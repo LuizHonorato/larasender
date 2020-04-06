@@ -1,0 +1,19 @@
+@font-face {
+    font-family: "Abel";
+    src: url("../fonts/Abel-Regular.ttf");
+}
+
+html, body {
+    background-color: #fff;
+    height: 100%;
+    width: 100%;
+}
+
+#app {
+    height: 100%;
+    width: 100%;
+}
+
+.login-title {
+    font-family: Abel, serif;
+}
