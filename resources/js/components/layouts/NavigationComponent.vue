@@ -40,6 +40,36 @@
                         <v-list-item-title>{{ item.title }}</v-list-item-title>
                     </v-list-item-content>
                 </v-list-item>
+
+                <v-divider></v-divider>
+
+                <v-list-item
+                    v-for="item in systemItems"
+                    :key="item.title"
+                    link
+                >
+                    <v-list-item-icon>
+                        <v-icon>{{ item.icon }}</v-icon>
+                    </v-list-item-icon>
+
+                    <v-list-item-content>
+                        <v-list-item-title>{{ item.title }}</v-list-item-title>
+                    </v-list-item-content>
+                </v-list-item>
+
+                <v-divider></v-divider>
+
+                <v-list-item>
+                    <v-list-item-icon>
+                        <v-icon>mdi-logout-variant</v-icon>
+                    </v-list-item-icon>
+
+                    <v-list-item-content>
+                        <v-list-item-title>Sair</v-list-item-title>
+                    </v-list-item-content>
+
+                </v-list-item>
+
             </v-list>
         </v-navigation-drawer>
     </v-container>
@@ -59,10 +89,16 @@
                 items: [
                     { title: 'Dashboard', icon: 'mdi-view-dashboard' },
                     { title: 'Clientes', icon: 'mdi-account-circle-outline' },
-                    { title: 'Caixas de e-mail', icon: 'mdi-email-multiple-outline' },
+                    { title: 'E-mails', icon: 'mdi-email-multiple-outline' },
                     { title: 'Campanhas', icon: 'mdi-bullhorn-outline' },
-                    { title: 'Templates', icon: 'mdi-chart-tree' },
+                    { title: 'Templates de e-mail', icon: 'mdi-chart-tree' },
+                    { title: 'Landing pages', icon: 'mdi-rocket-outline' },
 
+                ],
+                systemItems: [
+                    { title: 'Configurações do sistema', icon: 'mdi-cog' },
+                    { title: 'Usuários', icon: 'mdi-account-multiple' },
+                    { title: 'Ajuda', icon: 'mdi-help' },
                 ],
                 right: false,
                 miniVariant: false,

@@ -2101,6 +2101,36 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "NavigationComponent",
   props: {
@@ -2118,14 +2148,27 @@ __webpack_require__.r(__webpack_exports__);
         title: 'Clientes',
         icon: 'mdi-account-circle-outline'
       }, {
-        title: 'Caixas de e-mail',
+        title: 'E-mails',
         icon: 'mdi-email-multiple-outline'
       }, {
         title: 'Campanhas',
         icon: 'mdi-bullhorn-outline'
       }, {
-        title: 'Templates',
+        title: 'Templates de e-mail',
         icon: 'mdi-chart-tree'
+      }, {
+        title: 'Landing pages',
+        icon: 'mdi-rocket-outline'
+      }],
+      systemItems: [{
+        title: 'Configurações do sistema',
+        icon: 'mdi-cog'
+      }, {
+        title: 'Usuários',
+        icon: 'mdi-account-multiple'
+      }, {
+        title: 'Ajuda',
+        icon: 'mdi-help'
       }],
       right: false,
       miniVariant: false,
@@ -38907,7 +38950,50 @@ var render = function() {
                   ],
                   1
                 )
-              })
+              }),
+              _vm._v(" "),
+              _c("v-divider"),
+              _vm._v(" "),
+              _vm._l(_vm.systemItems, function(item) {
+                return _c(
+                  "v-list-item",
+                  { key: item.title, attrs: { link: "" } },
+                  [
+                    _c(
+                      "v-list-item-icon",
+                      [_c("v-icon", [_vm._v(_vm._s(item.icon))])],
+                      1
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "v-list-item-content",
+                      [_c("v-list-item-title", [_vm._v(_vm._s(item.title))])],
+                      1
+                    )
+                  ],
+                  1
+                )
+              }),
+              _vm._v(" "),
+              _c("v-divider"),
+              _vm._v(" "),
+              _c(
+                "v-list-item",
+                [
+                  _c(
+                    "v-list-item-icon",
+                    [_c("v-icon", [_vm._v("mdi-logout-variant")])],
+                    1
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "v-list-item-content",
+                    [_c("v-list-item-title", [_vm._v("Sair")])],
+                    1
+                  )
+                ],
+                1
+              )
             ],
             2
           )
