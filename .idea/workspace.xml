@@ -1,7 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="129e07a6-b47e-4b8f-be7b-66b03206ce8b" name="Default Changelist" comment="" />
+    <list default="true" id="129e07a6-b47e-4b8f-be7b-66b03206ce8b" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/resources/js/components/layouts/NavigationComponent.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/DashboardComponent.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/App.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/router/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/router/index.js" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -21,6 +27,9 @@
         <option value="Vue Single File Component" />
       </list>
     </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="PhpWorkspaceProjectConfiguration">
     <include_path>
@@ -124,6 +133,7 @@
     </include_path>
   </component>
   <component name="ProjectId" id="1a3G9h4kLzXNqdcPPhaHDJOXDzm" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="true" />
@@ -172,7 +182,8 @@
       <option name="presentableId" value="Default" />
       <updated>1585956713981</updated>
       <workItem from="1585956715528" duration="21947000" />
-      <workItem from="1586106199058" duration="18749000" />
+      <workItem from="1586106199058" duration="19372000" />
+      <workItem from="1586223596774" duration="7529000" />
     </task>
     <servers />
   </component>
@@ -180,6 +191,10 @@
     <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="340" y="143" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1586232658661">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="340" y="143" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1280.680@0.0.1280.680" timestamp="1586232658661" />
     <state x="396" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1586096622629">
       <screen x="0" y="0" width="1280" height="680" />
     </state>

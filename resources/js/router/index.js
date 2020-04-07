@@ -1,7 +1,7 @@
 import Vue from 'vue';
 import VueRouter from 'vue-router';
 import Login from '../components/LoginComponent';
-import Dashboard from '../components/DashboardComponent'
+import App from '../components/App'
 
 Vue.use(VueRouter);
 
@@ -13,7 +13,7 @@ const routes = [
             auth: true
         },
         name: 'dashboard',
-        component: Dashboard
+        component: App
     },
 ];
 

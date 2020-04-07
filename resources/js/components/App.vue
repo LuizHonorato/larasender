@@ -1,11 +1,12 @@
 <template>
-    <h1>Dashboard</h1>
+    <Navigation />
 </template>
 
 <script>
+    import Navigation from '../components/layouts/NavigationComponent'
     export default {
         name: "Dashboard",
-
+        components: {Navigation},
         created() {
             const userInfo = localStorage.getItem('user')
             if(userInfo) {
