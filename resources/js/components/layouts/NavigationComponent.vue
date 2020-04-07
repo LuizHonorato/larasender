@@ -59,7 +59,7 @@
 
                 <v-divider></v-divider>
 
-                <v-list-item>
+                <v-list-item v-on:click="logout()">
                     <v-list-item-icon>
                         <v-icon>mdi-logout-variant</v-icon>
                     </v-list-item-icon>
@@ -102,7 +102,11 @@
                 ],
                 right: false,
                 miniVariant: false,
-                expandOnHover: false,
+            }
+        },
+        methods: {
+            logout: function () {
+                this.$store.dispatch('logout')
             }
         }
     }

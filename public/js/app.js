@@ -2171,9 +2171,13 @@ __webpack_require__.r(__webpack_exports__);
         icon: 'mdi-help'
       }],
       right: false,
-      miniVariant: false,
-      expandOnHover: false
+      miniVariant: false
     };
+  },
+  methods: {
+    logout: function logout() {
+      this.$store.dispatch('logout');
+    }
   }
 });
 
@@ -38979,6 +38983,13 @@ var render = function() {
               _vm._v(" "),
               _c(
                 "v-list-item",
+                {
+                  on: {
+                    click: function($event) {
+                      return _vm.logout()
+                    }
+                  }
+                },
                 [
                   _c(
                     "v-list-item-icon",
