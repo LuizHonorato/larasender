@@ -2,9 +2,26 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="129e07a6-b47e-4b8f-be7b-66b03206ce8b" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/resources/js/components/core/ViewComponent.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/components/layouts/AppBarComponent.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/components/screens/CampaignsComponent.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/components/screens/ContactsComponent.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/components/screens/DashboardComponent.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/components/screens/EmailsComponent.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/components/screens/LandingPagesComponent.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/components/screens/TemplatesComponent.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/store/modules/drawer.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/mix-manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/public/mix-manifest.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/App.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/App.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/ExampleComponent.vue" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/js/components/layouts/NavigationComponent.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/layouts/NavigationComponent.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/router/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/router/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/store/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/store/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/master.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/master.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webpack.mix.js" beforeDir="false" afterPath="$PROJECT_DIR$/webpack.mix.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -21,8 +38,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="CSS File" />
-        <option value="JavaScript File" />
         <option value="Vue Single File Component" />
+        <option value="JavaScript File" />
       </list>
     </option>
   </component>
@@ -183,7 +200,8 @@
       <workItem from="1585956715528" duration="21947000" />
       <workItem from="1586106199058" duration="19372000" />
       <workItem from="1586223596774" duration="9789000" />
-      <workItem from="1586272445252" duration="801000" />
+      <workItem from="1586272445252" duration="1026000" />
+      <workItem from="1586294591510" duration="10352000" />
     </task>
     <servers />
   </component>
