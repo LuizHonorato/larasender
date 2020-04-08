@@ -2011,7 +2011,7 @@ __webpack_require__.r(__webpack_exports__);
         password: this.password
       }).then(function () {
         _this.$router.push({
-          name: 'dashboard'
+          name: 'Dashboard'
         });
       })["catch"](function (err) {
         console.log(err);
@@ -2059,6 +2059,7 @@ function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { va
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
+//
 //
 //
 //
@@ -39208,7 +39209,7 @@ var render = function() {
         "v-btn",
         {
           staticClass: "mr-3",
-          attrs: { elevation: "1", fab: "", small: "" },
+          attrs: { color: "#fff", elevation: "0", fab: "", small: "" },
           on: {
             click: function($event) {
               return _vm.setDrawer(!_vm.drawer.drawer)
@@ -39218,9 +39219,7 @@ var render = function() {
         [
           _vm.value
             ? _c("v-icon", [_vm._v("\n            mdi-view-quilt\n        ")])
-            : _c("v-icon", [
-                _vm._v("\n            mdi-dots-vertical\n        ")
-              ])
+            : _c("v-icon", [_vm._v("\n            mdi-menu\n        ")])
         ],
         1
       ),

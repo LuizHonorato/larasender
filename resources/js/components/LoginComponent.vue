@@ -58,7 +58,7 @@
                     password: this.password
                 })
                 .then(() => {
-                    this.$router.push({name: 'dashboard'})
+                    this.$router.push({name: 'Dashboard'})
                 })
                 .catch(err => {
                     console.log(err)

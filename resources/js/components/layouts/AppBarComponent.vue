@@ -10,7 +10,8 @@
 
         <v-btn
             class="mr-3"
-            elevation="1"
+            color="#fff"
+            elevation="0"
             fab
             small
             v-on:click="setDrawer(!drawer.drawer)"
@@ -20,7 +21,7 @@
             </v-icon>
 
             <v-icon v-else>
-                mdi-dots-vertical
+                mdi-menu
             </v-icon>
         </v-btn>
 
