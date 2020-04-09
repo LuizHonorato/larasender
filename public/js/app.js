@@ -1994,6 +1994,9 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "LoginComponent",
   data: function data() {
@@ -2294,8 +2297,75 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
-  name: "CampaignsComponent"
+  name: "CampaignsComponent",
+  data: function data() {
+    return {
+      dates: ['2020-04-02', '2020-04-05']
+    };
+  },
+  computed: {
+    dateRangeText: function dateRangeText() {
+      return this.dates.join(' ~ ');
+    }
+  }
 });
 
 /***/ }),
@@ -7021,6 +7091,25 @@ exports.push([module.i, ".v-btn:not(.v-btn--outlined).primary, .v-btn:not(.v-btn
 
 /***/ }),
 
+/***/ "./node_modules/css-loader/index.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/vuetify/src/components/VCard/VCard.sass":
+/*!*************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader!./node_modules/postcss-loader/src??ref--8-2!./node_modules/sass-loader/dist/cjs.js??ref--8-3!./node_modules/vuetify/src/components/VCard/VCard.sass ***!
+  \*************************************************************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(/*! ../../../../css-loader/lib/css-base.js */ "./node_modules/css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, ".theme--light.v-card {\n  background-color: #FFFFFF;\n  color: rgba(0, 0, 0, 0.87);\n}\n.theme--light.v-card > .v-card__text,\n.theme--light.v-card .v-card__subtitle {\n  color: rgba(0, 0, 0, 0.6);\n}\n.theme--light.v-card.v-card--outlined {\n  border: thin solid rgba(0, 0, 0, 0.12);\n}\n\n.theme--dark.v-card {\n  background-color: #1E1E1E;\n  color: #FFFFFF;\n}\n.theme--dark.v-card > .v-card__text,\n.theme--dark.v-card .v-card__subtitle {\n  color: rgba(255, 255, 255, 0.7);\n}\n.theme--dark.v-card.v-card--outlined {\n  border: thin solid rgba(255, 255, 255, 0.12);\n}\n\n.v-card {\n  display: block;\n  max-width: 100%;\n  outline: none;\n  text-decoration: none;\n  transition-property: box-shadow, opacity;\n  overflow-wrap: break-word;\n  position: relative;\n  white-space: normal;\n  transition: box-shadow 280ms cubic-bezier(0.4, 0, 0.2, 1);\n  will-change: box-shadow;\n  box-shadow: 0px 3px 1px -2px rgba(0, 0, 0, 0.2), 0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 1px 5px 0px rgba(0, 0, 0, 0.12);\n}\n.v-card:not(.v-sheet--tile):not(.v-card--shaped) {\n  border-radius: 4px;\n}\n.v-card > *:first-child:not(.v-btn):not(.v-chip),\n.v-card > .v-card__progress + *:not(.v-btn):not(.v-chip) {\n  border-top-left-radius: inherit;\n  border-top-right-radius: inherit;\n}\n.v-card > *:last-child:not(.v-btn):not(.v-chip) {\n  border-bottom-left-radius: inherit;\n  border-bottom-right-radius: inherit;\n}\n\n.v-card__progress {\n  top: 0;\n  left: 0;\n  right: 0;\n  overflow: hidden;\n}\n\n.v-card__subtitle + .v-card__text {\n  padding-top: 0;\n}\n\n.v-card__subtitle,\n.v-card__text {\n  font-size: 0.875rem;\n  font-weight: 400;\n  line-height: 1.375rem;\n  letter-spacing: 0.0071428571em;\n}\n\n.v-card__subtitle,\n.v-card__text,\n.v-card__title {\n  padding: 16px;\n}\n\n.v-card__title {\n  align-items: center;\n  display: flex;\n  flex-wrap: wrap;\n  font-size: 1.25rem;\n  font-weight: 500;\n  letter-spacing: 0.0125em;\n  line-height: 2rem;\n  word-break: break-all;\n}\n.v-card__title + .v-card__subtitle,\n.v-card__title + .v-card__text {\n  padding-top: 0;\n}\n.v-card__title + .v-card__subtitle {\n  margin-top: -16px;\n}\n\n.v-card__text {\n  width: 100%;\n}\n\n.v-card__actions {\n  align-items: center;\n  display: flex;\n  padding: 8px;\n}\n.v-card__actions > .v-btn.v-btn {\n  padding: 0 8px;\n}\n.v-application--is-ltr .v-card__actions > .v-btn.v-btn + .v-btn {\n  margin-left: 8px;\n}\n.v-application--is-ltr .v-card__actions > .v-btn.v-btn .v-icon--left {\n  margin-left: 4px;\n}\n.v-application--is-ltr .v-card__actions > .v-btn.v-btn .v-icon--right {\n  margin-right: 4px;\n}\n.v-application--is-rtl .v-card__actions > .v-btn.v-btn + .v-btn {\n  margin-right: 8px;\n}\n.v-application--is-rtl .v-card__actions > .v-btn.v-btn .v-icon--left {\n  margin-right: 4px;\n}\n.v-application--is-rtl .v-card__actions > .v-btn.v-btn .v-icon--right {\n  margin-left: 4px;\n}\n\n.v-card--flat {\n  box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0.2), 0px 0px 0px 0px rgba(0, 0, 0, 0.14), 0px 0px 0px 0px rgba(0, 0, 0, 0.12);\n}\n\n.v-card--hover {\n  cursor: pointer;\n  transition: box-shadow 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);\n}\n.v-card--hover:hover, .v-card--hover:focus {\n  box-shadow: 0px 5px 5px -3px rgba(0, 0, 0, 0.2), 0px 8px 10px 1px rgba(0, 0, 0, 0.14), 0px 3px 14px 2px rgba(0, 0, 0, 0.12);\n}\n\n.v-card--link {\n  cursor: pointer;\n}\n.v-card--link .v-chip {\n  cursor: pointer;\n}\n.v-card--link:focus:before {\n  opacity: 0.08;\n}\n.v-card--link:before {\n  background: currentColor;\n  bottom: 0;\n  content: \"\";\n  left: 0;\n  opacity: 0;\n  pointer-events: none;\n  position: absolute;\n  right: 0;\n  top: 0;\n  transition: 0.2s opacity;\n}\n\n.v-card--disabled {\n  pointer-events: none;\n  -webkit-user-select: none;\n     -moz-user-select: none;\n      -ms-user-select: none;\n          user-select: none;\n}\n.v-card--disabled > *:not(.v-card__progress) {\n  opacity: 0.6;\n  transition: inherit;\n}\n\n.v-card--loading {\n  overflow: hidden;\n}\n\n.v-card--outlined {\n  box-shadow: none;\n}\n\n.v-card--raised {\n  box-shadow: 0px 5px 5px -3px rgba(0, 0, 0, 0.2), 0px 8px 10px 1px rgba(0, 0, 0, 0.14), 0px 3px 14px 2px rgba(0, 0, 0, 0.12);\n}\n\n.v-card--shaped {\n  border-radius: 24px 4px;\n}", ""]);
+
+// exports
+
+
+/***/ }),
+
 /***/ "./node_modules/css-loader/index.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/vuetify/src/components/VContent/VContent.sass":
 /*!*******************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/css-loader!./node_modules/postcss-loader/src??ref--8-2!./node_modules/sass-loader/dist/cjs.js??ref--8-3!./node_modules/vuetify/src/components/VContent/VContent.sass ***!
@@ -7053,6 +7142,82 @@ exports = module.exports = __webpack_require__(/*! ../../../../css-loader/lib/cs
 
 // module
 exports.push([module.i, "/* Theme */\n.theme--light.v-counter {\n  color: rgba(0, 0, 0, 0.6);\n}\n\n.theme--dark.v-counter {\n  color: rgba(255, 255, 255, 0.7);\n}\n\n.v-counter {\n  flex: 0 1 auto;\n  font-size: 12px;\n  min-height: 12px;\n  line-height: 12px;\n}", ""]);
+
+// exports
+
+
+/***/ }),
+
+/***/ "./node_modules/css-loader/index.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/vuetify/src/components/VDatePicker/VDatePickerHeader.sass":
+/*!*******************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader!./node_modules/postcss-loader/src??ref--8-2!./node_modules/sass-loader/dist/cjs.js??ref--8-3!./node_modules/vuetify/src/components/VDatePicker/VDatePickerHeader.sass ***!
+  \*******************************************************************************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(/*! ../../../../css-loader/lib/css-base.js */ "./node_modules/css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, ".theme--light.v-date-picker-header .v-date-picker-header__value:not(.v-date-picker-header__value--disabled) button:not(:hover):not(:focus) {\n  color: rgba(0, 0, 0, 0.87);\n}\n.theme--light.v-date-picker-header .v-date-picker-header__value--disabled button {\n  color: rgba(0, 0, 0, 0.38);\n}\n\n.theme--dark.v-date-picker-header .v-date-picker-header__value:not(.v-date-picker-header__value--disabled) button:not(:hover):not(:focus) {\n  color: #FFFFFF;\n}\n.theme--dark.v-date-picker-header .v-date-picker-header__value--disabled button {\n  color: rgba(255, 255, 255, 0.5);\n}\n\n.v-date-picker-header {\n  padding: 4px 16px;\n  align-items: center;\n  display: flex;\n  justify-content: space-between;\n  position: relative;\n}\n.v-date-picker-header .v-btn {\n  margin: 0;\n  z-index: auto;\n}\n.v-date-picker-header .v-icon {\n  cursor: pointer;\n  -webkit-user-select: none;\n     -moz-user-select: none;\n      -ms-user-select: none;\n          user-select: none;\n}\n\n.v-date-picker-header__value {\n  flex: 1;\n  text-align: center;\n  position: relative;\n  overflow: hidden;\n}\n.v-date-picker-header__value div {\n  transition: 0.3s cubic-bezier(0.25, 0.8, 0.5, 1);\n  width: 100%;\n}\n.v-date-picker-header__value button {\n  cursor: pointer;\n  font-weight: bold;\n  outline: none;\n  padding: 0.5rem;\n  transition: 0.3s cubic-bezier(0.25, 0.8, 0.5, 1);\n}\n\n.v-date-picker-header--disabled {\n  pointer-events: none;\n}", ""]);
+
+// exports
+
+
+/***/ }),
+
+/***/ "./node_modules/css-loader/index.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/vuetify/src/components/VDatePicker/VDatePickerTable.sass":
+/*!******************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader!./node_modules/postcss-loader/src??ref--8-2!./node_modules/sass-loader/dist/cjs.js??ref--8-3!./node_modules/vuetify/src/components/VDatePicker/VDatePickerTable.sass ***!
+  \******************************************************************************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(/*! ../../../../css-loader/lib/css-base.js */ "./node_modules/css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, ".theme--light.v-date-picker-table th,\n.theme--light.v-date-picker-table .v-date-picker-table--date__week {\n  color: rgba(0, 0, 0, 0.38);\n}\n\n.theme--dark.v-date-picker-table th,\n.theme--dark.v-date-picker-table .v-date-picker-table--date__week {\n  color: rgba(255, 255, 255, 0.5);\n}\n\n.v-date-picker-table {\n  position: relative;\n  padding: 0 12px;\n  height: 242px;\n}\n.v-date-picker-table table {\n  transition: 0.3s cubic-bezier(0.25, 0.8, 0.5, 1);\n  top: 0;\n  table-layout: fixed;\n  width: 100%;\n}\n.v-date-picker-table td, .v-date-picker-table th {\n  text-align: center;\n  position: relative;\n}\n.v-date-picker-table th {\n  font-size: 12px;\n}\n.v-date-picker-table--date .v-btn {\n  height: 32px;\n  width: 32px;\n}\n.v-date-picker-table .v-btn {\n  z-index: auto;\n  margin: 0;\n  font-size: 12px;\n}\n.v-date-picker-table .v-btn.v-btn--active {\n  color: #FFFFFF;\n}\n\n.v-date-picker-table--month td {\n  width: 33.333333%;\n  height: 56px;\n  vertical-align: middle;\n  text-align: center;\n}\n.v-date-picker-table--month td .v-btn {\n  margin: 0 auto;\n  max-width: 140px;\n  min-width: 40px;\n  width: 100%;\n}\n\n.v-date-picker-table--date th {\n  padding: 8px 0;\n  font-weight: 600;\n}\n.v-date-picker-table--date td {\n  width: 45px;\n}\n\n.v-date-picker-table__events {\n  height: 8px;\n  left: 0;\n  position: absolute;\n  text-align: center;\n  white-space: pre;\n  width: 100%;\n}\n.v-date-picker-table__events > div {\n  border-radius: 50%;\n  display: inline-block;\n  height: 8px;\n  margin: 0 1px;\n  width: 8px;\n}\n\n.v-date-picker-table--date .v-date-picker-table__events {\n  bottom: 6px;\n}\n\n.v-date-picker-table--month .v-date-picker-table__events {\n  bottom: 8px;\n}\n\n.v-date-picker-table__current .v-date-picker-table__events {\n  margin-bottom: -1px;\n}\n\n.v-date-picker-table--disabled {\n  pointer-events: none;\n}", ""]);
+
+// exports
+
+
+/***/ }),
+
+/***/ "./node_modules/css-loader/index.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/vuetify/src/components/VDatePicker/VDatePickerTitle.sass":
+/*!******************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader!./node_modules/postcss-loader/src??ref--8-2!./node_modules/sass-loader/dist/cjs.js??ref--8-3!./node_modules/vuetify/src/components/VDatePicker/VDatePickerTitle.sass ***!
+  \******************************************************************************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(/*! ../../../../css-loader/lib/css-base.js */ "./node_modules/css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, ".v-date-picker-title {\n  display: flex;\n  justify-content: space-between;\n  flex-direction: column;\n  flex-wrap: wrap;\n  line-height: 1;\n}\n.v-application--is-ltr .v-date-picker-title .v-picker__title__btn {\n  text-align: left;\n}\n.v-application--is-rtl .v-date-picker-title .v-picker__title__btn {\n  text-align: right;\n}\n.v-date-picker-title__year {\n  align-items: center;\n  display: inline-flex;\n  font-size: 14px;\n  font-weight: 500;\n  margin-bottom: 8px;\n}\n.v-date-picker-title__date {\n  font-size: 34px;\n  text-align: left;\n  font-weight: 500;\n  position: relative;\n  overflow: hidden;\n  padding-bottom: 8px;\n  margin-bottom: -8px;\n}\n.v-date-picker-title__date > div {\n  position: relative;\n}\n.v-date-picker-title--disabled {\n  pointer-events: none;\n}", ""]);
+
+// exports
+
+
+/***/ }),
+
+/***/ "./node_modules/css-loader/index.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/vuetify/src/components/VDatePicker/VDatePickerYears.sass":
+/*!******************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader!./node_modules/postcss-loader/src??ref--8-2!./node_modules/sass-loader/dist/cjs.js??ref--8-3!./node_modules/vuetify/src/components/VDatePicker/VDatePickerYears.sass ***!
+  \******************************************************************************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(/*! ../../../../css-loader/lib/css-base.js */ "./node_modules/css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, ".v-date-picker-years {\n  font-size: 16px;\n  font-weight: 400;\n  height: 290px;\n  list-style-type: none;\n  overflow: auto;\n  text-align: center;\n}\n.v-date-picker-years.v-date-picker-years {\n  padding: 0;\n}\n.v-date-picker-years li {\n  cursor: pointer;\n  padding: 8px 0;\n  transition: none;\n}\n.v-date-picker-years li.active {\n  font-size: 26px;\n  font-weight: 500;\n  padding: 10px 0;\n}\n.v-date-picker-years li:hover {\n  background: rgba(0, 0, 0, 0.12);\n}\n\n.v-picker--landscape .v-date-picker-years {\n  padding: 0;\n  height: 290px;\n}", ""]);
 
 // exports
 
@@ -7287,6 +7452,25 @@ exports.push([module.i, ".v-list-item-group .v-list-item--active {\n  color: inh
 
 /***/ }),
 
+/***/ "./node_modules/css-loader/index.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/vuetify/src/components/VMenu/VMenu.sass":
+/*!*************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader!./node_modules/postcss-loader/src??ref--8-2!./node_modules/sass-loader/dist/cjs.js??ref--8-3!./node_modules/vuetify/src/components/VMenu/VMenu.sass ***!
+  \*************************************************************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(/*! ../../../../css-loader/lib/css-base.js */ "./node_modules/css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, ".v-menu {\n  display: none;\n}\n.v-menu--attached {\n  display: inline;\n}\n.v-menu__content {\n  position: absolute;\n  display: inline-block;\n  border-radius: 4px;\n  max-width: 80%;\n  overflow-y: auto;\n  overflow-x: hidden;\n  contain: content;\n  will-change: transform;\n  box-shadow: 0px 5px 5px -3px rgba(0, 0, 0, 0.2), 0px 8px 10px 1px rgba(0, 0, 0, 0.14), 0px 3px 14px 2px rgba(0, 0, 0, 0.12);\n}\n.v-menu__content--active {\n  pointer-events: none;\n}\n.v-menu__content--auto .v-list-item {\n  transition-property: transform, opacity;\n  transition-duration: 0.3s;\n  transition-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1);\n}\n.v-menu__content--fixed {\n  position: fixed;\n}\n.v-menu__content > .card {\n  contain: content;\n  -webkit-backface-visibility: hidden;\n          backface-visibility: hidden;\n}\n.v-menu > .v-menu__content {\n  max-width: none;\n}\n.v-menu-transition-enter .v-list-item {\n  min-width: 0;\n  pointer-events: none;\n}\n.v-menu-transition-enter-to .v-list-item {\n  pointer-events: auto;\n  transition-delay: 0.1s;\n}\n.v-menu-transition-leave-active, .v-menu-transition-leave-to {\n  pointer-events: none;\n}\n.v-menu-transition-enter, .v-menu-transition-leave-to {\n  opacity: 0;\n}\n.v-menu-transition-enter-active, .v-menu-transition-leave-active {\n  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);\n}\n\n.v-menu-transition-enter.v-menu__content--auto {\n  transition: none !important;\n}\n.v-menu-transition-enter.v-menu__content--auto .v-list-item {\n  opacity: 0;\n  transform: translateY(-15px);\n}\n.v-menu-transition-enter.v-menu__content--auto .v-list-item--active {\n  opacity: 1;\n  transform: none !important;\n  pointer-events: auto;\n}", ""]);
+
+// exports
+
+
+/***/ }),
+
 /***/ "./node_modules/css-loader/index.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/vuetify/src/components/VMessages/VMessages.sass":
 /*!*********************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/css-loader!./node_modules/postcss-loader/src??ref--8-2!./node_modules/sass-loader/dist/cjs.js??ref--8-3!./node_modules/vuetify/src/components/VMessages/VMessages.sass ***!
@@ -7338,6 +7522,25 @@ exports = module.exports = __webpack_require__(/*! ../../../../css-loader/lib/cs
 
 // module
 exports.push([module.i, ".theme--light.v-overlay {\n  color: rgba(0, 0, 0, 0.87);\n}\n\n.theme--dark.v-overlay {\n  color: #FFFFFF;\n}\n\n.v-overlay {\n  align-items: center;\n  border-radius: inherit;\n  display: flex;\n  justify-content: center;\n  position: fixed;\n  top: 0;\n  left: 0;\n  right: 0;\n  bottom: 0;\n  pointer-events: none;\n  transition: 0.3s cubic-bezier(0.25, 0.8, 0.5, 1), z-index 1ms;\n}\n\n.v-overlay__content {\n  position: relative;\n}\n\n.v-overlay__scrim {\n  border-radius: inherit;\n  bottom: 0;\n  height: 100%;\n  left: 0;\n  position: absolute;\n  right: 0;\n  top: 0;\n  transition: inherit;\n  width: 100%;\n  will-change: opacity;\n}\n\n.v-overlay--absolute {\n  position: absolute;\n}\n\n.v-overlay--active {\n  pointer-events: auto;\n}", ""]);
+
+// exports
+
+
+/***/ }),
+
+/***/ "./node_modules/css-loader/index.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/vuetify/src/components/VPicker/VPicker.sass":
+/*!*****************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader!./node_modules/postcss-loader/src??ref--8-2!./node_modules/sass-loader/dist/cjs.js??ref--8-3!./node_modules/vuetify/src/components/VPicker/VPicker.sass ***!
+  \*****************************************************************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(/*! ../../../../css-loader/lib/css-base.js */ "./node_modules/css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, ".theme--light.v-picker__title {\n  background: #e0e0e0;\n}\n\n.theme--dark.v-picker__title {\n  background: #616161;\n}\n\n.theme--light.v-picker__body {\n  background: #FFFFFF;\n}\n\n.theme--dark.v-picker__body {\n  background: #424242;\n}\n\n.v-picker {\n  border-radius: 4px;\n  contain: layout style;\n  display: inline-flex;\n  flex-direction: column;\n  vertical-align: top;\n  position: relative;\n}\n\n.v-picker--full-width {\n  display: flex;\n  width: 100%;\n}\n.v-picker--full-width > .v-picker__body {\n  margin: initial;\n}\n\n.v-picker__title {\n  color: #FFFFFF;\n  border-top-left-radius: 4px;\n  border-top-right-radius: 4px;\n  padding: 16px;\n}\n\n.v-picker__title__btn {\n  transition: 0.3s cubic-bezier(0.25, 0.8, 0.5, 1);\n}\n.v-picker__title__btn:not(.v-picker__title__btn--active) {\n  opacity: 0.6;\n  cursor: pointer;\n}\n.v-picker__title__btn:not(.v-picker__title__btn--active):hover:not(:focus) {\n  opacity: 1;\n}\n\n.v-picker__title__btn--readonly {\n  pointer-events: none;\n}\n\n.v-picker__title__btn--active {\n  opacity: 1;\n}\n\n.v-picker__body {\n  height: auto;\n  overflow: hidden;\n  position: relative;\n  z-index: 0;\n  flex: 1 0 auto;\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  margin: 0 auto;\n}\n.v-picker__body > div {\n  width: 100%;\n}\n.v-picker__body > div.fade-transition-leave-active {\n  position: absolute;\n}\n\n.v-picker--landscape .v-picker__title {\n  border-top-right-radius: 0;\n  border-bottom-right-radius: 0;\n  width: 170px;\n  position: absolute;\n  top: 0;\n  height: 100%;\n  z-index: 1;\n}\n.v-application--is-ltr .v-picker--landscape .v-picker__title {\n  left: 0;\n}\n.v-application--is-rtl .v-picker--landscape .v-picker__title {\n  right: 0;\n}\n.v-application--is-ltr .v-picker--landscape .v-picker__body:not(.v-picker__body--no-title),\n.v-application--is-ltr .v-picker--landscape .v-picker__actions:not(.v-picker__actions--no-title) {\n  margin-left: 170px;\n  margin-right: 0;\n}\n.v-application--is-rtl .v-picker--landscape .v-picker__body:not(.v-picker__body--no-title),\n.v-application--is-rtl .v-picker--landscape .v-picker__actions:not(.v-picker__actions--no-title) {\n  margin-right: 170px;\n  margin-left: 0;\n}", ""]);
 
 // exports
 
@@ -39045,117 +39248,128 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c(
-    "v-container",
+    "v-form",
     { staticStyle: { height: "100%" } },
     [
       _c(
-        "v-row",
-        {
-          staticStyle: { height: "100%" },
-          attrs: { align: "center", justify: "center" }
-        },
+        "v-container",
+        { staticStyle: { height: "100%" } },
         [
           _c(
-            "v-col",
+            "v-row",
             {
-              attrs: {
-                cols: "12",
-                sm: "12",
-                md: "6",
-                order: "2",
-                "order-sm": "1"
-              }
+              staticStyle: { height: "100%" },
+              attrs: { align: "center", justify: "center" }
             },
             [
               _c(
-                "v-row",
-                { attrs: { align: "center", justify: "center" } },
+                "v-col",
+                {
+                  attrs: {
+                    cols: "12",
+                    sm: "12",
+                    md: "6",
+                    order: "2",
+                    "order-sm": "1"
+                  }
+                },
                 [
-                  _c("v-img", {
-                    attrs: {
-                      src: "images/illus-email-marketing-2.jpg",
-                      "aspect-ratio": "1.7"
-                    }
-                  })
+                  _c(
+                    "v-row",
+                    { attrs: { align: "center", justify: "center" } },
+                    [
+                      _c("v-img", {
+                        attrs: {
+                          src: "images/illus-email-marketing-2.jpg",
+                          "aspect-ratio": "1.7"
+                        }
+                      })
+                    ],
+                    1
+                  )
                 ],
                 1
-              )
-            ],
-            1
-          ),
-          _vm._v(" "),
-          _c(
-            "v-col",
-            {
-              attrs: {
-                cols: "12",
-                sm: "12",
-                md: "6",
-                order: "1",
-                "order-sm": "2"
-              }
-            },
-            [
+              ),
+              _vm._v(" "),
               _c(
-                "v-row",
-                { attrs: { align: "center", justify: "center" } },
+                "v-col",
+                {
+                  attrs: {
+                    cols: "12",
+                    sm: "12",
+                    md: "6",
+                    order: "1",
+                    "order-sm": "2"
+                  }
+                },
                 [
-                  _c("div", { staticClass: "display-1 my-2 login-title" }, [
-                    _vm._v(
-                      "\n                    { LARASENDER }\n                "
-                    )
-                  ]),
-                  _vm._v(" "),
                   _c(
-                    "v-col",
-                    { attrs: { cols: "12", sm: "6", md: "8" } },
+                    "v-row",
+                    { attrs: { align: "center", justify: "center" } },
                     [
-                      _c("v-text-field", {
-                        attrs: { label: "E-mail", outlined: "" },
-                        model: {
-                          value: _vm.email,
-                          callback: function($$v) {
-                            _vm.email = $$v
-                          },
-                          expression: "email"
-                        }
-                      }),
-                      _vm._v(" "),
-                      _c("v-text-field", {
-                        attrs: {
-                          label: "Senha",
-                          type: "password",
-                          outlined: ""
-                        },
-                        model: {
-                          value: _vm.password,
-                          callback: function($$v) {
-                            _vm.password = $$v
-                          },
-                          expression: "password"
-                        }
-                      }),
+                      _c("div", { staticClass: "display-1 my-2 login-title" }, [
+                        _vm._v(
+                          "\n                        { LARASENDER }\n                    "
+                        )
+                      ]),
                       _vm._v(" "),
                       _c(
-                        "div",
-                        { staticClass: "my-md-2" },
+                        "v-col",
+                        { attrs: { cols: "12", sm: "6", md: "8" } },
                         [
-                          _c(
-                            "v-btn",
-                            {
-                              attrs: {
-                                depressed: "",
-                                large: "",
-                                block: "",
-                                color: "primary"
-                              },
-                              on: {
-                                click: function($event) {
-                                  return _vm.login()
-                                }
-                              }
+                          _c("v-text-field", {
+                            attrs: {
+                              label: "E-mail",
+                              type: "email",
+                              outlined: ""
                             },
-                            [_vm._v("Entrar")]
+                            model: {
+                              value: _vm.email,
+                              callback: function($$v) {
+                                _vm.email = $$v
+                              },
+                              expression: "email"
+                            }
+                          }),
+                          _vm._v(" "),
+                          _c("v-text-field", {
+                            attrs: {
+                              label: "Senha",
+                              type: "password",
+                              outlined: ""
+                            },
+                            model: {
+                              value: _vm.password,
+                              callback: function($$v) {
+                                _vm.password = $$v
+                              },
+                              expression: "password"
+                            }
+                          }),
+                          _vm._v(" "),
+                          _c(
+                            "div",
+                            { staticClass: "my-md-2" },
+                            [
+                              _c(
+                                "v-btn",
+                                {
+                                  attrs: {
+                                    depressed: "",
+                                    large: "",
+                                    block: "",
+                                    color: "primary"
+                                  },
+                                  on: {
+                                    click: function($event) {
+                                      return _vm.login()
+                                    }
+                                  }
+                                },
+                                [_vm._v("Entrar")]
+                              )
+                            ],
+                            1
                           )
                         ],
                         1
@@ -39464,7 +39678,160 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("h1", [_vm._v("Campanhas")])
+  return _c(
+    "v-container",
+    [
+      _c(
+        "v-row",
+        [
+          _c(
+            "v-col",
+            { attrs: { cols: "12", sm: "12", md: "6" } },
+            [
+              _c("v-text-field", {
+                attrs: {
+                  placeholder: "Buscar campanhas...",
+                  type: "text",
+                  outlined: "",
+                  "prepend-inner-icon": "mdi-magnify"
+                }
+              })
+            ],
+            1
+          ),
+          _vm._v(" "),
+          _c(
+            "v-col",
+            {
+              staticClass: "mt-md-2",
+              attrs: { cols: "10", sm: "10", md: "4" }
+            },
+            [
+              _c(
+                "v-menu",
+                {
+                  ref: "startMenu",
+                  attrs: {
+                    "close-on-content-click": false,
+                    "nudge-right": 40,
+                    "return-value": _vm.start,
+                    transition: "scale-transition",
+                    "offset-y": ""
+                  },
+                  on: {
+                    "update:returnValue": function($event) {
+                      _vm.start = $event
+                    },
+                    "update:return-value": function($event) {
+                      _vm.start = $event
+                    }
+                  },
+                  scopedSlots: _vm._u([
+                    {
+                      key: "activator",
+                      fn: function(ref) {
+                        var on = ref.on
+                        return [
+                          _c(
+                            "v-text-field",
+                            _vm._g(
+                              {
+                                attrs: {
+                                  label: "ou filtre por data",
+                                  "prepend-inner-icon": "mdi-calendar",
+                                  dense: "",
+                                  readonly: "",
+                                  outlined: "",
+                                  "hide-details": ""
+                                },
+                                model: {
+                                  value: _vm.dateRangeText,
+                                  callback: function($$v) {
+                                    _vm.dateRangeText = $$v
+                                  },
+                                  expression: "dateRangeText"
+                                }
+                              },
+                              on
+                            )
+                          )
+                        ]
+                      }
+                    }
+                  ]),
+                  model: {
+                    value: _vm.startMenu,
+                    callback: function($$v) {
+                      _vm.startMenu = $$v
+                    },
+                    expression: "startMenu"
+                  }
+                },
+                [
+                  _vm._v(" "),
+                  _c(
+                    "v-date-picker",
+                    {
+                      attrs: { "no-title": "", scrollable: "", range: "" },
+                      model: {
+                        value: _vm.dates,
+                        callback: function($$v) {
+                          _vm.dates = $$v
+                        },
+                        expression: "dates"
+                      }
+                    },
+                    [
+                      _c("v-spacer"),
+                      _vm._v(" "),
+                      _c(
+                        "v-btn",
+                        {
+                          attrs: { text: "", color: "primary" },
+                          on: {
+                            click: function($event) {
+                              _vm.startMenu = false
+                            }
+                          }
+                        },
+                        [
+                          _vm._v(
+                            "\n                        Cancelar\n                    "
+                          )
+                        ]
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "v-btn",
+                        {
+                          attrs: { text: "", color: "primary" },
+                          on: {
+                            click: function($event) {
+                              return _vm.$refs.startMenu.save(_vm.start)
+                            }
+                          }
+                        },
+                        [
+                          _vm._v(
+                            "\n                        OK\n                    "
+                          )
+                        ]
+                      )
+                    ],
+                    1
+                  )
+                ],
+                1
+              )
+            ],
+            1
+          )
+        ],
+        1
+      )
+    ],
+    1
+  )
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -96900,6 +97267,464 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./node_modules/vuetify/lib/components/VCalendar/util/timestamp.js":
+/*!*************************************************************************!*\
+  !*** ./node_modules/vuetify/lib/components/VCalendar/util/timestamp.js ***!
+  \*************************************************************************/
+/*! exports provided: PARSE_REGEX, PARSE_TIME, DAYS_IN_MONTH, DAYS_IN_MONTH_LEAP, DAYS_IN_MONTH_MIN, DAYS_IN_MONTH_MAX, MONTH_MAX, MONTH_MIN, DAY_MIN, DAYS_IN_WEEK, MINUTES_IN_HOUR, HOURS_IN_DAY, FIRST_HOUR, getStartOfWeek, getEndOfWeek, getStartOfMonth, getEndOfMonth, parseTime, validateTimestamp, parseTimestamp, parseDate, getDayIdentifier, getTimeIdentifier, getTimestampIdentifier, updateRelative, updateMinutes, updateWeekday, updateFormatted, getWeekday, isLeapYear, daysInMonth, copyTimestamp, padNumber, getDate, getTime, nextMinutes, nextDay, prevDay, relativeDays, diffMinutes, findWeekday, getWeekdaySkips, createDayList, createIntervalList, createNativeLocaleFormatter */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "PARSE_REGEX", function() { return PARSE_REGEX; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "PARSE_TIME", function() { return PARSE_TIME; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DAYS_IN_MONTH", function() { return DAYS_IN_MONTH; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DAYS_IN_MONTH_LEAP", function() { return DAYS_IN_MONTH_LEAP; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DAYS_IN_MONTH_MIN", function() { return DAYS_IN_MONTH_MIN; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DAYS_IN_MONTH_MAX", function() { return DAYS_IN_MONTH_MAX; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "MONTH_MAX", function() { return MONTH_MAX; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "MONTH_MIN", function() { return MONTH_MIN; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DAY_MIN", function() { return DAY_MIN; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DAYS_IN_WEEK", function() { return DAYS_IN_WEEK; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "MINUTES_IN_HOUR", function() { return MINUTES_IN_HOUR; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "HOURS_IN_DAY", function() { return HOURS_IN_DAY; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "FIRST_HOUR", function() { return FIRST_HOUR; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getStartOfWeek", function() { return getStartOfWeek; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getEndOfWeek", function() { return getEndOfWeek; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getStartOfMonth", function() { return getStartOfMonth; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getEndOfMonth", function() { return getEndOfMonth; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "parseTime", function() { return parseTime; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "validateTimestamp", function() { return validateTimestamp; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "parseTimestamp", function() { return parseTimestamp; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "parseDate", function() { return parseDate; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getDayIdentifier", function() { return getDayIdentifier; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getTimeIdentifier", function() { return getTimeIdentifier; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getTimestampIdentifier", function() { return getTimestampIdentifier; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "updateRelative", function() { return updateRelative; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "updateMinutes", function() { return updateMinutes; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "updateWeekday", function() { return updateWeekday; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "updateFormatted", function() { return updateFormatted; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getWeekday", function() { return getWeekday; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "isLeapYear", function() { return isLeapYear; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "daysInMonth", function() { return daysInMonth; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "copyTimestamp", function() { return copyTimestamp; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "padNumber", function() { return padNumber; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getDate", function() { return getDate; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getTime", function() { return getTime; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "nextMinutes", function() { return nextMinutes; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "nextDay", function() { return nextDay; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "prevDay", function() { return prevDay; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "relativeDays", function() { return relativeDays; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "diffMinutes", function() { return diffMinutes; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "findWeekday", function() { return findWeekday; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getWeekdaySkips", function() { return getWeekdaySkips; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "createDayList", function() { return createDayList; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "createIntervalList", function() { return createIntervalList; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "createNativeLocaleFormatter", function() { return createNativeLocaleFormatter; });
+const PARSE_REGEX = /^(\d{4})-(\d{1,2})(-(\d{1,2}))?([^\d]+(\d{1,2}))?(:(\d{1,2}))?(:(\d{1,2}))?$/;
+const PARSE_TIME = /(\d\d?)(:(\d\d?)|)(:(\d\d?)|)/;
+const DAYS_IN_MONTH = [0, 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
+const DAYS_IN_MONTH_LEAP = [0, 31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
+const DAYS_IN_MONTH_MIN = 28;
+const DAYS_IN_MONTH_MAX = 31;
+const MONTH_MAX = 12;
+const MONTH_MIN = 1;
+const DAY_MIN = 1;
+const DAYS_IN_WEEK = 7;
+const MINUTES_IN_HOUR = 60;
+const HOURS_IN_DAY = 24;
+const FIRST_HOUR = 0;
+function getStartOfWeek(timestamp, weekdays, today) {
+  const start = copyTimestamp(timestamp);
+  findWeekday(start, weekdays[0], prevDay);
+  updateFormatted(start);
+
+  if (today) {
+    updateRelative(start, today, start.hasTime);
+  }
+
+  return start;
+}
+function getEndOfWeek(timestamp, weekdays, today) {
+  const end = copyTimestamp(timestamp);
+  findWeekday(end, weekdays[weekdays.length - 1]);
+  updateFormatted(end);
+
+  if (today) {
+    updateRelative(end, today, end.hasTime);
+  }
+
+  return end;
+}
+function getStartOfMonth(timestamp) {
+  const start = copyTimestamp(timestamp);
+  start.day = DAY_MIN;
+  updateWeekday(start);
+  updateFormatted(start);
+  return start;
+}
+function getEndOfMonth(timestamp) {
+  const end = copyTimestamp(timestamp);
+  end.day = daysInMonth(end.year, end.month);
+  updateWeekday(end);
+  updateFormatted(end);
+  return end;
+}
+function parseTime(input) {
+  if (typeof input === 'number') {
+    // when a number is given, it's minutes since 12:00am
+    return input;
+  } else if (typeof input === 'string') {
+    // when a string is given, it's a hh:mm:ss format where seconds are optional
+    const parts = PARSE_TIME.exec(input);
+
+    if (!parts) {
+      return false;
+    }
+
+    return parseInt(parts[1]) * 60 + parseInt(parts[3] || 0);
+  } else if (typeof input === 'object') {
+    // when an object is given, it must have hour and minute
+    if (typeof input.hour !== 'number' || typeof input.minute !== 'number') {
+      return false;
+    }
+
+    return input.hour * 60 + input.minute;
+  } else {
+    // unsupported type
+    return false;
+  }
+}
+function validateTimestamp(input) {
+  return !!PARSE_REGEX.exec(input);
+}
+function parseTimestamp(input, required = false, now) {
+  // YYYY-MM-DD hh:mm:ss
+  const parts = PARSE_REGEX.exec(input);
+
+  if (!parts) {
+    if (required) {
+      throw new Error(`${input} is not a valid timestamp. It must be in the format of YYYY-MM-DD or YYYY-MM-DD hh:mm. Zero-padding is optional and seconds are ignored.`);
+    }
+
+    return null;
+  }
+
+  const timestamp = {
+    date: input,
+    time: '',
+    year: parseInt(parts[1]),
+    month: parseInt(parts[2]),
+    day: parseInt(parts[4]) || 1,
+    hour: parseInt(parts[6]) || 0,
+    minute: parseInt(parts[8]) || 0,
+    weekday: 0,
+    hasDay: !!parts[4],
+    hasTime: !!(parts[6] && parts[8]),
+    past: false,
+    present: false,
+    future: false
+  };
+  updateWeekday(timestamp);
+  updateFormatted(timestamp);
+
+  if (now) {
+    updateRelative(timestamp, now, timestamp.hasTime);
+  }
+
+  return timestamp;
+}
+function parseDate(date) {
+  return updateFormatted({
+    date: '',
+    time: '',
+    year: date.getFullYear(),
+    month: date.getMonth() + 1,
+    day: date.getDate(),
+    weekday: date.getDay(),
+    hour: date.getHours(),
+    minute: date.getMinutes(),
+    hasDay: true,
+    hasTime: true,
+    past: false,
+    present: true,
+    future: false
+  });
+}
+function getDayIdentifier(timestamp) {
+  return timestamp.year * 10000 + timestamp.month * 100 + timestamp.day;
+}
+function getTimeIdentifier(timestamp) {
+  return timestamp.hour * 100 + timestamp.minute;
+}
+function getTimestampIdentifier(timestamp) {
+  return getDayIdentifier(timestamp) * 10000 + getTimeIdentifier(timestamp);
+}
+function updateRelative(timestamp, now, time = false) {
+  let a = getDayIdentifier(now);
+  let b = getDayIdentifier(timestamp);
+  let present = a === b;
+
+  if (timestamp.hasTime && time && present) {
+    a = getTimeIdentifier(now);
+    b = getTimeIdentifier(timestamp);
+    present = a === b;
+  }
+
+  timestamp.past = b < a;
+  timestamp.present = present;
+  timestamp.future = b > a;
+  return timestamp;
+}
+function updateMinutes(timestamp, minutes, now) {
+  timestamp.hasTime = true;
+  timestamp.hour = Math.floor(minutes / MINUTES_IN_HOUR);
+  timestamp.minute = minutes % MINUTES_IN_HOUR;
+  timestamp.time = getTime(timestamp);
+
+  if (now) {
+    updateRelative(timestamp, now, true);
+  }
+
+  return timestamp;
+}
+function updateWeekday(timestamp) {
+  timestamp.weekday = getWeekday(timestamp);
+  return timestamp;
+}
+function updateFormatted(timestamp) {
+  timestamp.time = getTime(timestamp);
+  timestamp.date = getDate(timestamp);
+  return timestamp;
+}
+function getWeekday(timestamp) {
+  if (timestamp.hasDay) {
+    const _ = Math.floor;
+    const k = timestamp.day;
+    const m = (timestamp.month + 9) % MONTH_MAX + 1;
+
+    const C = _(timestamp.year / 100);
+
+    const Y = timestamp.year % 100 - (timestamp.month <= 2 ? 1 : 0);
+    return ((k + _(2.6 * m - 0.2) - 2 * C + Y + _(Y / 4) + _(C / 4)) % 7 + 7) % 7;
+  }
+
+  return timestamp.weekday;
+}
+function isLeapYear(year) {
+  return year % 4 === 0 && year % 100 !== 0 || year % 400 === 0;
+}
+function daysInMonth(year, month) {
+  return isLeapYear(year) ? DAYS_IN_MONTH_LEAP[month] : DAYS_IN_MONTH[month];
+}
+function copyTimestamp(timestamp) {
+  const {
+    date,
+    time,
+    year,
+    month,
+    day,
+    weekday,
+    hour,
+    minute,
+    hasDay,
+    hasTime,
+    past,
+    present,
+    future
+  } = timestamp;
+  return {
+    date,
+    time,
+    year,
+    month,
+    day,
+    weekday,
+    hour,
+    minute,
+    hasDay,
+    hasTime,
+    past,
+    present,
+    future
+  };
+}
+function padNumber(x, length) {
+  let padded = String(x);
+
+  while (padded.length < length) {
+    padded = '0' + padded;
+  }
+
+  return padded;
+}
+function getDate(timestamp) {
+  let str = `${padNumber(timestamp.year, 4)}-${padNumber(timestamp.month, 2)}`;
+  if (timestamp.hasDay) str += `-${padNumber(timestamp.day, 2)}`;
+  return str;
+}
+function getTime(timestamp) {
+  if (!timestamp.hasTime) {
+    return '';
+  }
+
+  return `${padNumber(timestamp.hour, 2)}:${padNumber(timestamp.minute, 2)}`;
+}
+function nextMinutes(timestamp, minutes) {
+  timestamp.minute += minutes;
+
+  while (timestamp.minute > MINUTES_IN_HOUR) {
+    timestamp.minute -= MINUTES_IN_HOUR;
+    timestamp.hour++;
+
+    if (timestamp.hour >= HOURS_IN_DAY) {
+      nextDay(timestamp);
+      timestamp.hour = FIRST_HOUR;
+    }
+  }
+
+  return timestamp;
+}
+function nextDay(timestamp) {
+  timestamp.day++;
+  timestamp.weekday = (timestamp.weekday + 1) % DAYS_IN_WEEK;
+
+  if (timestamp.day > DAYS_IN_MONTH_MIN && timestamp.day > daysInMonth(timestamp.year, timestamp.month)) {
+    timestamp.day = DAY_MIN;
+    timestamp.month++;
+
+    if (timestamp.month > MONTH_MAX) {
+      timestamp.month = MONTH_MIN;
+      timestamp.year++;
+    }
+  }
+
+  return timestamp;
+}
+function prevDay(timestamp) {
+  timestamp.day--;
+  timestamp.weekday = (timestamp.weekday + 6) % DAYS_IN_WEEK;
+
+  if (timestamp.day < DAY_MIN) {
+    timestamp.month--;
+
+    if (timestamp.month < MONTH_MIN) {
+      timestamp.year--;
+      timestamp.month = MONTH_MAX;
+    }
+
+    timestamp.day = daysInMonth(timestamp.year, timestamp.month);
+  }
+
+  return timestamp;
+}
+function relativeDays(timestamp, mover = nextDay, days = 1) {
+  while (--days >= 0) mover(timestamp);
+
+  return timestamp;
+}
+function diffMinutes(min, max) {
+  const Y = (max.year - min.year) * 525600;
+  const M = (max.month - min.month) * 43800;
+  const D = (max.day - min.day) * 1440;
+  const h = (max.hour - min.hour) * 60;
+  const m = max.minute - min.minute;
+  return Y + M + D + h + m;
+}
+function findWeekday(timestamp, weekday, mover = nextDay, maxDays = 6) {
+  while (timestamp.weekday !== weekday && --maxDays >= 0) mover(timestamp);
+
+  return timestamp;
+}
+function getWeekdaySkips(weekdays) {
+  const skips = [1, 1, 1, 1, 1, 1, 1];
+  const filled = [0, 0, 0, 0, 0, 0, 0];
+
+  for (let i = 0; i < weekdays.length; i++) {
+    filled[weekdays[i]] = 1;
+  }
+
+  for (let k = 0; k < DAYS_IN_WEEK; k++) {
+    let skip = 1;
+
+    for (let j = 1; j < DAYS_IN_WEEK; j++) {
+      const next = (k + j) % DAYS_IN_WEEK;
+
+      if (filled[next]) {
+        break;
+      }
+
+      skip++;
+    }
+
+    skips[k] = filled[k] * skip;
+  }
+
+  return skips;
+}
+function createDayList(start, end, now, weekdaySkips, max = 42, min = 0) {
+  const stop = getDayIdentifier(end);
+  const days = [];
+  let current = copyTimestamp(start);
+  let currentIdentifier = 0;
+  let stopped = currentIdentifier === stop;
+
+  if (stop < getDayIdentifier(start)) {
+    throw new Error('End date is earlier than start date.');
+  }
+
+  while ((!stopped || days.length < min) && days.length < max) {
+    currentIdentifier = getDayIdentifier(current);
+    stopped = stopped || currentIdentifier === stop;
+
+    if (weekdaySkips[current.weekday] === 0) {
+      current = nextDay(current);
+      continue;
+    }
+
+    const day = copyTimestamp(current);
+    updateFormatted(day);
+    updateRelative(day, now);
+    days.push(day);
+    current = relativeDays(current, nextDay, weekdaySkips[current.weekday]);
+  }
+
+  if (!days.length) throw new Error('No dates found using specified start date, end date, and weekdays.');
+  return days;
+}
+function createIntervalList(timestamp, first, minutes, count, now) {
+  const intervals = [];
+
+  for (let i = 0; i < count; i++) {
+    const mins = (first + i) * minutes;
+    const int = copyTimestamp(timestamp);
+    intervals.push(updateMinutes(int, mins, now));
+  }
+
+  return intervals;
+}
+function createNativeLocaleFormatter(locale, getOptions) {
+  const emptyFormatter = (_t, _s) => '';
+
+  if (typeof Intl === 'undefined' || typeof Intl.DateTimeFormat === 'undefined') {
+    return emptyFormatter;
+  }
+
+  return (timestamp, short) => {
+    try {
+      const intlFormatter = new Intl.DateTimeFormat(locale || undefined, getOptions(timestamp, short));
+      const time = `${padNumber(timestamp.hour, 2)}:${padNumber(timestamp.minute, 2)}`;
+      const date = timestamp.date;
+      return intlFormatter.format(new Date(`${date}T${time}:00+00:00`));
+    } catch (e) {
+      return '';
+    }
+  };
+}
+//# sourceMappingURL=timestamp.js.map
+
+/***/ }),
+
 /***/ "./node_modules/vuetify/lib/components/VContent/VContent.js":
 /*!******************************************************************!*\
   !*** ./node_modules/vuetify/lib/components/VContent/VContent.js ***!
@@ -97054,6 +97879,1525 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./node_modules/vuetify/lib/components/VDatePicker/VDatePicker.js":
+/*!************************************************************************!*\
+  !*** ./node_modules/vuetify/lib/components/VDatePicker/VDatePicker.js ***!
+  \************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _VDatePickerTitle__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./VDatePickerTitle */ "./node_modules/vuetify/lib/components/VDatePicker/VDatePickerTitle.js");
+/* harmony import */ var _VDatePickerHeader__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./VDatePickerHeader */ "./node_modules/vuetify/lib/components/VDatePicker/VDatePickerHeader.js");
+/* harmony import */ var _VDatePickerDateTable__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./VDatePickerDateTable */ "./node_modules/vuetify/lib/components/VDatePicker/VDatePickerDateTable.js");
+/* harmony import */ var _VDatePickerMonthTable__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./VDatePickerMonthTable */ "./node_modules/vuetify/lib/components/VDatePicker/VDatePickerMonthTable.js");
+/* harmony import */ var _VDatePickerYears__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./VDatePickerYears */ "./node_modules/vuetify/lib/components/VDatePicker/VDatePickerYears.js");
+/* harmony import */ var _mixins_localable__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../mixins/localable */ "./node_modules/vuetify/lib/mixins/localable/index.js");
+/* harmony import */ var _mixins_picker__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../mixins/picker */ "./node_modules/vuetify/lib/mixins/picker/index.js");
+/* harmony import */ var _util__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./util */ "./node_modules/vuetify/lib/components/VDatePicker/util/index.js");
+/* harmony import */ var _util_isDateAllowed__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./util/isDateAllowed */ "./node_modules/vuetify/lib/components/VDatePicker/util/isDateAllowed.js");
+/* harmony import */ var _util_console__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../../util/console */ "./node_modules/vuetify/lib/util/console.js");
+/* harmony import */ var _VCalendar_util_timestamp__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../VCalendar/util/timestamp */ "./node_modules/vuetify/lib/components/VCalendar/util/timestamp.js");
+/* harmony import */ var _util_mixins__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../../util/mixins */ "./node_modules/vuetify/lib/util/mixins.js");
+// Components
+
+
+
+
+ // Mixins
+
+
+ // Utils
+
+
+
+
+
+ // Adds leading zero to month/day if necessary, returns 'YYYY' if type = 'year',
+// 'YYYY-MM' if 'month' and 'YYYY-MM-DD' if 'date'
+
+function sanitizeDateString(dateString, type) {
+  const [year, month = 1, date = 1] = dateString.split('-');
+  return `${year}-${Object(_util__WEBPACK_IMPORTED_MODULE_7__["pad"])(month)}-${Object(_util__WEBPACK_IMPORTED_MODULE_7__["pad"])(date)}`.substr(0, {
+    date: 10,
+    month: 7,
+    year: 4
+  }[type]);
+}
+
+/* harmony default export */ __webpack_exports__["default"] = (Object(_util_mixins__WEBPACK_IMPORTED_MODULE_11__["default"])(_mixins_localable__WEBPACK_IMPORTED_MODULE_5__["default"], _mixins_picker__WEBPACK_IMPORTED_MODULE_6__["default"]
+/* @vue/component */
+).extend({
+  name: 'v-date-picker',
+  props: {
+    allowedDates: Function,
+    // Function formatting the day in date picker table
+    dayFormat: Function,
+    disabled: Boolean,
+    events: {
+      type: [Array, Function, Object],
+      default: () => null
+    },
+    eventColor: {
+      type: [Array, Function, Object, String],
+      default: () => 'warning'
+    },
+    firstDayOfWeek: {
+      type: [String, Number],
+      default: 0
+    },
+    // Function formatting the tableDate in the day/month table header
+    headerDateFormat: Function,
+    max: String,
+    min: String,
+    // Function formatting month in the months table
+    monthFormat: Function,
+    multiple: Boolean,
+    nextIcon: {
+      type: String,
+      default: '$next'
+    },
+    pickerDate: String,
+    prevIcon: {
+      type: String,
+      default: '$prev'
+    },
+    range: Boolean,
+    reactive: Boolean,
+    readonly: Boolean,
+    scrollable: Boolean,
+    showCurrent: {
+      type: [Boolean, String],
+      default: true
+    },
+    selectedItemsText: {
+      type: String,
+      default: '$vuetify.datePicker.itemsSelected'
+    },
+    showWeek: Boolean,
+    // Function formatting currently selected date in the picker title
+    titleDateFormat: Function,
+    type: {
+      type: String,
+      default: 'date',
+      validator: type => ['date', 'month'].includes(type)
+    },
+    value: [Array, String],
+    weekdayFormat: Function,
+    // Function formatting the year in table header and pickup title
+    yearFormat: Function,
+    yearIcon: String
+  },
+
+  data() {
+    const now = new Date();
+    return {
+      activePicker: this.type.toUpperCase(),
+      inputDay: null,
+      inputMonth: null,
+      inputYear: null,
+      isReversing: false,
+      now,
+      // tableDate is a string in 'YYYY' / 'YYYY-M' format (leading zero for month is not required)
+      tableDate: (() => {
+        if (this.pickerDate) {
+          return this.pickerDate;
+        }
+
+        const date = (this.multiple || this.range ? this.value[this.value.length - 1] : this.value) || `${now.getFullYear()}-${now.getMonth() + 1}`;
+        return sanitizeDateString(date, this.type === 'date' ? 'month' : 'year');
+      })()
+    };
+  },
+
+  computed: {
+    isMultiple() {
+      return this.multiple || this.range;
+    },
+
+    lastValue() {
+      return this.isMultiple ? this.value[this.value.length - 1] : this.value;
+    },
+
+    selectedMonths() {
+      if (!this.value || !this.value.length || this.type === 'month') {
+        return this.value;
+      } else if (this.isMultiple) {
+        return this.value.map(val => val.substr(0, 7));
+      } else {
+        return this.value.substr(0, 7);
+      }
+    },
+
+    current() {
+      if (this.showCurrent === true) {
+        return sanitizeDateString(`${this.now.getFullYear()}-${this.now.getMonth() + 1}-${this.now.getDate()}`, this.type);
+      }
+
+      return this.showCurrent || null;
+    },
+
+    inputDate() {
+      return this.type === 'date' ? `${this.inputYear}-${Object(_util__WEBPACK_IMPORTED_MODULE_7__["pad"])(this.inputMonth + 1)}-${Object(_util__WEBPACK_IMPORTED_MODULE_7__["pad"])(this.inputDay)}` : `${this.inputYear}-${Object(_util__WEBPACK_IMPORTED_MODULE_7__["pad"])(this.inputMonth + 1)}`;
+    },
+
+    tableMonth() {
+      return Number((this.pickerDate || this.tableDate).split('-')[1]) - 1;
+    },
+
+    tableYear() {
+      return Number((this.pickerDate || this.tableDate).split('-')[0]);
+    },
+
+    minMonth() {
+      return this.min ? sanitizeDateString(this.min, 'month') : null;
+    },
+
+    maxMonth() {
+      return this.max ? sanitizeDateString(this.max, 'month') : null;
+    },
+
+    minYear() {
+      return this.min ? sanitizeDateString(this.min, 'year') : null;
+    },
+
+    maxYear() {
+      return this.max ? sanitizeDateString(this.max, 'year') : null;
+    },
+
+    formatters() {
+      return {
+        year: this.yearFormat || Object(_util__WEBPACK_IMPORTED_MODULE_7__["createNativeLocaleFormatter"])(this.currentLocale, {
+          year: 'numeric',
+          timeZone: 'UTC'
+        }, {
+          length: 4
+        }),
+        titleDate: this.titleDateFormat || (this.isMultiple ? this.defaultTitleMultipleDateFormatter : this.defaultTitleDateFormatter)
+      };
+    },
+
+    defaultTitleMultipleDateFormatter() {
+      return dates => {
+        if (!dates.length) {
+          return '-';
+        }
+
+        if (dates.length === 1) {
+          return this.defaultTitleDateFormatter(dates[0]);
+        }
+
+        return this.$vuetify.lang.t(this.selectedItemsText, dates.length);
+      };
+    },
+
+    defaultTitleDateFormatter() {
+      const titleFormats = {
+        year: {
+          year: 'numeric',
+          timeZone: 'UTC'
+        },
+        month: {
+          month: 'long',
+          timeZone: 'UTC'
+        },
+        date: {
+          weekday: 'short',
+          month: 'short',
+          day: 'numeric',
+          timeZone: 'UTC'
+        }
+      };
+      const titleDateFormatter = Object(_util__WEBPACK_IMPORTED_MODULE_7__["createNativeLocaleFormatter"])(this.currentLocale, titleFormats[this.type], {
+        start: 0,
+        length: {
+          date: 10,
+          month: 7,
+          year: 4
+        }[this.type]
+      });
+
+      const landscapeFormatter = date => titleDateFormatter(date).replace(/([^\d\s])([\d])/g, (match, nonDigit, digit) => `${nonDigit} ${digit}`).replace(', ', ',<br>');
+
+      return this.landscape ? landscapeFormatter : titleDateFormatter;
+    }
+
+  },
+  watch: {
+    tableDate(val, prev) {
+      // Make a ISO 8601 strings from val and prev for comparision, otherwise it will incorrectly
+      // compare for example '2000-9' and '2000-10'
+      const sanitizeType = this.type === 'month' ? 'year' : 'month';
+      this.isReversing = sanitizeDateString(val, sanitizeType) < sanitizeDateString(prev, sanitizeType);
+      this.$emit('update:picker-date', val);
+    },
+
+    pickerDate(val) {
+      if (val) {
+        this.tableDate = val;
+      } else if (this.lastValue && this.type === 'date') {
+        this.tableDate = sanitizeDateString(this.lastValue, 'month');
+      } else if (this.lastValue && this.type === 'month') {
+        this.tableDate = sanitizeDateString(this.lastValue, 'year');
+      }
+    },
+
+    value(newValue, oldValue) {
+      this.checkMultipleProp();
+      this.setInputDate();
+
+      if (!this.isMultiple && this.value && !this.pickerDate) {
+        this.tableDate = sanitizeDateString(this.inputDate, this.type === 'month' ? 'year' : 'month');
+      } else if (this.isMultiple && this.value.length && !oldValue.length && !this.pickerDate) {
+        this.tableDate = sanitizeDateString(this.inputDate, this.type === 'month' ? 'year' : 'month');
+      }
+    },
+
+    type(type) {
+      this.activePicker = type.toUpperCase();
+
+      if (this.value && this.value.length) {
+        const output = (this.isMultiple ? this.value : [this.value]).map(val => sanitizeDateString(val, type)).filter(this.isDateAllowed);
+        this.$emit('input', this.isMultiple ? output : output[0]);
+      }
+    }
+
+  },
+
+  created() {
+    this.checkMultipleProp();
+
+    if (this.pickerDate !== this.tableDate) {
+      this.$emit('update:picker-date', this.tableDate);
+    }
+
+    this.setInputDate();
+  },
+
+  methods: {
+    emitInput(newInput) {
+      if (this.range && this.value) {
+        if (this.value.length === 2) {
+          this.$emit('input', [newInput]);
+        } else {
+          const output = [...this.value, newInput];
+          this.$emit('input', output);
+          this.$emit('change', output);
+        }
+
+        return;
+      }
+
+      const output = this.multiple ? this.value.indexOf(newInput) === -1 ? this.value.concat([newInput]) : this.value.filter(x => x !== newInput) : newInput;
+      this.$emit('input', output);
+      this.multiple || this.$emit('change', newInput);
+    },
+
+    checkMultipleProp() {
+      if (this.value == null) return;
+      const valueType = this.value.constructor.name;
+      const expected = this.isMultiple ? 'Array' : 'String';
+
+      if (valueType !== expected) {
+        Object(_util_console__WEBPACK_IMPORTED_MODULE_9__["consoleWarn"])(`Value must be ${this.isMultiple ? 'an' : 'a'} ${expected}, got ${valueType}`, this);
+      }
+    },
+
+    isDateAllowed(value) {
+      return Object(_util_isDateAllowed__WEBPACK_IMPORTED_MODULE_8__["default"])(value, this.min, this.max, this.allowedDates);
+    },
+
+    yearClick(value) {
+      this.inputYear = value;
+
+      if (this.type === 'month') {
+        this.tableDate = `${value}`;
+      } else {
+        this.tableDate = `${value}-${Object(_util__WEBPACK_IMPORTED_MODULE_7__["pad"])((this.tableMonth || 0) + 1)}`;
+      }
+
+      this.activePicker = 'MONTH';
+
+      if (this.reactive && !this.readonly && !this.isMultiple && this.isDateAllowed(this.inputDate)) {
+        this.$emit('input', this.inputDate);
+      }
+    },
+
+    monthClick(value) {
+      this.inputYear = parseInt(value.split('-')[0], 10);
+      this.inputMonth = parseInt(value.split('-')[1], 10) - 1;
+
+      if (this.type === 'date') {
+        if (this.inputDay) {
+          this.inputDay = Math.min(this.inputDay, Object(_VCalendar_util_timestamp__WEBPACK_IMPORTED_MODULE_10__["daysInMonth"])(this.inputYear, this.inputMonth + 1));
+        }
+
+        this.tableDate = value;
+        this.activePicker = 'DATE';
+
+        if (this.reactive && !this.readonly && !this.isMultiple && this.isDateAllowed(this.inputDate)) {
+          this.$emit('input', this.inputDate);
+        }
+      } else {
+        this.emitInput(this.inputDate);
+      }
+    },
+
+    dateClick(value) {
+      this.inputYear = parseInt(value.split('-')[0], 10);
+      this.inputMonth = parseInt(value.split('-')[1], 10) - 1;
+      this.inputDay = parseInt(value.split('-')[2], 10);
+      this.emitInput(this.inputDate);
+    },
+
+    genPickerTitle() {
+      return this.$createElement(_VDatePickerTitle__WEBPACK_IMPORTED_MODULE_0__["default"], {
+        props: {
+          date: this.value ? this.formatters.titleDate(this.value) : '',
+          disabled: this.disabled,
+          readonly: this.readonly,
+          selectingYear: this.activePicker === 'YEAR',
+          year: this.formatters.year(this.value ? `${this.inputYear}` : this.tableDate),
+          yearIcon: this.yearIcon,
+          value: this.isMultiple ? this.value[0] : this.value
+        },
+        slot: 'title',
+        on: {
+          'update:selecting-year': value => this.activePicker = value ? 'YEAR' : this.type.toUpperCase()
+        }
+      });
+    },
+
+    genTableHeader() {
+      return this.$createElement(_VDatePickerHeader__WEBPACK_IMPORTED_MODULE_1__["default"], {
+        props: {
+          nextIcon: this.nextIcon,
+          color: this.color,
+          dark: this.dark,
+          disabled: this.disabled,
+          format: this.headerDateFormat,
+          light: this.light,
+          locale: this.locale,
+          min: this.activePicker === 'DATE' ? this.minMonth : this.minYear,
+          max: this.activePicker === 'DATE' ? this.maxMonth : this.maxYear,
+          prevIcon: this.prevIcon,
+          readonly: this.readonly,
+          value: this.activePicker === 'DATE' ? `${Object(_util__WEBPACK_IMPORTED_MODULE_7__["pad"])(this.tableYear, 4)}-${Object(_util__WEBPACK_IMPORTED_MODULE_7__["pad"])(this.tableMonth + 1)}` : `${Object(_util__WEBPACK_IMPORTED_MODULE_7__["pad"])(this.tableYear, 4)}`
+        },
+        on: {
+          toggle: () => this.activePicker = this.activePicker === 'DATE' ? 'MONTH' : 'YEAR',
+          input: value => this.tableDate = value
+        }
+      });
+    },
+
+    genDateTable() {
+      return this.$createElement(_VDatePickerDateTable__WEBPACK_IMPORTED_MODULE_2__["default"], {
+        props: {
+          allowedDates: this.allowedDates,
+          color: this.color,
+          current: this.current,
+          dark: this.dark,
+          disabled: this.disabled,
+          events: this.events,
+          eventColor: this.eventColor,
+          firstDayOfWeek: this.firstDayOfWeek,
+          format: this.dayFormat,
+          light: this.light,
+          locale: this.locale,
+          min: this.min,
+          max: this.max,
+          range: this.range,
+          readonly: this.readonly,
+          scrollable: this.scrollable,
+          showWeek: this.showWeek,
+          tableDate: `${Object(_util__WEBPACK_IMPORTED_MODULE_7__["pad"])(this.tableYear, 4)}-${Object(_util__WEBPACK_IMPORTED_MODULE_7__["pad"])(this.tableMonth + 1)}`,
+          value: this.value,
+          weekdayFormat: this.weekdayFormat
+        },
+        ref: 'table',
+        on: {
+          input: this.dateClick,
+          'update:table-date': value => this.tableDate = value,
+          'click:date': value => this.$emit('click:date', value),
+          'dblclick:date': value => this.$emit('dblclick:date', value)
+        }
+      });
+    },
+
+    genMonthTable() {
+      return this.$createElement(_VDatePickerMonthTable__WEBPACK_IMPORTED_MODULE_3__["default"], {
+        props: {
+          allowedDates: this.type === 'month' ? this.allowedDates : null,
+          color: this.color,
+          current: this.current ? sanitizeDateString(this.current, 'month') : null,
+          dark: this.dark,
+          disabled: this.disabled,
+          events: this.type === 'month' ? this.events : null,
+          eventColor: this.type === 'month' ? this.eventColor : null,
+          format: this.monthFormat,
+          light: this.light,
+          locale: this.locale,
+          min: this.minMonth,
+          max: this.maxMonth,
+          range: this.range,
+          readonly: this.readonly && this.type === 'month',
+          scrollable: this.scrollable,
+          value: this.selectedMonths,
+          tableDate: `${Object(_util__WEBPACK_IMPORTED_MODULE_7__["pad"])(this.tableYear, 4)}`
+        },
+        ref: 'table',
+        on: {
+          input: this.monthClick,
+          'update:table-date': value => this.tableDate = value,
+          'click:month': value => this.$emit('click:month', value),
+          'dblclick:month': value => this.$emit('dblclick:month', value)
+        }
+      });
+    },
+
+    genYears() {
+      return this.$createElement(_VDatePickerYears__WEBPACK_IMPORTED_MODULE_4__["default"], {
+        props: {
+          color: this.color,
+          format: this.yearFormat,
+          locale: this.locale,
+          min: this.minYear,
+          max: this.maxYear,
+          value: this.tableYear
+        },
+        on: {
+          input: this.yearClick
+        }
+      });
+    },
+
+    genPickerBody() {
+      const children = this.activePicker === 'YEAR' ? [this.genYears()] : [this.genTableHeader(), this.activePicker === 'DATE' ? this.genDateTable() : this.genMonthTable()];
+      return this.$createElement('div', {
+        key: this.activePicker
+      }, children);
+    },
+
+    setInputDate() {
+      if (this.lastValue) {
+        const array = this.lastValue.split('-');
+        this.inputYear = parseInt(array[0], 10);
+        this.inputMonth = parseInt(array[1], 10) - 1;
+
+        if (this.type === 'date') {
+          this.inputDay = parseInt(array[2], 10);
+        }
+      } else {
+        this.inputYear = this.inputYear || this.now.getFullYear();
+        this.inputMonth = this.inputMonth == null ? this.inputMonth : this.now.getMonth();
+        this.inputDay = this.inputDay || this.now.getDate();
+      }
+    }
+
+  },
+
+  render() {
+    return this.genPicker('v-picker--date');
+  }
+
+}));
+//# sourceMappingURL=VDatePicker.js.map
+
+/***/ }),
+
+/***/ "./node_modules/vuetify/lib/components/VDatePicker/VDatePickerDateTable.js":
+/*!*********************************************************************************!*\
+  !*** ./node_modules/vuetify/lib/components/VDatePicker/VDatePickerDateTable.js ***!
+  \*********************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _mixins_date_picker_table__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./mixins/date-picker-table */ "./node_modules/vuetify/lib/components/VDatePicker/mixins/date-picker-table.js");
+/* harmony import */ var _util__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./util */ "./node_modules/vuetify/lib/components/VDatePicker/util/index.js");
+/* harmony import */ var _util_helpers__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../util/helpers */ "./node_modules/vuetify/lib/util/helpers.js");
+/* harmony import */ var _util_mixins__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../util/mixins */ "./node_modules/vuetify/lib/util/mixins.js");
+// Mixins
+ // Utils
+
+
+
+
+/* harmony default export */ __webpack_exports__["default"] = (Object(_util_mixins__WEBPACK_IMPORTED_MODULE_3__["default"])(_mixins_date_picker_table__WEBPACK_IMPORTED_MODULE_0__["default"]
+/* @vue/component */
+).extend({
+  name: 'v-date-picker-date-table',
+  props: {
+    firstDayOfWeek: {
+      type: [String, Number],
+      default: 0
+    },
+    showWeek: Boolean,
+    weekdayFormat: Function
+  },
+  computed: {
+    formatter() {
+      return this.format || Object(_util__WEBPACK_IMPORTED_MODULE_1__["createNativeLocaleFormatter"])(this.currentLocale, {
+        day: 'numeric',
+        timeZone: 'UTC'
+      }, {
+        start: 8,
+        length: 2
+      });
+    },
+
+    weekdayFormatter() {
+      return this.weekdayFormat || Object(_util__WEBPACK_IMPORTED_MODULE_1__["createNativeLocaleFormatter"])(this.currentLocale, {
+        weekday: 'narrow',
+        timeZone: 'UTC'
+      });
+    },
+
+    weekDays() {
+      const first = parseInt(this.firstDayOfWeek, 10);
+      return this.weekdayFormatter ? Object(_util_helpers__WEBPACK_IMPORTED_MODULE_2__["createRange"])(7).map(i => this.weekdayFormatter(`2017-01-${first + i + 15}`)) // 2017-01-15 is Sunday
+      : Object(_util_helpers__WEBPACK_IMPORTED_MODULE_2__["createRange"])(7).map(i => ['S', 'M', 'T', 'W', 'T', 'F', 'S'][(i + first) % 7]);
+    }
+
+  },
+  methods: {
+    calculateTableDate(delta) {
+      return Object(_util__WEBPACK_IMPORTED_MODULE_1__["monthChange"])(this.tableDate, Math.sign(delta || 1));
+    },
+
+    genTHead() {
+      const days = this.weekDays.map(day => this.$createElement('th', day));
+      this.showWeek && days.unshift(this.$createElement('th'));
+      return this.$createElement('thead', this.genTR(days));
+    },
+
+    // Returns number of the days from the firstDayOfWeek to the first day of the current month
+    weekDaysBeforeFirstDayOfTheMonth() {
+      const firstDayOfTheMonth = new Date(`${this.displayedYear}-${Object(_util__WEBPACK_IMPORTED_MODULE_1__["pad"])(this.displayedMonth + 1)}-01T00:00:00+00:00`);
+      const weekDay = firstDayOfTheMonth.getUTCDay();
+      return (weekDay - parseInt(this.firstDayOfWeek) + 7) % 7;
+    },
+
+    getWeekNumber() {
+      let dayOfYear = [0, 31, 59, 90, 120, 151, 181, 212, 243, 273, 304, 334][this.displayedMonth];
+
+      if (this.displayedMonth > 1 && (this.displayedYear % 4 === 0 && this.displayedYear % 100 !== 0 || this.displayedYear % 400 === 0)) {
+        dayOfYear++;
+      }
+
+      const offset = (this.displayedYear + (this.displayedYear - 1 >> 2) - Math.floor((this.displayedYear - 1) / 100) + Math.floor((this.displayedYear - 1) / 400) - Number(this.firstDayOfWeek)) % 7; // https://en.wikipedia.org/wiki/Zeller%27s_congruence
+
+      return Math.floor((dayOfYear + offset) / 7) + 1;
+    },
+
+    genWeekNumber(weekNumber) {
+      return this.$createElement('td', [this.$createElement('small', {
+        staticClass: 'v-date-picker-table--date__week'
+      }, String(weekNumber).padStart(2, '0'))]);
+    },
+
+    genTBody() {
+      const children = [];
+      const daysInMonth = new Date(this.displayedYear, this.displayedMonth + 1, 0).getDate();
+      let rows = [];
+      let day = this.weekDaysBeforeFirstDayOfTheMonth();
+      let weekNumber = this.getWeekNumber();
+      this.showWeek && rows.push(this.genWeekNumber(weekNumber++));
+
+      while (day--) rows.push(this.$createElement('td'));
+
+      for (day = 1; day <= daysInMonth; day++) {
+        const date = `${this.displayedYear}-${Object(_util__WEBPACK_IMPORTED_MODULE_1__["pad"])(this.displayedMonth + 1)}-${Object(_util__WEBPACK_IMPORTED_MODULE_1__["pad"])(day)}`;
+        rows.push(this.$createElement('td', [this.genButton(date, true, 'date', this.formatter)]));
+
+        if (rows.length % (this.showWeek ? 8 : 7) === 0) {
+          children.push(this.genTR(rows));
+          rows = [];
+          day < daysInMonth && this.showWeek && rows.push(this.genWeekNumber(weekNumber++));
+        }
+      }
+
+      if (rows.length) {
+        children.push(this.genTR(rows));
+      }
+
+      return this.$createElement('tbody', children);
+    },
+
+    genTR(children) {
+      return [this.$createElement('tr', children)];
+    }
+
+  },
+
+  render() {
+    return this.genTable('v-date-picker-table v-date-picker-table--date', [this.genTHead(), this.genTBody()], this.calculateTableDate);
+  }
+
+}));
+//# sourceMappingURL=VDatePickerDateTable.js.map
+
+/***/ }),
+
+/***/ "./node_modules/vuetify/lib/components/VDatePicker/VDatePickerHeader.js":
+/*!******************************************************************************!*\
+  !*** ./node_modules/vuetify/lib/components/VDatePicker/VDatePickerHeader.js ***!
+  \******************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _src_components_VDatePicker_VDatePickerHeader_sass__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../src/components/VDatePicker/VDatePickerHeader.sass */ "./node_modules/vuetify/src/components/VDatePicker/VDatePickerHeader.sass");
+/* harmony import */ var _src_components_VDatePicker_VDatePickerHeader_sass__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_src_components_VDatePicker_VDatePickerHeader_sass__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _VBtn__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../VBtn */ "./node_modules/vuetify/lib/components/VBtn/index.js");
+/* harmony import */ var _VIcon__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../VIcon */ "./node_modules/vuetify/lib/components/VIcon/index.js");
+/* harmony import */ var _mixins_colorable__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../mixins/colorable */ "./node_modules/vuetify/lib/mixins/colorable/index.js");
+/* harmony import */ var _mixins_localable__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../mixins/localable */ "./node_modules/vuetify/lib/mixins/localable/index.js");
+/* harmony import */ var _mixins_themeable__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../mixins/themeable */ "./node_modules/vuetify/lib/mixins/themeable/index.js");
+/* harmony import */ var _util__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./util */ "./node_modules/vuetify/lib/components/VDatePicker/util/index.js");
+/* harmony import */ var _util_mixins__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../../util/mixins */ "./node_modules/vuetify/lib/util/mixins.js");
+ // Components
+
+
+ // Mixins
+
+
+
+ // Utils
+
+
+
+/* harmony default export */ __webpack_exports__["default"] = (Object(_util_mixins__WEBPACK_IMPORTED_MODULE_7__["default"])(_mixins_colorable__WEBPACK_IMPORTED_MODULE_3__["default"], _mixins_localable__WEBPACK_IMPORTED_MODULE_4__["default"], _mixins_themeable__WEBPACK_IMPORTED_MODULE_5__["default"]
+/* @vue/component */
+).extend({
+  name: 'v-date-picker-header',
+  props: {
+    disabled: Boolean,
+    format: Function,
+    min: String,
+    max: String,
+    nextIcon: {
+      type: String,
+      default: '$next'
+    },
+    prevIcon: {
+      type: String,
+      default: '$prev'
+    },
+    readonly: Boolean,
+    value: {
+      type: [Number, String],
+      required: true
+    }
+  },
+
+  data() {
+    return {
+      isReversing: false
+    };
+  },
+
+  computed: {
+    formatter() {
+      if (this.format) {
+        return this.format;
+      } else if (String(this.value).split('-')[1]) {
+        return Object(_util__WEBPACK_IMPORTED_MODULE_6__["createNativeLocaleFormatter"])(this.currentLocale, {
+          month: 'long',
+          year: 'numeric',
+          timeZone: 'UTC'
+        }, {
+          length: 7
+        });
+      } else {
+        return Object(_util__WEBPACK_IMPORTED_MODULE_6__["createNativeLocaleFormatter"])(this.currentLocale, {
+          year: 'numeric',
+          timeZone: 'UTC'
+        }, {
+          length: 4
+        });
+      }
+    }
+
+  },
+  watch: {
+    value(newVal, oldVal) {
+      this.isReversing = newVal < oldVal;
+    }
+
+  },
+  methods: {
+    genBtn(change) {
+      const disabled = this.disabled || change < 0 && this.min && this.calculateChange(change) < this.min || change > 0 && this.max && this.calculateChange(change) > this.max;
+      return this.$createElement(_VBtn__WEBPACK_IMPORTED_MODULE_1__["default"], {
+        props: {
+          dark: this.dark,
+          disabled,
+          icon: true,
+          light: this.light
+        },
+        nativeOn: {
+          click: e => {
+            e.stopPropagation();
+            this.$emit('input', this.calculateChange(change));
+          }
+        }
+      }, [this.$createElement(_VIcon__WEBPACK_IMPORTED_MODULE_2__["default"], change < 0 === !this.$vuetify.rtl ? this.prevIcon : this.nextIcon)]);
+    },
+
+    calculateChange(sign) {
+      const [year, month] = String(this.value).split('-').map(Number);
+
+      if (month == null) {
+        return `${year + sign}`;
+      } else {
+        return Object(_util__WEBPACK_IMPORTED_MODULE_6__["monthChange"])(String(this.value), sign);
+      }
+    },
+
+    genHeader() {
+      const color = !this.disabled && (this.color || 'accent');
+      const header = this.$createElement('div', this.setTextColor(color, {
+        key: String(this.value)
+      }), [this.$createElement('button', {
+        attrs: {
+          type: 'button'
+        },
+        on: {
+          click: () => this.$emit('toggle')
+        }
+      }, [this.$slots.default || this.formatter(String(this.value))])]);
+      const transition = this.$createElement('transition', {
+        props: {
+          name: this.isReversing === !this.$vuetify.rtl ? 'tab-reverse-transition' : 'tab-transition'
+        }
+      }, [header]);
+      return this.$createElement('div', {
+        staticClass: 'v-date-picker-header__value',
+        class: {
+          'v-date-picker-header__value--disabled': this.disabled
+        }
+      }, [transition]);
+    }
+
+  },
+
+  render() {
+    return this.$createElement('div', {
+      staticClass: 'v-date-picker-header',
+      class: {
+        'v-date-picker-header--disabled': this.disabled,
+        ...this.themeClasses
+      }
+    }, [this.genBtn(-1), this.genHeader(), this.genBtn(+1)]);
+  }
+
+}));
+//# sourceMappingURL=VDatePickerHeader.js.map
+
+/***/ }),
+
+/***/ "./node_modules/vuetify/lib/components/VDatePicker/VDatePickerMonthTable.js":
+/*!**********************************************************************************!*\
+  !*** ./node_modules/vuetify/lib/components/VDatePicker/VDatePickerMonthTable.js ***!
+  \**********************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _mixins_date_picker_table__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./mixins/date-picker-table */ "./node_modules/vuetify/lib/components/VDatePicker/mixins/date-picker-table.js");
+/* harmony import */ var _util__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./util */ "./node_modules/vuetify/lib/components/VDatePicker/util/index.js");
+/* harmony import */ var _util_mixins__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../util/mixins */ "./node_modules/vuetify/lib/util/mixins.js");
+// Mixins
+ // Utils
+
+
+
+/* harmony default export */ __webpack_exports__["default"] = (Object(_util_mixins__WEBPACK_IMPORTED_MODULE_2__["default"])(_mixins_date_picker_table__WEBPACK_IMPORTED_MODULE_0__["default"]
+/* @vue/component */
+).extend({
+  name: 'v-date-picker-month-table',
+  computed: {
+    formatter() {
+      return this.format || Object(_util__WEBPACK_IMPORTED_MODULE_1__["createNativeLocaleFormatter"])(this.currentLocale, {
+        month: 'short',
+        timeZone: 'UTC'
+      }, {
+        start: 5,
+        length: 2
+      });
+    }
+
+  },
+  methods: {
+    calculateTableDate(delta) {
+      return `${parseInt(this.tableDate, 10) + Math.sign(delta || 1)}`;
+    },
+
+    genTBody() {
+      const children = [];
+      const cols = Array(3).fill(null);
+      const rows = 12 / cols.length;
+
+      for (let row = 0; row < rows; row++) {
+        const tds = cols.map((_, col) => {
+          const month = row * cols.length + col;
+          const date = `${this.displayedYear}-${Object(_util__WEBPACK_IMPORTED_MODULE_1__["pad"])(month + 1)}`;
+          return this.$createElement('td', {
+            key: month
+          }, [this.genButton(date, false, 'month', this.formatter)]);
+        });
+        children.push(this.$createElement('tr', {
+          key: row
+        }, tds));
+      }
+
+      return this.$createElement('tbody', children);
+    }
+
+  },
+
+  render() {
+    return this.genTable('v-date-picker-table v-date-picker-table--month', [this.genTBody()], this.calculateTableDate);
+  }
+
+}));
+//# sourceMappingURL=VDatePickerMonthTable.js.map
+
+/***/ }),
+
+/***/ "./node_modules/vuetify/lib/components/VDatePicker/VDatePickerTitle.js":
+/*!*****************************************************************************!*\
+  !*** ./node_modules/vuetify/lib/components/VDatePicker/VDatePickerTitle.js ***!
+  \*****************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _src_components_VDatePicker_VDatePickerTitle_sass__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../src/components/VDatePicker/VDatePickerTitle.sass */ "./node_modules/vuetify/src/components/VDatePicker/VDatePickerTitle.sass");
+/* harmony import */ var _src_components_VDatePicker_VDatePickerTitle_sass__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_src_components_VDatePicker_VDatePickerTitle_sass__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _VIcon__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../VIcon */ "./node_modules/vuetify/lib/components/VIcon/index.js");
+/* harmony import */ var _mixins_picker_button__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../mixins/picker-button */ "./node_modules/vuetify/lib/mixins/picker-button/index.js");
+/* harmony import */ var _util_mixins__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../util/mixins */ "./node_modules/vuetify/lib/util/mixins.js");
+ // Components
+
+ // Mixins
+
+ // Utils
+
+
+/* harmony default export */ __webpack_exports__["default"] = (Object(_util_mixins__WEBPACK_IMPORTED_MODULE_3__["default"])(_mixins_picker_button__WEBPACK_IMPORTED_MODULE_2__["default"]
+/* @vue/component */
+).extend({
+  name: 'v-date-picker-title',
+  props: {
+    date: {
+      type: String,
+      default: ''
+    },
+    disabled: Boolean,
+    readonly: Boolean,
+    selectingYear: Boolean,
+    value: {
+      type: String
+    },
+    year: {
+      type: [Number, String],
+      default: ''
+    },
+    yearIcon: {
+      type: String
+    }
+  },
+  data: () => ({
+    isReversing: false
+  }),
+  computed: {
+    computedTransition() {
+      return this.isReversing ? 'picker-reverse-transition' : 'picker-transition';
+    }
+
+  },
+  watch: {
+    value(val, prev) {
+      this.isReversing = val < prev;
+    }
+
+  },
+  methods: {
+    genYearIcon() {
+      return this.$createElement(_VIcon__WEBPACK_IMPORTED_MODULE_1__["default"], {
+        props: {
+          dark: true
+        }
+      }, this.yearIcon);
+    },
+
+    getYearBtn() {
+      return this.genPickerButton('selectingYear', true, [String(this.year), this.yearIcon ? this.genYearIcon() : null], false, 'v-date-picker-title__year');
+    },
+
+    genTitleText() {
+      return this.$createElement('transition', {
+        props: {
+          name: this.computedTransition
+        }
+      }, [this.$createElement('div', {
+        domProps: {
+          innerHTML: this.date || '&nbsp;'
+        },
+        key: this.value
+      })]);
+    },
+
+    genTitleDate() {
+      return this.genPickerButton('selectingYear', false, [this.genTitleText()], false, 'v-date-picker-title__date');
+    }
+
+  },
+
+  render(h) {
+    return h('div', {
+      staticClass: 'v-date-picker-title',
+      class: {
+        'v-date-picker-title--disabled': this.disabled
+      }
+    }, [this.getYearBtn(), this.genTitleDate()]);
+  }
+
+}));
+//# sourceMappingURL=VDatePickerTitle.js.map
+
+/***/ }),
+
+/***/ "./node_modules/vuetify/lib/components/VDatePicker/VDatePickerYears.js":
+/*!*****************************************************************************!*\
+  !*** ./node_modules/vuetify/lib/components/VDatePicker/VDatePickerYears.js ***!
+  \*****************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _src_components_VDatePicker_VDatePickerYears_sass__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../src/components/VDatePicker/VDatePickerYears.sass */ "./node_modules/vuetify/src/components/VDatePicker/VDatePickerYears.sass");
+/* harmony import */ var _src_components_VDatePicker_VDatePickerYears_sass__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_src_components_VDatePicker_VDatePickerYears_sass__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _mixins_colorable__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../mixins/colorable */ "./node_modules/vuetify/lib/mixins/colorable/index.js");
+/* harmony import */ var _mixins_localable__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../mixins/localable */ "./node_modules/vuetify/lib/mixins/localable/index.js");
+/* harmony import */ var _util__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./util */ "./node_modules/vuetify/lib/components/VDatePicker/util/index.js");
+/* harmony import */ var _util_mixins__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../util/mixins */ "./node_modules/vuetify/lib/util/mixins.js");
+ // Mixins
+
+
+ // Utils
+
+
+
+/* harmony default export */ __webpack_exports__["default"] = (Object(_util_mixins__WEBPACK_IMPORTED_MODULE_4__["default"])(_mixins_colorable__WEBPACK_IMPORTED_MODULE_1__["default"], _mixins_localable__WEBPACK_IMPORTED_MODULE_2__["default"]
+/* @vue/component */
+).extend({
+  name: 'v-date-picker-years',
+  props: {
+    format: Function,
+    min: [Number, String],
+    max: [Number, String],
+    readonly: Boolean,
+    value: [Number, String]
+  },
+
+  data() {
+    return {
+      defaultColor: 'primary'
+    };
+  },
+
+  computed: {
+    formatter() {
+      return this.format || Object(_util__WEBPACK_IMPORTED_MODULE_3__["createNativeLocaleFormatter"])(this.currentLocale, {
+        year: 'numeric',
+        timeZone: 'UTC'
+      }, {
+        length: 4
+      });
+    }
+
+  },
+
+  mounted() {
+    setTimeout(() => {
+      const activeItem = this.$el.getElementsByClassName('active')[0];
+
+      if (activeItem) {
+        this.$el.scrollTop = activeItem.offsetTop - this.$el.offsetHeight / 2 + activeItem.offsetHeight / 2;
+      } else if (this.min && !this.max) {
+        this.$el.scrollTop = this.$el.scrollHeight;
+      } else if (!this.min && this.max) {
+        this.$el.scrollTop = 0;
+      } else {
+        this.$el.scrollTop = this.$el.scrollHeight / 2 - this.$el.offsetHeight / 2;
+      }
+    });
+  },
+
+  methods: {
+    genYearItem(year) {
+      const formatted = this.formatter(`${year}`);
+      const active = parseInt(this.value, 10) === year;
+      const color = active && (this.color || 'primary');
+      return this.$createElement('li', this.setTextColor(color, {
+        key: year,
+        class: {
+          active
+        },
+        on: {
+          click: () => this.$emit('input', year)
+        }
+      }), formatted);
+    },
+
+    genYearItems() {
+      const children = [];
+      const selectedYear = this.value ? parseInt(this.value, 10) : new Date().getFullYear();
+      const maxYear = this.max ? parseInt(this.max, 10) : selectedYear + 100;
+      const minYear = Math.min(maxYear, this.min ? parseInt(this.min, 10) : selectedYear - 100);
+
+      for (let year = maxYear; year >= minYear; year--) {
+        children.push(this.genYearItem(year));
+      }
+
+      return children;
+    }
+
+  },
+
+  render() {
+    return this.$createElement('ul', {
+      staticClass: 'v-date-picker-years',
+      ref: 'years'
+    }, this.genYearItems());
+  }
+
+}));
+//# sourceMappingURL=VDatePickerYears.js.map
+
+/***/ }),
+
+/***/ "./node_modules/vuetify/lib/components/VDatePicker/index.js":
+/*!******************************************************************!*\
+  !*** ./node_modules/vuetify/lib/components/VDatePicker/index.js ***!
+  \******************************************************************/
+/*! exports provided: VDatePicker, VDatePickerTitle, VDatePickerHeader, VDatePickerDateTable, VDatePickerMonthTable, VDatePickerYears, default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _VDatePicker__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./VDatePicker */ "./node_modules/vuetify/lib/components/VDatePicker/VDatePicker.js");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "VDatePicker", function() { return _VDatePicker__WEBPACK_IMPORTED_MODULE_0__["default"]; });
+
+/* harmony import */ var _VDatePickerTitle__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./VDatePickerTitle */ "./node_modules/vuetify/lib/components/VDatePicker/VDatePickerTitle.js");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "VDatePickerTitle", function() { return _VDatePickerTitle__WEBPACK_IMPORTED_MODULE_1__["default"]; });
+
+/* harmony import */ var _VDatePickerHeader__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./VDatePickerHeader */ "./node_modules/vuetify/lib/components/VDatePicker/VDatePickerHeader.js");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "VDatePickerHeader", function() { return _VDatePickerHeader__WEBPACK_IMPORTED_MODULE_2__["default"]; });
+
+/* harmony import */ var _VDatePickerDateTable__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./VDatePickerDateTable */ "./node_modules/vuetify/lib/components/VDatePicker/VDatePickerDateTable.js");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "VDatePickerDateTable", function() { return _VDatePickerDateTable__WEBPACK_IMPORTED_MODULE_3__["default"]; });
+
+/* harmony import */ var _VDatePickerMonthTable__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./VDatePickerMonthTable */ "./node_modules/vuetify/lib/components/VDatePicker/VDatePickerMonthTable.js");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "VDatePickerMonthTable", function() { return _VDatePickerMonthTable__WEBPACK_IMPORTED_MODULE_4__["default"]; });
+
+/* harmony import */ var _VDatePickerYears__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./VDatePickerYears */ "./node_modules/vuetify/lib/components/VDatePicker/VDatePickerYears.js");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "VDatePickerYears", function() { return _VDatePickerYears__WEBPACK_IMPORTED_MODULE_5__["default"]; });
+
+
+
+
+
+
+
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+  $_vuetify_subcomponents: {
+    VDatePicker: _VDatePicker__WEBPACK_IMPORTED_MODULE_0__["default"],
+    VDatePickerTitle: _VDatePickerTitle__WEBPACK_IMPORTED_MODULE_1__["default"],
+    VDatePickerHeader: _VDatePickerHeader__WEBPACK_IMPORTED_MODULE_2__["default"],
+    VDatePickerDateTable: _VDatePickerDateTable__WEBPACK_IMPORTED_MODULE_3__["default"],
+    VDatePickerMonthTable: _VDatePickerMonthTable__WEBPACK_IMPORTED_MODULE_4__["default"],
+    VDatePickerYears: _VDatePickerYears__WEBPACK_IMPORTED_MODULE_5__["default"]
+  }
+});
+//# sourceMappingURL=index.js.map
+
+/***/ }),
+
+/***/ "./node_modules/vuetify/lib/components/VDatePicker/mixins/date-picker-table.js":
+/*!*************************************************************************************!*\
+  !*** ./node_modules/vuetify/lib/components/VDatePicker/mixins/date-picker-table.js ***!
+  \*************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _src_components_VDatePicker_VDatePickerTable_sass__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../../src/components/VDatePicker/VDatePickerTable.sass */ "./node_modules/vuetify/src/components/VDatePicker/VDatePickerTable.sass");
+/* harmony import */ var _src_components_VDatePicker_VDatePickerTable_sass__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_src_components_VDatePicker_VDatePickerTable_sass__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _directives_touch__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../directives/touch */ "./node_modules/vuetify/lib/directives/touch/index.js");
+/* harmony import */ var _mixins_colorable__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../mixins/colorable */ "./node_modules/vuetify/lib/mixins/colorable/index.js");
+/* harmony import */ var _mixins_localable__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../mixins/localable */ "./node_modules/vuetify/lib/mixins/localable/index.js");
+/* harmony import */ var _mixins_themeable__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../../mixins/themeable */ "./node_modules/vuetify/lib/mixins/themeable/index.js");
+/* harmony import */ var _util_isDateAllowed__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../util/isDateAllowed */ "./node_modules/vuetify/lib/components/VDatePicker/util/isDateAllowed.js");
+/* harmony import */ var _util_mixins__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../../util/mixins */ "./node_modules/vuetify/lib/util/mixins.js");
+ // Directives
+
+ // Mixins
+
+
+
+ // Utils
+
+
+
+/* harmony default export */ __webpack_exports__["default"] = (Object(_util_mixins__WEBPACK_IMPORTED_MODULE_6__["default"])(_mixins_colorable__WEBPACK_IMPORTED_MODULE_2__["default"], _mixins_localable__WEBPACK_IMPORTED_MODULE_3__["default"], _mixins_themeable__WEBPACK_IMPORTED_MODULE_4__["default"]
+/* @vue/component */
+).extend({
+  directives: {
+    Touch: _directives_touch__WEBPACK_IMPORTED_MODULE_1__["default"]
+  },
+  props: {
+    allowedDates: Function,
+    current: String,
+    disabled: Boolean,
+    format: Function,
+    events: {
+      type: [Array, Function, Object],
+      default: () => null
+    },
+    eventColor: {
+      type: [Array, Function, Object, String],
+      default: () => 'warning'
+    },
+    min: String,
+    max: String,
+    range: Boolean,
+    readonly: Boolean,
+    scrollable: Boolean,
+    tableDate: {
+      type: String,
+      required: true
+    },
+    value: [String, Array]
+  },
+  data: () => ({
+    isReversing: false
+  }),
+  computed: {
+    computedTransition() {
+      return this.isReversing === !this.$vuetify.rtl ? 'tab-reverse-transition' : 'tab-transition';
+    },
+
+    displayedMonth() {
+      return Number(this.tableDate.split('-')[1]) - 1;
+    },
+
+    displayedYear() {
+      return Number(this.tableDate.split('-')[0]);
+    }
+
+  },
+  watch: {
+    tableDate(newVal, oldVal) {
+      this.isReversing = newVal < oldVal;
+    }
+
+  },
+  methods: {
+    genButtonClasses(isAllowed, isFloating, isSelected, isCurrent) {
+      return {
+        'v-size--default': !isFloating,
+        'v-date-picker-table__current': isCurrent,
+        'v-btn--active': isSelected,
+        'v-btn--flat': !isAllowed || this.disabled,
+        'v-btn--text': isSelected === isCurrent,
+        'v-btn--rounded': isFloating,
+        'v-btn--disabled': !isAllowed || this.disabled,
+        'v-btn--outlined': isCurrent && !isSelected,
+        ...this.themeClasses
+      };
+    },
+
+    genButtonEvents(value, isAllowed, mouseEventType) {
+      if (this.disabled) return undefined;
+      return {
+        click: () => {
+          isAllowed && !this.readonly && this.$emit('input', value);
+          this.$emit(`click:${mouseEventType}`, value);
+        },
+        dblclick: () => this.$emit(`dblclick:${mouseEventType}`, value)
+      };
+    },
+
+    genButton(value, isFloating, mouseEventType, formatter) {
+      const isAllowed = Object(_util_isDateAllowed__WEBPACK_IMPORTED_MODULE_5__["default"])(value, this.min, this.max, this.allowedDates);
+      const isSelected = this.isSelected(value);
+      const isCurrent = value === this.current;
+      const setColor = isSelected ? this.setBackgroundColor : this.setTextColor;
+      const color = (isSelected || isCurrent) && (this.color || 'accent');
+      return this.$createElement('button', setColor(color, {
+        staticClass: 'v-btn',
+        class: this.genButtonClasses(isAllowed, isFloating, isSelected, isCurrent),
+        attrs: {
+          type: 'button'
+        },
+        domProps: {
+          disabled: this.disabled || !isAllowed
+        },
+        on: this.genButtonEvents(value, isAllowed, mouseEventType)
+      }), [this.$createElement('div', {
+        staticClass: 'v-btn__content'
+      }, [formatter(value)]), this.genEvents(value)]);
+    },
+
+    getEventColors(date) {
+      const arrayize = v => Array.isArray(v) ? v : [v];
+
+      let eventData;
+      let eventColors = [];
+
+      if (Array.isArray(this.events)) {
+        eventData = this.events.includes(date);
+      } else if (this.events instanceof Function) {
+        eventData = this.events(date) || false;
+      } else if (this.events) {
+        eventData = this.events[date] || false;
+      } else {
+        eventData = false;
+      }
+
+      if (!eventData) {
+        return [];
+      } else if (eventData !== true) {
+        eventColors = arrayize(eventData);
+      } else if (typeof this.eventColor === 'string') {
+        eventColors = [this.eventColor];
+      } else if (typeof this.eventColor === 'function') {
+        eventColors = arrayize(this.eventColor(date));
+      } else if (Array.isArray(this.eventColor)) {
+        eventColors = this.eventColor;
+      } else {
+        eventColors = arrayize(this.eventColor[date]);
+      }
+
+      return eventColors.filter(v => v);
+    },
+
+    genEvents(date) {
+      const eventColors = this.getEventColors(date);
+      return eventColors.length ? this.$createElement('div', {
+        staticClass: 'v-date-picker-table__events'
+      }, eventColors.map(color => this.$createElement('div', this.setBackgroundColor(color)))) : null;
+    },
+
+    wheel(e, calculateTableDate) {
+      e.preventDefault();
+      this.$emit('update:table-date', calculateTableDate(e.deltaY));
+    },
+
+    touch(value, calculateTableDate) {
+      this.$emit('update:table-date', calculateTableDate(value));
+    },
+
+    genTable(staticClass, children, calculateTableDate) {
+      const transition = this.$createElement('transition', {
+        props: {
+          name: this.computedTransition
+        }
+      }, [this.$createElement('table', {
+        key: this.tableDate
+      }, children)]);
+      const touchDirective = {
+        name: 'touch',
+        value: {
+          left: e => e.offsetX < -15 && this.touch(1, calculateTableDate),
+          right: e => e.offsetX > 15 && this.touch(-1, calculateTableDate)
+        }
+      };
+      return this.$createElement('div', {
+        staticClass,
+        class: {
+          'v-date-picker-table--disabled': this.disabled,
+          ...this.themeClasses
+        },
+        on: !this.disabled && this.scrollable ? {
+          wheel: e => this.wheel(e, calculateTableDate)
+        } : undefined,
+        directives: [touchDirective]
+      }, [transition]);
+    },
+
+    isSelected(value) {
+      if (Array.isArray(this.value)) {
+        if (this.range && this.value.length === 2) {
+          const [from, to] = [...this.value].sort();
+          return from <= value && value <= to;
+        } else {
+          return this.value.indexOf(value) !== -1;
+        }
+      }
+
+      return value === this.value;
+    }
+
+  }
+}));
+//# sourceMappingURL=date-picker-table.js.map
+
+/***/ }),
+
+/***/ "./node_modules/vuetify/lib/components/VDatePicker/util/createNativeLocaleFormatter.js":
+/*!*********************************************************************************************!*\
+  !*** ./node_modules/vuetify/lib/components/VDatePicker/util/createNativeLocaleFormatter.js ***!
+  \*********************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _pad__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./pad */ "./node_modules/vuetify/lib/components/VDatePicker/util/pad.js");
+
+
+function createNativeLocaleFormatter(locale, options, substrOptions = {
+  start: 0,
+  length: 0
+}) {
+  const makeIsoString = dateString => {
+    const [year, month, date] = dateString.trim().split(' ')[0].split('-');
+    return [Object(_pad__WEBPACK_IMPORTED_MODULE_0__["default"])(year, 4), Object(_pad__WEBPACK_IMPORTED_MODULE_0__["default"])(month || 1), Object(_pad__WEBPACK_IMPORTED_MODULE_0__["default"])(date || 1)].join('-');
+  };
+
+  try {
+    const intlFormatter = new Intl.DateTimeFormat(locale || undefined, options);
+    return dateString => intlFormatter.format(new Date(`${makeIsoString(dateString)}T00:00:00+00:00`));
+  } catch (e) {
+    return substrOptions.start || substrOptions.length ? dateString => makeIsoString(dateString).substr(substrOptions.start || 0, substrOptions.length) : undefined;
+  }
+}
+
+/* harmony default export */ __webpack_exports__["default"] = (createNativeLocaleFormatter);
+//# sourceMappingURL=createNativeLocaleFormatter.js.map
+
+/***/ }),
+
+/***/ "./node_modules/vuetify/lib/components/VDatePicker/util/index.js":
+/*!***********************************************************************!*\
+  !*** ./node_modules/vuetify/lib/components/VDatePicker/util/index.js ***!
+  \***********************************************************************/
+/*! exports provided: createNativeLocaleFormatter, monthChange, pad */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _createNativeLocaleFormatter__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./createNativeLocaleFormatter */ "./node_modules/vuetify/lib/components/VDatePicker/util/createNativeLocaleFormatter.js");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "createNativeLocaleFormatter", function() { return _createNativeLocaleFormatter__WEBPACK_IMPORTED_MODULE_0__["default"]; });
+
+/* harmony import */ var _monthChange__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./monthChange */ "./node_modules/vuetify/lib/components/VDatePicker/util/monthChange.js");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "monthChange", function() { return _monthChange__WEBPACK_IMPORTED_MODULE_1__["default"]; });
+
+/* harmony import */ var _pad__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./pad */ "./node_modules/vuetify/lib/components/VDatePicker/util/pad.js");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "pad", function() { return _pad__WEBPACK_IMPORTED_MODULE_2__["default"]; });
+
+
+
+
+
+//# sourceMappingURL=index.js.map
+
+/***/ }),
+
+/***/ "./node_modules/vuetify/lib/components/VDatePicker/util/isDateAllowed.js":
+/*!*******************************************************************************!*\
+  !*** ./node_modules/vuetify/lib/components/VDatePicker/util/isDateAllowed.js ***!
+  \*******************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return isDateAllowed; });
+function isDateAllowed(date, min, max, allowedFn) {
+  return (!allowedFn || allowedFn(date)) && (!min || date >= min.substr(0, 10)) && (!max || date <= max);
+}
+//# sourceMappingURL=isDateAllowed.js.map
+
+/***/ }),
+
+/***/ "./node_modules/vuetify/lib/components/VDatePicker/util/monthChange.js":
+/*!*****************************************************************************!*\
+  !*** ./node_modules/vuetify/lib/components/VDatePicker/util/monthChange.js ***!
+  \*****************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _pad__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./pad */ "./node_modules/vuetify/lib/components/VDatePicker/util/pad.js");
+
+/**
+ * @param {String} value YYYY-MM format
+ * @param {Number} sign -1 or +1
+ */
+
+/* harmony default export */ __webpack_exports__["default"] = ((value, sign) => {
+  const [year, month] = value.split('-').map(Number);
+
+  if (month + sign === 0) {
+    return `${year - 1}-12`;
+  } else if (month + sign === 13) {
+    return `${year + 1}-01`;
+  } else {
+    return `${year}-${Object(_pad__WEBPACK_IMPORTED_MODULE_0__["default"])(month + sign)}`;
+  }
+});
+//# sourceMappingURL=monthChange.js.map
+
+/***/ }),
+
+/***/ "./node_modules/vuetify/lib/components/VDatePicker/util/pad.js":
+/*!*********************************************************************!*\
+  !*** ./node_modules/vuetify/lib/components/VDatePicker/util/pad.js ***!
+  \*********************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+const padStart = (string, targetLength, padString) => {
+  targetLength = targetLength >> 0;
+  string = String(string);
+  padString = String(padString);
+
+  if (string.length > targetLength) {
+    return String(string);
+  }
+
+  targetLength = targetLength - string.length;
+
+  if (targetLength > padString.length) {
+    padString += padString.repeat(targetLength / padString.length);
+  }
+
+  return padString.slice(0, targetLength) + String(string);
+};
+
+/* harmony default export */ __webpack_exports__["default"] = ((n, length = 2) => padStart(n, length, '0'));
+//# sourceMappingURL=pad.js.map
+
+/***/ }),
+
 /***/ "./node_modules/vuetify/lib/components/VDivider/VDivider.js":
 /*!******************************************************************!*\
   !*** ./node_modules/vuetify/lib/components/VDivider/VDivider.js ***!
@@ -97121,6 +99465,165 @@ __webpack_require__.r(__webpack_exports__);
 
 
 /* harmony default export */ __webpack_exports__["default"] = (_VDivider__WEBPACK_IMPORTED_MODULE_0__["default"]);
+//# sourceMappingURL=index.js.map
+
+/***/ }),
+
+/***/ "./node_modules/vuetify/lib/components/VForm/VForm.js":
+/*!************************************************************!*\
+  !*** ./node_modules/vuetify/lib/components/VForm/VForm.js ***!
+  \************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _util_mixins__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../util/mixins */ "./node_modules/vuetify/lib/util/mixins.js");
+/* harmony import */ var _mixins_binds_attrs__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../mixins/binds-attrs */ "./node_modules/vuetify/lib/mixins/binds-attrs/index.js");
+/* harmony import */ var _mixins_registrable__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../mixins/registrable */ "./node_modules/vuetify/lib/mixins/registrable/index.js");
+// Mixins
+
+
+
+/* @vue/component */
+
+/* harmony default export */ __webpack_exports__["default"] = (Object(_util_mixins__WEBPACK_IMPORTED_MODULE_0__["default"])(_mixins_binds_attrs__WEBPACK_IMPORTED_MODULE_1__["default"], Object(_mixins_registrable__WEBPACK_IMPORTED_MODULE_2__["provide"])('form')
+/* @vue/component */
+).extend({
+  name: 'v-form',
+  inheritAttrs: false,
+  props: {
+    lazyValidation: Boolean,
+    value: Boolean
+  },
+  data: () => ({
+    inputs: [],
+    watchers: [],
+    errorBag: {}
+  }),
+  watch: {
+    errorBag: {
+      handler(val) {
+        const errors = Object.values(val).includes(true);
+        this.$emit('input', !errors);
+      },
+
+      deep: true,
+      immediate: true
+    }
+  },
+  methods: {
+    watchInput(input) {
+      const watcher = input => {
+        return input.$watch('hasError', val => {
+          this.$set(this.errorBag, input._uid, val);
+        }, {
+          immediate: true
+        });
+      };
+
+      const watchers = {
+        _uid: input._uid,
+        valid: () => {},
+        shouldValidate: () => {}
+      };
+
+      if (this.lazyValidation) {
+        // Only start watching inputs if we need to
+        watchers.shouldValidate = input.$watch('shouldValidate', val => {
+          if (!val) return; // Only watch if we're not already doing it
+
+          if (this.errorBag.hasOwnProperty(input._uid)) return;
+          watchers.valid = watcher(input);
+        });
+      } else {
+        watchers.valid = watcher(input);
+      }
+
+      return watchers;
+    },
+
+    /** @public */
+    validate() {
+      return this.inputs.filter(input => !input.validate(true)).length === 0;
+    },
+
+    /** @public */
+    reset() {
+      this.inputs.forEach(input => input.reset());
+      this.resetErrorBag();
+    },
+
+    resetErrorBag() {
+      if (this.lazyValidation) {
+        // Account for timeout in validatable
+        setTimeout(() => {
+          this.errorBag = {};
+        }, 0);
+      }
+    },
+
+    /** @public */
+    resetValidation() {
+      this.inputs.forEach(input => input.resetValidation());
+      this.resetErrorBag();
+    },
+
+    register(input) {
+      this.inputs.push(input);
+      this.watchers.push(this.watchInput(input));
+    },
+
+    unregister(input) {
+      const found = this.inputs.find(i => i._uid === input._uid);
+      if (!found) return;
+      const unwatch = this.watchers.find(i => i._uid === found._uid);
+
+      if (unwatch) {
+        unwatch.valid();
+        unwatch.shouldValidate();
+      }
+
+      this.watchers = this.watchers.filter(i => i._uid !== found._uid);
+      this.inputs = this.inputs.filter(i => i._uid !== found._uid);
+      this.$delete(this.errorBag, found._uid);
+    }
+
+  },
+
+  render(h) {
+    return h('form', {
+      staticClass: 'v-form',
+      attrs: {
+        novalidate: true,
+        ...this.attrs$
+      },
+      on: {
+        submit: e => this.$emit('submit', e)
+      }
+    }, this.$slots.default);
+  }
+
+}));
+//# sourceMappingURL=VForm.js.map
+
+/***/ }),
+
+/***/ "./node_modules/vuetify/lib/components/VForm/index.js":
+/*!************************************************************!*\
+  !*** ./node_modules/vuetify/lib/components/VForm/index.js ***!
+  \************************************************************/
+/*! exports provided: VForm, default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _VForm__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./VForm */ "./node_modules/vuetify/lib/components/VForm/VForm.js");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "VForm", function() { return _VForm__WEBPACK_IMPORTED_MODULE_0__["default"]; });
+
+
+
+/* harmony default export */ __webpack_exports__["default"] = (_VForm__WEBPACK_IMPORTED_MODULE_0__["default"]);
 //# sourceMappingURL=index.js.map
 
 /***/ }),
@@ -99646,6 +102149,495 @@ const VListItemSubtitle = Object(_util_helpers__WEBPACK_IMPORTED_MODULE_0__["cre
 
 /***/ }),
 
+/***/ "./node_modules/vuetify/lib/components/VMenu/VMenu.js":
+/*!************************************************************!*\
+  !*** ./node_modules/vuetify/lib/components/VMenu/VMenu.js ***!
+  \************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _src_components_VMenu_VMenu_sass__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../src/components/VMenu/VMenu.sass */ "./node_modules/vuetify/src/components/VMenu/VMenu.sass");
+/* harmony import */ var _src_components_VMenu_VMenu_sass__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_src_components_VMenu_VMenu_sass__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _VThemeProvider__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../VThemeProvider */ "./node_modules/vuetify/lib/components/VThemeProvider/index.js");
+/* harmony import */ var _mixins_activatable__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../mixins/activatable */ "./node_modules/vuetify/lib/mixins/activatable/index.js");
+/* harmony import */ var _mixins_delayable__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../mixins/delayable */ "./node_modules/vuetify/lib/mixins/delayable/index.js");
+/* harmony import */ var _mixins_dependent__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../mixins/dependent */ "./node_modules/vuetify/lib/mixins/dependent/index.js");
+/* harmony import */ var _mixins_detachable__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../mixins/detachable */ "./node_modules/vuetify/lib/mixins/detachable/index.js");
+/* harmony import */ var _mixins_menuable__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../mixins/menuable */ "./node_modules/vuetify/lib/mixins/menuable/index.js");
+/* harmony import */ var _mixins_returnable__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../../mixins/returnable */ "./node_modules/vuetify/lib/mixins/returnable/index.js");
+/* harmony import */ var _mixins_toggleable__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../../mixins/toggleable */ "./node_modules/vuetify/lib/mixins/toggleable/index.js");
+/* harmony import */ var _mixins_themeable__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../../mixins/themeable */ "./node_modules/vuetify/lib/mixins/themeable/index.js");
+/* harmony import */ var _directives_click_outside__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../../directives/click-outside */ "./node_modules/vuetify/lib/directives/click-outside/index.js");
+/* harmony import */ var _directives_resize__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../../directives/resize */ "./node_modules/vuetify/lib/directives/resize/index.js");
+/* harmony import */ var _util_mixins__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ../../util/mixins */ "./node_modules/vuetify/lib/util/mixins.js");
+/* harmony import */ var _util_console__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ../../util/console */ "./node_modules/vuetify/lib/util/console.js");
+/* harmony import */ var _util_helpers__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ../../util/helpers */ "./node_modules/vuetify/lib/util/helpers.js");
+// Styles
+ // Components
+
+ // Mixins
+
+
+
+
+
+
+
+
+ // Directives
+
+
+ // Utilities
+
+
+
+
+const baseMixins = Object(_util_mixins__WEBPACK_IMPORTED_MODULE_12__["default"])(_mixins_dependent__WEBPACK_IMPORTED_MODULE_4__["default"], _mixins_delayable__WEBPACK_IMPORTED_MODULE_3__["default"], _mixins_detachable__WEBPACK_IMPORTED_MODULE_5__["default"], _mixins_menuable__WEBPACK_IMPORTED_MODULE_6__["default"], _mixins_returnable__WEBPACK_IMPORTED_MODULE_7__["default"], _mixins_toggleable__WEBPACK_IMPORTED_MODULE_8__["default"], _mixins_themeable__WEBPACK_IMPORTED_MODULE_9__["default"]);
+/* @vue/component */
+
+/* harmony default export */ __webpack_exports__["default"] = (baseMixins.extend({
+  name: 'v-menu',
+
+  provide() {
+    return {
+      isInMenu: true,
+      // Pass theme through to default slot
+      theme: this.theme
+    };
+  },
+
+  directives: {
+    ClickOutside: _directives_click_outside__WEBPACK_IMPORTED_MODULE_10__["default"],
+    Resize: _directives_resize__WEBPACK_IMPORTED_MODULE_11__["default"]
+  },
+  props: {
+    auto: Boolean,
+    closeOnClick: {
+      type: Boolean,
+      default: true
+    },
+    closeOnContentClick: {
+      type: Boolean,
+      default: true
+    },
+    disabled: Boolean,
+    disableKeys: Boolean,
+    maxHeight: {
+      type: [Number, String],
+      default: 'auto'
+    },
+    offsetX: Boolean,
+    offsetY: Boolean,
+    openOnClick: {
+      type: Boolean,
+      default: true
+    },
+    openOnHover: Boolean,
+    origin: {
+      type: String,
+      default: 'top left'
+    },
+    transition: {
+      type: [Boolean, String],
+      default: 'v-menu-transition'
+    }
+  },
+
+  data() {
+    return {
+      calculatedTopAuto: 0,
+      defaultOffset: 8,
+      hasJustFocused: false,
+      listIndex: -1,
+      resizeTimeout: 0,
+      selectedIndex: null,
+      tiles: []
+    };
+  },
+
+  computed: {
+    activeTile() {
+      return this.tiles[this.listIndex];
+    },
+
+    calculatedLeft() {
+      const menuWidth = Math.max(this.dimensions.content.width, parseFloat(this.calculatedMinWidth));
+      if (!this.auto) return this.calcLeft(menuWidth) || '0';
+      return Object(_util_helpers__WEBPACK_IMPORTED_MODULE_14__["convertToUnit"])(this.calcXOverflow(this.calcLeftAuto(), menuWidth)) || '0';
+    },
+
+    calculatedMaxHeight() {
+      const height = this.auto ? '200px' : Object(_util_helpers__WEBPACK_IMPORTED_MODULE_14__["convertToUnit"])(this.maxHeight);
+      return height || '0';
+    },
+
+    calculatedMaxWidth() {
+      return Object(_util_helpers__WEBPACK_IMPORTED_MODULE_14__["convertToUnit"])(this.maxWidth) || '0';
+    },
+
+    calculatedMinWidth() {
+      if (this.minWidth) {
+        return Object(_util_helpers__WEBPACK_IMPORTED_MODULE_14__["convertToUnit"])(this.minWidth) || '0';
+      }
+
+      const minWidth = Math.min(this.dimensions.activator.width + Number(this.nudgeWidth) + (this.auto ? 16 : 0), Math.max(this.pageWidth - 24, 0));
+      const calculatedMaxWidth = isNaN(parseInt(this.calculatedMaxWidth)) ? minWidth : parseInt(this.calculatedMaxWidth);
+      return Object(_util_helpers__WEBPACK_IMPORTED_MODULE_14__["convertToUnit"])(Math.min(calculatedMaxWidth, minWidth)) || '0';
+    },
+
+    calculatedTop() {
+      const top = !this.auto ? this.calcTop() : Object(_util_helpers__WEBPACK_IMPORTED_MODULE_14__["convertToUnit"])(this.calcYOverflow(this.calculatedTopAuto));
+      return top || '0';
+    },
+
+    hasClickableTiles() {
+      return Boolean(this.tiles.find(tile => tile.tabIndex > -1));
+    },
+
+    styles() {
+      return {
+        maxHeight: this.calculatedMaxHeight,
+        minWidth: this.calculatedMinWidth,
+        maxWidth: this.calculatedMaxWidth,
+        top: this.calculatedTop,
+        left: this.calculatedLeft,
+        transformOrigin: this.origin,
+        zIndex: this.zIndex || this.activeZIndex
+      };
+    }
+
+  },
+  watch: {
+    isActive(val) {
+      if (!val) this.listIndex = -1;
+    },
+
+    isContentActive(val) {
+      this.hasJustFocused = val;
+    },
+
+    listIndex(next, prev) {
+      if (next in this.tiles) {
+        const tile = this.tiles[next];
+        tile.classList.add('v-list-item--highlighted');
+        this.$refs.content.scrollTop = tile.offsetTop - tile.clientHeight;
+      }
+
+      prev in this.tiles && this.tiles[prev].classList.remove('v-list-item--highlighted');
+    }
+
+  },
+
+  created() {
+    /* istanbul ignore next */
+    if (this.$attrs.hasOwnProperty('full-width')) {
+      Object(_util_console__WEBPACK_IMPORTED_MODULE_13__["removed"])('full-width', this);
+    }
+  },
+
+  mounted() {
+    this.isActive && this.callActivate();
+  },
+
+  methods: {
+    activate() {
+      // Update coordinates and dimensions of menu
+      // and its activator
+      this.updateDimensions(); // Start the transition
+
+      requestAnimationFrame(() => {
+        // Once transitioning, calculate scroll and top position
+        this.startTransition().then(() => {
+          if (this.$refs.content) {
+            this.calculatedTopAuto = this.calcTopAuto();
+            this.auto && (this.$refs.content.scrollTop = this.calcScrollPosition());
+          }
+        });
+      });
+    },
+
+    calcScrollPosition() {
+      const $el = this.$refs.content;
+      const activeTile = $el.querySelector('.v-list-item--active');
+      const maxScrollTop = $el.scrollHeight - $el.offsetHeight;
+      return activeTile ? Math.min(maxScrollTop, Math.max(0, activeTile.offsetTop - $el.offsetHeight / 2 + activeTile.offsetHeight / 2)) : $el.scrollTop;
+    },
+
+    calcLeftAuto() {
+      return parseInt(this.dimensions.activator.left - this.defaultOffset * 2);
+    },
+
+    calcTopAuto() {
+      const $el = this.$refs.content;
+      const activeTile = $el.querySelector('.v-list-item--active');
+
+      if (!activeTile) {
+        this.selectedIndex = null;
+      }
+
+      if (this.offsetY || !activeTile) {
+        return this.computedTop;
+      }
+
+      this.selectedIndex = Array.from(this.tiles).indexOf(activeTile);
+      const tileDistanceFromMenuTop = activeTile.offsetTop - this.calcScrollPosition();
+      const firstTileOffsetTop = $el.querySelector('.v-list-item').offsetTop;
+      return this.computedTop - tileDistanceFromMenuTop - firstTileOffsetTop - 1;
+    },
+
+    changeListIndex(e) {
+      // For infinite scroll and autocomplete, re-evaluate children
+      this.getTiles();
+
+      if (!this.isActive || !this.hasClickableTiles) {
+        return;
+      } else if (e.keyCode === _util_helpers__WEBPACK_IMPORTED_MODULE_14__["keyCodes"].tab) {
+        this.isActive = false;
+        return;
+      } else if (e.keyCode === _util_helpers__WEBPACK_IMPORTED_MODULE_14__["keyCodes"].down) {
+        this.nextTile();
+      } else if (e.keyCode === _util_helpers__WEBPACK_IMPORTED_MODULE_14__["keyCodes"].up) {
+        this.prevTile();
+      } else if (e.keyCode === _util_helpers__WEBPACK_IMPORTED_MODULE_14__["keyCodes"].enter && this.listIndex !== -1) {
+        this.tiles[this.listIndex].click();
+      } else {
+        return;
+      } // One of the conditions was met, prevent default action (#2988)
+
+
+      e.preventDefault();
+    },
+
+    closeConditional(e) {
+      const target = e.target;
+      return this.isActive && !this._isDestroyed && this.closeOnClick && !this.$refs.content.contains(target);
+    },
+
+    genActivatorAttributes() {
+      const attributes = _mixins_activatable__WEBPACK_IMPORTED_MODULE_2__["default"].options.methods.genActivatorAttributes.call(this);
+
+      if (this.activeTile && this.activeTile.id) {
+        return { ...attributes,
+          'aria-activedescendant': this.activeTile.id
+        };
+      }
+
+      return attributes;
+    },
+
+    genActivatorListeners() {
+      const listeners = _mixins_menuable__WEBPACK_IMPORTED_MODULE_6__["default"].options.methods.genActivatorListeners.call(this);
+
+      if (!this.disableKeys) {
+        listeners.keydown = this.onKeyDown;
+      }
+
+      return listeners;
+    },
+
+    genTransition() {
+      const content = this.genContent();
+      if (!this.transition) return content;
+      return this.$createElement('transition', {
+        props: {
+          name: this.transition
+        }
+      }, [content]);
+    },
+
+    genDirectives() {
+      const directives = [{
+        name: 'show',
+        value: this.isContentActive
+      }]; // Do not add click outside for hover menu
+
+      if (!this.openOnHover && this.closeOnClick) {
+        directives.push({
+          name: 'click-outside',
+          value: () => {
+            this.isActive = false;
+          },
+          args: {
+            closeConditional: this.closeConditional,
+            include: () => [this.$el, ...this.getOpenDependentElements()]
+          }
+        });
+      }
+
+      return directives;
+    },
+
+    genContent() {
+      const options = {
+        attrs: { ...this.getScopeIdAttrs(),
+          role: 'role' in this.$attrs ? this.$attrs.role : 'menu'
+        },
+        staticClass: 'v-menu__content',
+        class: { ...this.rootThemeClasses,
+          'v-menu__content--auto': this.auto,
+          'v-menu__content--fixed': this.activatorFixed,
+          menuable__content__active: this.isActive,
+          [this.contentClass.trim()]: true
+        },
+        style: this.styles,
+        directives: this.genDirectives(),
+        ref: 'content',
+        on: {
+          click: e => {
+            const target = e.target;
+            if (target.getAttribute('disabled')) return;
+            if (this.closeOnContentClick) this.isActive = false;
+          },
+          keydown: this.onKeyDown
+        }
+      };
+
+      if (!this.disabled && this.openOnHover) {
+        options.on = options.on || {};
+        options.on.mouseenter = this.mouseEnterHandler;
+      }
+
+      if (this.openOnHover) {
+        options.on = options.on || {};
+        options.on.mouseleave = this.mouseLeaveHandler;
+      }
+
+      return this.$createElement('div', options, this.getContentSlot());
+    },
+
+    getTiles() {
+      if (!this.$refs.content) return;
+      this.tiles = Array.from(this.$refs.content.querySelectorAll('.v-list-item'));
+    },
+
+    mouseEnterHandler() {
+      this.runDelay('open', () => {
+        if (this.hasJustFocused) return;
+        this.hasJustFocused = true;
+        this.isActive = true;
+      });
+    },
+
+    mouseLeaveHandler(e) {
+      // Prevent accidental re-activation
+      this.runDelay('close', () => {
+        if (this.$refs.content.contains(e.relatedTarget)) return;
+        requestAnimationFrame(() => {
+          this.isActive = false;
+          this.callDeactivate();
+        });
+      });
+    },
+
+    nextTile() {
+      const tile = this.tiles[this.listIndex + 1];
+
+      if (!tile) {
+        if (!this.tiles.length) return;
+        this.listIndex = -1;
+        this.nextTile();
+        return;
+      }
+
+      this.listIndex++;
+      if (tile.tabIndex === -1) this.nextTile();
+    },
+
+    prevTile() {
+      const tile = this.tiles[this.listIndex - 1];
+
+      if (!tile) {
+        if (!this.tiles.length) return;
+        this.listIndex = this.tiles.length;
+        this.prevTile();
+        return;
+      }
+
+      this.listIndex--;
+      if (tile.tabIndex === -1) this.prevTile();
+    },
+
+    onKeyDown(e) {
+      if (e.keyCode === _util_helpers__WEBPACK_IMPORTED_MODULE_14__["keyCodes"].esc) {
+        // Wait for dependent elements to close first
+        setTimeout(() => {
+          this.isActive = false;
+        });
+        const activator = this.getActivator();
+        this.$nextTick(() => activator && activator.focus());
+      } else if (!this.isActive && [_util_helpers__WEBPACK_IMPORTED_MODULE_14__["keyCodes"].up, _util_helpers__WEBPACK_IMPORTED_MODULE_14__["keyCodes"].down].includes(e.keyCode)) {
+        this.isActive = true;
+      } // Allow for isActive watcher to generate tile list
+
+
+      this.$nextTick(() => this.changeListIndex(e));
+    },
+
+    onResize() {
+      if (!this.isActive) return; // Account for screen resize
+      // and orientation change
+      // eslint-disable-next-line no-unused-expressions
+
+      this.$refs.content.offsetWidth;
+      this.updateDimensions(); // When resizing to a smaller width
+      // content width is evaluated before
+      // the new activator width has been
+      // set, causing it to not size properly
+      // hacky but will revisit in the future
+
+      clearTimeout(this.resizeTimeout);
+      this.resizeTimeout = window.setTimeout(this.updateDimensions, 100);
+    }
+
+  },
+
+  render(h) {
+    const data = {
+      staticClass: 'v-menu',
+      class: {
+        'v-menu--attached': this.attach === '' || this.attach === true || this.attach === 'attach'
+      },
+      directives: [{
+        arg: '500',
+        name: 'resize',
+        value: this.onResize
+      }]
+    };
+    return h('div', data, [!this.activator && this.genActivator(), this.showLazyContent(() => [this.$createElement(_VThemeProvider__WEBPACK_IMPORTED_MODULE_1__["VThemeProvider"], {
+      props: {
+        root: true,
+        light: this.light,
+        dark: this.dark
+      }
+    }, [this.genTransition()])])]);
+  }
+
+}));
+//# sourceMappingURL=VMenu.js.map
+
+/***/ }),
+
+/***/ "./node_modules/vuetify/lib/components/VMenu/index.js":
+/*!************************************************************!*\
+  !*** ./node_modules/vuetify/lib/components/VMenu/index.js ***!
+  \************************************************************/
+/*! exports provided: VMenu, default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _VMenu__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./VMenu */ "./node_modules/vuetify/lib/components/VMenu/VMenu.js");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "VMenu", function() { return _VMenu__WEBPACK_IMPORTED_MODULE_0__["default"]; });
+
+
+
+/* harmony default export */ __webpack_exports__["default"] = (_VMenu__WEBPACK_IMPORTED_MODULE_0__["default"]);
+//# sourceMappingURL=index.js.map
+
+/***/ }),
+
 /***/ "./node_modules/vuetify/lib/components/VMessages/VMessages.js":
 /*!********************************************************************!*\
   !*** ./node_modules/vuetify/lib/components/VMessages/VMessages.js ***!
@@ -100313,6 +103305,132 @@ __webpack_require__.r(__webpack_exports__);
 
 
 /* harmony default export */ __webpack_exports__["default"] = (_VOverlay__WEBPACK_IMPORTED_MODULE_0__["default"]);
+//# sourceMappingURL=index.js.map
+
+/***/ }),
+
+/***/ "./node_modules/vuetify/lib/components/VPicker/VPicker.js":
+/*!****************************************************************!*\
+  !*** ./node_modules/vuetify/lib/components/VPicker/VPicker.js ***!
+  \****************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _src_components_VPicker_VPicker_sass__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../src/components/VPicker/VPicker.sass */ "./node_modules/vuetify/src/components/VPicker/VPicker.sass");
+/* harmony import */ var _src_components_VPicker_VPicker_sass__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_src_components_VPicker_VPicker_sass__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _src_components_VCard_VCard_sass__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../src/components/VCard/VCard.sass */ "./node_modules/vuetify/src/components/VCard/VCard.sass");
+/* harmony import */ var _src_components_VCard_VCard_sass__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_src_components_VCard_VCard_sass__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _mixins_colorable__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../mixins/colorable */ "./node_modules/vuetify/lib/mixins/colorable/index.js");
+/* harmony import */ var _mixins_themeable__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../mixins/themeable */ "./node_modules/vuetify/lib/mixins/themeable/index.js");
+/* harmony import */ var _util_helpers__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../util/helpers */ "./node_modules/vuetify/lib/util/helpers.js");
+/* harmony import */ var _util_mixins__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../util/mixins */ "./node_modules/vuetify/lib/util/mixins.js");
+
+ // Mixins
+
+
+ // Helpers
+
+
+
+/* @vue/component */
+
+/* harmony default export */ __webpack_exports__["default"] = (Object(_util_mixins__WEBPACK_IMPORTED_MODULE_5__["default"])(_mixins_colorable__WEBPACK_IMPORTED_MODULE_2__["default"], _mixins_themeable__WEBPACK_IMPORTED_MODULE_3__["default"]).extend({
+  name: 'v-picker',
+  props: {
+    fullWidth: Boolean,
+    landscape: Boolean,
+    noTitle: Boolean,
+    transition: {
+      type: String,
+      default: 'fade-transition'
+    },
+    width: {
+      type: [Number, String],
+      default: 290
+    }
+  },
+  computed: {
+    computedTitleColor() {
+      const defaultTitleColor = this.isDark ? false : this.color || 'primary';
+      return this.color || defaultTitleColor;
+    }
+
+  },
+  methods: {
+    genTitle() {
+      return this.$createElement('div', this.setBackgroundColor(this.computedTitleColor, {
+        staticClass: 'v-picker__title',
+        class: {
+          'v-picker__title--landscape': this.landscape
+        }
+      }), this.$slots.title);
+    },
+
+    genBodyTransition() {
+      return this.$createElement('transition', {
+        props: {
+          name: this.transition
+        }
+      }, this.$slots.default);
+    },
+
+    genBody() {
+      return this.$createElement('div', {
+        staticClass: 'v-picker__body',
+        class: {
+          'v-picker__body--no-title': this.noTitle,
+          ...this.themeClasses
+        },
+        style: this.fullWidth ? undefined : {
+          width: Object(_util_helpers__WEBPACK_IMPORTED_MODULE_4__["convertToUnit"])(this.width)
+        }
+      }, [this.genBodyTransition()]);
+    },
+
+    genActions() {
+      return this.$createElement('div', {
+        staticClass: 'v-picker__actions v-card__actions',
+        class: {
+          'v-picker__actions--no-title': this.noTitle
+        }
+      }, this.$slots.actions);
+    }
+
+  },
+
+  render(h) {
+    return h('div', {
+      staticClass: 'v-picker v-card',
+      class: {
+        'v-picker--landscape': this.landscape,
+        'v-picker--full-width': this.fullWidth,
+        ...this.themeClasses
+      }
+    }, [this.$slots.title ? this.genTitle() : null, this.genBody(), this.$slots.actions ? this.genActions() : null]);
+  }
+
+}));
+//# sourceMappingURL=VPicker.js.map
+
+/***/ }),
+
+/***/ "./node_modules/vuetify/lib/components/VPicker/index.js":
+/*!**************************************************************!*\
+  !*** ./node_modules/vuetify/lib/components/VPicker/index.js ***!
+  \**************************************************************/
+/*! exports provided: VPicker, default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _VPicker__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./VPicker */ "./node_modules/vuetify/lib/components/VPicker/VPicker.js");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "VPicker", function() { return _VPicker__WEBPACK_IMPORTED_MODULE_0__["default"]; });
+
+
+
+/* harmony default export */ __webpack_exports__["default"] = (_VPicker__WEBPACK_IMPORTED_MODULE_0__["default"]);
 //# sourceMappingURL=index.js.map
 
 /***/ }),
@@ -101459,6 +104577,61 @@ __webpack_require__.r(__webpack_exports__);
 
 
 /* harmony default export */ __webpack_exports__["default"] = (_VTextField__WEBPACK_IMPORTED_MODULE_0__["default"]);
+//# sourceMappingURL=index.js.map
+
+/***/ }),
+
+/***/ "./node_modules/vuetify/lib/components/VThemeProvider/VThemeProvider.js":
+/*!******************************************************************************!*\
+  !*** ./node_modules/vuetify/lib/components/VThemeProvider/VThemeProvider.js ***!
+  \******************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _mixins_themeable__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../mixins/themeable */ "./node_modules/vuetify/lib/mixins/themeable/index.js");
+// Mixins
+
+/* @vue/component */
+
+/* harmony default export */ __webpack_exports__["default"] = (_mixins_themeable__WEBPACK_IMPORTED_MODULE_0__["default"].extend({
+  name: 'v-theme-provider',
+  props: {
+    root: Boolean
+  },
+  computed: {
+    isDark() {
+      return this.root ? this.rootIsDark : _mixins_themeable__WEBPACK_IMPORTED_MODULE_0__["default"].options.computed.isDark.call(this);
+    }
+
+  },
+
+  render() {
+    /* istanbul ignore next */
+    return this.$slots.default && this.$slots.default.find(node => !node.isComment && node.text !== ' ');
+  }
+
+}));
+//# sourceMappingURL=VThemeProvider.js.map
+
+/***/ }),
+
+/***/ "./node_modules/vuetify/lib/components/VThemeProvider/index.js":
+/*!*********************************************************************!*\
+  !*** ./node_modules/vuetify/lib/components/VThemeProvider/index.js ***!
+  \*********************************************************************/
+/*! exports provided: VThemeProvider, default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _VThemeProvider__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./VThemeProvider */ "./node_modules/vuetify/lib/components/VThemeProvider/VThemeProvider.js");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "VThemeProvider", function() { return _VThemeProvider__WEBPACK_IMPORTED_MODULE_0__["default"]; });
+
+
+
+/* harmony default export */ __webpack_exports__["default"] = (_VThemeProvider__WEBPACK_IMPORTED_MODULE_0__["default"]);
 //# sourceMappingURL=index.js.map
 
 /***/ }),
@@ -102663,6 +105836,205 @@ const Touch = {
 
 /***/ }),
 
+/***/ "./node_modules/vuetify/lib/mixins/activatable/index.js":
+/*!**************************************************************!*\
+  !*** ./node_modules/vuetify/lib/mixins/activatable/index.js ***!
+  \**************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _delayable__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../delayable */ "./node_modules/vuetify/lib/mixins/delayable/index.js");
+/* harmony import */ var _toggleable__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../toggleable */ "./node_modules/vuetify/lib/mixins/toggleable/index.js");
+/* harmony import */ var _util_mixins__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../util/mixins */ "./node_modules/vuetify/lib/util/mixins.js");
+/* harmony import */ var _util_helpers__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../util/helpers */ "./node_modules/vuetify/lib/util/helpers.js");
+/* harmony import */ var _util_console__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../util/console */ "./node_modules/vuetify/lib/util/console.js");
+// Mixins
+
+ // Utilities
+
+
+
+
+const baseMixins = Object(_util_mixins__WEBPACK_IMPORTED_MODULE_2__["default"])(_delayable__WEBPACK_IMPORTED_MODULE_0__["default"], _toggleable__WEBPACK_IMPORTED_MODULE_1__["default"]);
+/* @vue/component */
+
+/* harmony default export */ __webpack_exports__["default"] = (baseMixins.extend({
+  name: 'activatable',
+  props: {
+    activator: {
+      default: null,
+      validator: val => {
+        return ['string', 'object'].includes(typeof val);
+      }
+    },
+    disabled: Boolean,
+    internalActivator: Boolean,
+    openOnHover: Boolean
+  },
+  data: () => ({
+    // Do not use this directly, call getActivator() instead
+    activatorElement: null,
+    activatorNode: [],
+    events: ['click', 'mouseenter', 'mouseleave'],
+    listeners: {}
+  }),
+  watch: {
+    activator: 'resetActivator',
+    openOnHover: 'resetActivator'
+  },
+
+  mounted() {
+    const slotType = Object(_util_helpers__WEBPACK_IMPORTED_MODULE_3__["getSlotType"])(this, 'activator', true);
+
+    if (slotType && ['v-slot', 'normal'].includes(slotType)) {
+      Object(_util_console__WEBPACK_IMPORTED_MODULE_4__["consoleError"])(`The activator slot must be bound, try '<template v-slot:activator="{ on }"><v-btn v-on="on">'`, this);
+    }
+
+    this.addActivatorEvents();
+  },
+
+  beforeDestroy() {
+    this.removeActivatorEvents();
+  },
+
+  methods: {
+    addActivatorEvents() {
+      if (!this.activator || this.disabled || !this.getActivator()) return;
+      this.listeners = this.genActivatorListeners();
+      const keys = Object.keys(this.listeners);
+
+      for (const key of keys) {
+        this.getActivator().addEventListener(key, this.listeners[key]);
+      }
+    },
+
+    genActivator() {
+      const node = Object(_util_helpers__WEBPACK_IMPORTED_MODULE_3__["getSlot"])(this, 'activator', Object.assign(this.getValueProxy(), {
+        on: this.genActivatorListeners(),
+        attrs: this.genActivatorAttributes()
+      })) || [];
+      this.activatorNode = node;
+      return node;
+    },
+
+    genActivatorAttributes() {
+      return {
+        role: 'button',
+        'aria-haspopup': true,
+        'aria-expanded': String(this.isActive)
+      };
+    },
+
+    genActivatorListeners() {
+      if (this.disabled) return {};
+      const listeners = {};
+
+      if (this.openOnHover) {
+        listeners.mouseenter = e => {
+          this.getActivator(e);
+          this.runDelay('open');
+        };
+
+        listeners.mouseleave = e => {
+          this.getActivator(e);
+          this.runDelay('close');
+        };
+      } else {
+        listeners.click = e => {
+          const activator = this.getActivator(e);
+          if (activator) activator.focus();
+          e.stopPropagation();
+          this.isActive = !this.isActive;
+        };
+      }
+
+      return listeners;
+    },
+
+    getActivator(e) {
+      // If we've already fetched the activator, re-use
+      if (this.activatorElement) return this.activatorElement;
+      let activator = null;
+
+      if (this.activator) {
+        const target = this.internalActivator ? this.$el : document;
+
+        if (typeof this.activator === 'string') {
+          // Selector
+          activator = target.querySelector(this.activator);
+        } else if (this.activator.$el) {
+          // Component (ref)
+          activator = this.activator.$el;
+        } else {
+          // HTMLElement | Element
+          activator = this.activator;
+        }
+      } else if (this.activatorNode.length === 1 || this.activatorNode.length && !e) {
+        // Use the contents of the activator slot
+        // There's either only one element in it or we
+        // don't have a click event to use as a last resort
+        const vm = this.activatorNode[0].componentInstance;
+
+        if (vm && vm.$options.mixins && //                         Activatable is indirectly used via Menuable
+        vm.$options.mixins.some(m => m.options && ['activatable', 'menuable'].includes(m.options.name))) {
+          // Activator is actually another activatible component, use its activator (#8846)
+          activator = vm.getActivator();
+        } else {
+          activator = this.activatorNode[0].elm;
+        }
+      } else if (e) {
+        // Activated by a click event
+        activator = e.currentTarget || e.target;
+      }
+
+      this.activatorElement = activator;
+      return this.activatorElement;
+    },
+
+    getContentSlot() {
+      return Object(_util_helpers__WEBPACK_IMPORTED_MODULE_3__["getSlot"])(this, 'default', this.getValueProxy(), true);
+    },
+
+    getValueProxy() {
+      const self = this;
+      return {
+        get value() {
+          return self.isActive;
+        },
+
+        set value(isActive) {
+          self.isActive = isActive;
+        }
+
+      };
+    },
+
+    removeActivatorEvents() {
+      if (!this.activator || !this.activatorElement) return;
+      const keys = Object.keys(this.listeners);
+
+      for (const key of keys) {
+        this.activatorElement.removeEventListener(key, this.listeners[key]);
+      }
+
+      this.listeners = {};
+    },
+
+    resetActivator() {
+      this.removeActivatorEvents();
+      this.activatorElement = null;
+      this.getActivator();
+      this.addActivatorEvents();
+    }
+
+  }
+}));
+//# sourceMappingURL=index.js.map
+
+/***/ }),
+
 /***/ "./node_modules/vuetify/lib/mixins/applicationable/index.js":
 /*!******************************************************************!*\
   !*** ./node_modules/vuetify/lib/mixins/applicationable/index.js ***!
@@ -102960,6 +106332,71 @@ function isCssColor(color) {
 
 /***/ }),
 
+/***/ "./node_modules/vuetify/lib/mixins/delayable/index.js":
+/*!************************************************************!*\
+  !*** ./node_modules/vuetify/lib/mixins/delayable/index.js ***!
+  \************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.common.js");
+/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(vue__WEBPACK_IMPORTED_MODULE_0__);
+
+/**
+ * Delayable
+ *
+ * @mixin
+ *
+ * Changes the open or close delay time for elements
+ */
+
+/* harmony default export */ __webpack_exports__["default"] = (vue__WEBPACK_IMPORTED_MODULE_0___default.a.extend().extend({
+  name: 'delayable',
+  props: {
+    openDelay: {
+      type: [Number, String],
+      default: 0
+    },
+    closeDelay: {
+      type: [Number, String],
+      default: 0
+    }
+  },
+  data: () => ({
+    openTimeout: undefined,
+    closeTimeout: undefined
+  }),
+  methods: {
+    /**
+     * Clear any pending delay timers from executing
+     */
+    clearDelay() {
+      clearTimeout(this.openTimeout);
+      clearTimeout(this.closeTimeout);
+    },
+
+    /**
+     * Runs callback after a specified delay
+     */
+    runDelay(type, cb) {
+      this.clearDelay();
+      const delay = parseInt(this[`${type}Delay`], 10);
+      this[`${type}Timeout`] = setTimeout(cb || (() => {
+        this.isActive = {
+          open: true,
+          close: false
+        }[type];
+      }), delay);
+    }
+
+  }
+}));
+//# sourceMappingURL=index.js.map
+
+/***/ }),
+
 /***/ "./node_modules/vuetify/lib/mixins/dependent/index.js":
 /*!************************************************************!*\
   !*** ./node_modules/vuetify/lib/mixins/dependent/index.js ***!
@@ -103035,6 +106472,145 @@ function searchChildren(children) {
       if (this.overlay) result.push(this.overlay.$el);
       result.push(...this.getOpenDependentElements());
       return result;
+    }
+
+  }
+}));
+//# sourceMappingURL=index.js.map
+
+/***/ }),
+
+/***/ "./node_modules/vuetify/lib/mixins/detachable/index.js":
+/*!*************************************************************!*\
+  !*** ./node_modules/vuetify/lib/mixins/detachable/index.js ***!
+  \*************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _bootable__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../bootable */ "./node_modules/vuetify/lib/mixins/bootable/index.js");
+/* harmony import */ var _util_helpers__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../util/helpers */ "./node_modules/vuetify/lib/util/helpers.js");
+/* harmony import */ var _util_mixins__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../util/mixins */ "./node_modules/vuetify/lib/util/mixins.js");
+/* harmony import */ var _util_console__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../util/console */ "./node_modules/vuetify/lib/util/console.js");
+// Mixins
+ // Utilities
+
+
+
+
+
+function validateAttachTarget(val) {
+  const type = typeof val;
+  if (type === 'boolean' || type === 'string') return true;
+  return val.nodeType === Node.ELEMENT_NODE;
+}
+/* @vue/component */
+
+
+/* harmony default export */ __webpack_exports__["default"] = (Object(_util_mixins__WEBPACK_IMPORTED_MODULE_2__["default"])(_bootable__WEBPACK_IMPORTED_MODULE_0__["default"]).extend({
+  name: 'detachable',
+  props: {
+    attach: {
+      default: false,
+      validator: validateAttachTarget
+    },
+    contentClass: {
+      type: String,
+      default: ''
+    }
+  },
+  data: () => ({
+    activatorNode: null,
+    hasDetached: false
+  }),
+  watch: {
+    attach() {
+      this.hasDetached = false;
+      this.initDetach();
+    },
+
+    hasContent() {
+      this.$nextTick(this.initDetach);
+    }
+
+  },
+
+  beforeMount() {
+    this.$nextTick(() => {
+      if (this.activatorNode) {
+        const activator = Array.isArray(this.activatorNode) ? this.activatorNode : [this.activatorNode];
+        activator.forEach(node => {
+          if (!node.elm) return;
+          if (!this.$el.parentNode) return;
+          const target = this.$el === this.$el.parentNode.firstChild ? this.$el : this.$el.nextSibling;
+          this.$el.parentNode.insertBefore(node.elm, target);
+        });
+      }
+    });
+  },
+
+  mounted() {
+    this.hasContent && this.initDetach();
+  },
+
+  deactivated() {
+    this.isActive = false;
+  },
+
+  beforeDestroy() {
+    // IE11 Fix
+    try {
+      if (this.$refs.content && this.$refs.content.parentNode) {
+        this.$refs.content.parentNode.removeChild(this.$refs.content);
+      }
+
+      if (this.activatorNode) {
+        const activator = Array.isArray(this.activatorNode) ? this.activatorNode : [this.activatorNode];
+        activator.forEach(node => {
+          node.elm && node.elm.parentNode && node.elm.parentNode.removeChild(node.elm);
+        });
+      }
+    } catch (e) {
+      console.log(e);
+    }
+  },
+
+  methods: {
+    getScopeIdAttrs() {
+      const scopeId = Object(_util_helpers__WEBPACK_IMPORTED_MODULE_1__["getObjectValueByPath"])(this.$vnode, 'context.$options._scopeId');
+      return scopeId && {
+        [scopeId]: ''
+      };
+    },
+
+    initDetach() {
+      if (this._isDestroyed || !this.$refs.content || this.hasDetached || // Leave menu in place if attached
+      // and dev has not changed target
+      this.attach === '' || // If used as a boolean prop (<v-menu attach>)
+      this.attach === true || // If bound to a boolean (<v-menu :attach="true">)
+      this.attach === 'attach' // If bound as boolean prop in pug (v-menu(attach))
+      ) return;
+      let target;
+
+      if (this.attach === false) {
+        // Default, detach to app
+        target = document.querySelector('[data-app]');
+      } else if (typeof this.attach === 'string') {
+        // CSS selector
+        target = document.querySelector(this.attach);
+      } else {
+        // DOM Element
+        target = this.attach;
+      }
+
+      if (!target) {
+        Object(_util_console__WEBPACK_IMPORTED_MODULE_3__["consoleWarn"])(`Unable to locate target ${this.attach || '[data-app]'}`, this);
+        return;
+      }
+
+      target.appendChild(this.$refs.content);
+      this.hasDetached = true;
     }
 
   }
@@ -103275,6 +106851,34 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./node_modules/vuetify/lib/mixins/localable/index.js":
+/*!************************************************************!*\
+  !*** ./node_modules/vuetify/lib/mixins/localable/index.js ***!
+  \************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.common.js");
+/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(vue__WEBPACK_IMPORTED_MODULE_0__);
+
+/* harmony default export */ __webpack_exports__["default"] = (vue__WEBPACK_IMPORTED_MODULE_0___default.a.extend({
+  name: 'localable',
+  props: {
+    locale: String
+  },
+  computed: {
+    currentLocale() {
+      return this.locale || this.$vuetify.lang.current;
+    }
+
+  }
+}));
+//# sourceMappingURL=index.js.map
+
+/***/ }),
+
 /***/ "./node_modules/vuetify/lib/mixins/measurable/index.js":
 /*!*************************************************************!*\
   !*** ./node_modules/vuetify/lib/mixins/measurable/index.js ***!
@@ -103317,6 +106921,381 @@ __webpack_require__.r(__webpack_exports__);
       if (maxWidth) styles.maxWidth = maxWidth;
       if (width) styles.width = width;
       return styles;
+    }
+
+  }
+}));
+//# sourceMappingURL=index.js.map
+
+/***/ }),
+
+/***/ "./node_modules/vuetify/lib/mixins/menuable/index.js":
+/*!***********************************************************!*\
+  !*** ./node_modules/vuetify/lib/mixins/menuable/index.js ***!
+  \***********************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _positionable__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../positionable */ "./node_modules/vuetify/lib/mixins/positionable/index.js");
+/* harmony import */ var _stackable__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../stackable */ "./node_modules/vuetify/lib/mixins/stackable/index.js");
+/* harmony import */ var _activatable__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../activatable */ "./node_modules/vuetify/lib/mixins/activatable/index.js");
+/* harmony import */ var _util_mixins__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../util/mixins */ "./node_modules/vuetify/lib/util/mixins.js");
+/* harmony import */ var _util_helpers__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../util/helpers */ "./node_modules/vuetify/lib/util/helpers.js");
+// Mixins
+
+
+ // Utilities
+
+
+ // Types
+
+const baseMixins = Object(_util_mixins__WEBPACK_IMPORTED_MODULE_3__["default"])(_stackable__WEBPACK_IMPORTED_MODULE_1__["default"], _positionable__WEBPACK_IMPORTED_MODULE_0__["default"], _activatable__WEBPACK_IMPORTED_MODULE_2__["default"]);
+/* @vue/component */
+
+/* harmony default export */ __webpack_exports__["default"] = (baseMixins.extend().extend({
+  name: 'menuable',
+  props: {
+    allowOverflow: Boolean,
+    light: Boolean,
+    dark: Boolean,
+    maxWidth: {
+      type: [Number, String],
+      default: 'auto'
+    },
+    minWidth: [Number, String],
+    nudgeBottom: {
+      type: [Number, String],
+      default: 0
+    },
+    nudgeLeft: {
+      type: [Number, String],
+      default: 0
+    },
+    nudgeRight: {
+      type: [Number, String],
+      default: 0
+    },
+    nudgeTop: {
+      type: [Number, String],
+      default: 0
+    },
+    nudgeWidth: {
+      type: [Number, String],
+      default: 0
+    },
+    offsetOverflow: Boolean,
+    openOnClick: Boolean,
+    positionX: {
+      type: Number,
+      default: null
+    },
+    positionY: {
+      type: Number,
+      default: null
+    },
+    zIndex: {
+      type: [Number, String],
+      default: null
+    }
+  },
+  data: () => ({
+    absoluteX: 0,
+    absoluteY: 0,
+    activatedBy: null,
+    activatorFixed: false,
+    dimensions: {
+      activator: {
+        top: 0,
+        left: 0,
+        bottom: 0,
+        right: 0,
+        width: 0,
+        height: 0,
+        offsetTop: 0,
+        scrollHeight: 0,
+        offsetLeft: 0
+      },
+      content: {
+        top: 0,
+        left: 0,
+        bottom: 0,
+        right: 0,
+        width: 0,
+        height: 0,
+        offsetTop: 0,
+        scrollHeight: 0
+      }
+    },
+    hasJustFocused: false,
+    hasWindow: false,
+    inputActivator: false,
+    isContentActive: false,
+    pageWidth: 0,
+    pageYOffset: 0,
+    stackClass: 'v-menu__content--active',
+    stackMinZIndex: 6
+  }),
+  computed: {
+    computedLeft() {
+      const a = this.dimensions.activator;
+      const c = this.dimensions.content;
+      const activatorLeft = (this.attach !== false ? a.offsetLeft : a.left) || 0;
+      const minWidth = Math.max(a.width, c.width);
+      let left = 0;
+      left += this.left ? activatorLeft - (minWidth - a.width) : activatorLeft;
+
+      if (this.offsetX) {
+        const maxWidth = isNaN(Number(this.maxWidth)) ? a.width : Math.min(a.width, Number(this.maxWidth));
+        left += this.left ? -maxWidth : a.width;
+      }
+
+      if (this.nudgeLeft) left -= parseInt(this.nudgeLeft);
+      if (this.nudgeRight) left += parseInt(this.nudgeRight);
+      return left;
+    },
+
+    computedTop() {
+      const a = this.dimensions.activator;
+      const c = this.dimensions.content;
+      let top = 0;
+      if (this.top) top += a.height - c.height;
+      if (this.attach !== false) top += a.offsetTop;else top += a.top + this.pageYOffset;
+      if (this.offsetY) top += this.top ? -a.height : a.height;
+      if (this.nudgeTop) top -= parseInt(this.nudgeTop);
+      if (this.nudgeBottom) top += parseInt(this.nudgeBottom);
+      return top;
+    },
+
+    hasActivator() {
+      return !!this.$slots.activator || !!this.$scopedSlots.activator || !!this.activator || !!this.inputActivator;
+    }
+
+  },
+  watch: {
+    disabled(val) {
+      val && this.callDeactivate();
+    },
+
+    isActive(val) {
+      if (this.disabled) return;
+      val ? this.callActivate() : this.callDeactivate();
+    },
+
+    positionX: 'updateDimensions',
+    positionY: 'updateDimensions'
+  },
+
+  beforeMount() {
+    this.hasWindow = typeof window !== 'undefined';
+  },
+
+  methods: {
+    absolutePosition() {
+      return {
+        offsetTop: 0,
+        offsetLeft: 0,
+        scrollHeight: 0,
+        top: this.positionY || this.absoluteY,
+        bottom: this.positionY || this.absoluteY,
+        left: this.positionX || this.absoluteX,
+        right: this.positionX || this.absoluteX,
+        height: 0,
+        width: 0
+      };
+    },
+
+    activate() {},
+
+    calcLeft(menuWidth) {
+      return Object(_util_helpers__WEBPACK_IMPORTED_MODULE_4__["convertToUnit"])(this.attach !== false ? this.computedLeft : this.calcXOverflow(this.computedLeft, menuWidth));
+    },
+
+    calcTop() {
+      return Object(_util_helpers__WEBPACK_IMPORTED_MODULE_4__["convertToUnit"])(this.attach !== false ? this.computedTop : this.calcYOverflow(this.computedTop));
+    },
+
+    calcXOverflow(left, menuWidth) {
+      const xOverflow = left + menuWidth - this.pageWidth + 12;
+
+      if ((!this.left || this.right) && xOverflow > 0) {
+        left = Math.max(left - xOverflow, 0);
+      } else {
+        left = Math.max(left, 12);
+      }
+
+      return left + this.getOffsetLeft();
+    },
+
+    calcYOverflow(top) {
+      const documentHeight = this.getInnerHeight();
+      const toTop = this.pageYOffset + documentHeight;
+      const activator = this.dimensions.activator;
+      const contentHeight = this.dimensions.content.height;
+      const totalHeight = top + contentHeight;
+      const isOverflowing = toTop < totalHeight; // If overflowing bottom and offset
+      // TODO: set 'bottom' position instead of 'top'
+
+      if (isOverflowing && this.offsetOverflow && // If we don't have enough room to offset
+      // the overflow, don't offset
+      activator.top > contentHeight) {
+        top = this.pageYOffset + (activator.top - contentHeight); // If overflowing bottom
+      } else if (isOverflowing && !this.allowOverflow) {
+        top = toTop - contentHeight - 12; // If overflowing top
+      } else if (top < this.pageYOffset && !this.allowOverflow) {
+        top = this.pageYOffset + 12;
+      }
+
+      return top < 12 ? 12 : top;
+    },
+
+    callActivate() {
+      if (!this.hasWindow) return;
+      this.activate();
+    },
+
+    callDeactivate() {
+      this.isContentActive = false;
+      this.deactivate();
+    },
+
+    checkForPageYOffset() {
+      if (this.hasWindow) {
+        this.pageYOffset = this.activatorFixed ? 0 : this.getOffsetTop();
+      }
+    },
+
+    checkActivatorFixed() {
+      if (this.attach !== false) return;
+      let el = this.getActivator();
+
+      while (el) {
+        if (window.getComputedStyle(el).position === 'fixed') {
+          this.activatorFixed = true;
+          return;
+        }
+
+        el = el.offsetParent;
+      }
+
+      this.activatorFixed = false;
+    },
+
+    deactivate() {},
+
+    genActivatorListeners() {
+      const listeners = _activatable__WEBPACK_IMPORTED_MODULE_2__["default"].options.methods.genActivatorListeners.call(this);
+      const onClick = listeners.click;
+
+      listeners.click = e => {
+        if (this.openOnClick) {
+          onClick && onClick(e);
+        }
+
+        this.absoluteX = e.clientX;
+        this.absoluteY = e.clientY;
+      };
+
+      return listeners;
+    },
+
+    getInnerHeight() {
+      if (!this.hasWindow) return 0;
+      return window.innerHeight || document.documentElement.clientHeight;
+    },
+
+    getOffsetLeft() {
+      if (!this.hasWindow) return 0;
+      return window.pageXOffset || document.documentElement.scrollLeft;
+    },
+
+    getOffsetTop() {
+      if (!this.hasWindow) return 0;
+      return window.pageYOffset || document.documentElement.scrollTop;
+    },
+
+    getRoundedBoundedClientRect(el) {
+      const rect = el.getBoundingClientRect();
+      return {
+        top: Math.round(rect.top),
+        left: Math.round(rect.left),
+        bottom: Math.round(rect.bottom),
+        right: Math.round(rect.right),
+        width: Math.round(rect.width),
+        height: Math.round(rect.height)
+      };
+    },
+
+    measure(el) {
+      if (!el || !this.hasWindow) return null;
+      const rect = this.getRoundedBoundedClientRect(el); // Account for activator margin
+
+      if (this.attach !== false) {
+        const style = window.getComputedStyle(el);
+        rect.left = parseInt(style.marginLeft);
+        rect.top = parseInt(style.marginTop);
+      }
+
+      return rect;
+    },
+
+    sneakPeek(cb) {
+      requestAnimationFrame(() => {
+        const el = this.$refs.content;
+
+        if (!el || el.style.display !== 'none') {
+          cb();
+          return;
+        }
+
+        el.style.display = 'inline-block';
+        cb();
+        el.style.display = 'none';
+      });
+    },
+
+    startTransition() {
+      return new Promise(resolve => requestAnimationFrame(() => {
+        this.isContentActive = this.hasJustFocused = this.isActive;
+        resolve();
+      }));
+    },
+
+    updateDimensions() {
+      this.hasWindow = typeof window !== 'undefined';
+      this.checkActivatorFixed();
+      this.checkForPageYOffset();
+      this.pageWidth = document.documentElement.clientWidth;
+      const dimensions = {
+        activator: { ...this.dimensions.activator
+        },
+        content: { ...this.dimensions.content
+        }
+      }; // Activator should already be shown
+
+      if (!this.hasActivator || this.absolute) {
+        dimensions.activator = this.absolutePosition();
+      } else {
+        const activator = this.getActivator();
+        if (!activator) return;
+        dimensions.activator = this.measure(activator);
+        dimensions.activator.offsetLeft = activator.offsetLeft;
+
+        if (this.attach !== false) {
+          // account for css padding causing things to not line up
+          // this is mostly for v-autocomplete, hopefully it won't break anything
+          dimensions.activator.offsetTop = activator.offsetTop;
+        } else {
+          dimensions.activator.offsetTop = 0;
+        }
+      } // Display and hide to get dimensions
+
+
+      this.sneakPeek(() => {
+        this.$refs.content && (dimensions.content = this.measure(this.$refs.content));
+        this.dimensions = dimensions;
+      });
     }
 
   }
@@ -103534,6 +107513,136 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./node_modules/vuetify/lib/mixins/picker-button/index.js":
+/*!****************************************************************!*\
+  !*** ./node_modules/vuetify/lib/mixins/picker-button/index.js ***!
+  \****************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _colorable__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../colorable */ "./node_modules/vuetify/lib/mixins/colorable/index.js");
+/* harmony import */ var _util_mixins__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../util/mixins */ "./node_modules/vuetify/lib/util/mixins.js");
+/* harmony import */ var _util_helpers__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../util/helpers */ "./node_modules/vuetify/lib/util/helpers.js");
+// Mixins
+ // Utilities
+
+
+
+/* @vue/component */
+
+/* harmony default export */ __webpack_exports__["default"] = (Object(_util_mixins__WEBPACK_IMPORTED_MODULE_1__["default"])(_colorable__WEBPACK_IMPORTED_MODULE_0__["default"]).extend({
+  methods: {
+    genPickerButton(prop, value, content, readonly = false, staticClass = '') {
+      const active = this[prop] === value;
+
+      const click = event => {
+        event.stopPropagation();
+        this.$emit(`update:${Object(_util_helpers__WEBPACK_IMPORTED_MODULE_2__["kebabCase"])(prop)}`, value);
+      };
+
+      return this.$createElement('div', {
+        staticClass: `v-picker__title__btn ${staticClass}`.trim(),
+        class: {
+          'v-picker__title__btn--active': active,
+          'v-picker__title__btn--readonly': readonly
+        },
+        on: active || readonly ? undefined : {
+          click
+        }
+      }, Array.isArray(content) ? content : [content]);
+    }
+
+  }
+}));
+//# sourceMappingURL=index.js.map
+
+/***/ }),
+
+/***/ "./node_modules/vuetify/lib/mixins/picker/index.js":
+/*!*********************************************************!*\
+  !*** ./node_modules/vuetify/lib/mixins/picker/index.js ***!
+  \*********************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _components_VPicker__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../components/VPicker */ "./node_modules/vuetify/lib/components/VPicker/index.js");
+/* harmony import */ var _colorable__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../colorable */ "./node_modules/vuetify/lib/mixins/colorable/index.js");
+/* harmony import */ var _themeable__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../themeable */ "./node_modules/vuetify/lib/mixins/themeable/index.js");
+/* harmony import */ var _util_mixins__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../util/mixins */ "./node_modules/vuetify/lib/util/mixins.js");
+// Components
+ // Mixins
+
+
+ // Utils
+
+
+/* harmony default export */ __webpack_exports__["default"] = (Object(_util_mixins__WEBPACK_IMPORTED_MODULE_3__["default"])(_colorable__WEBPACK_IMPORTED_MODULE_1__["default"], _themeable__WEBPACK_IMPORTED_MODULE_2__["default"]
+/* @vue/component */
+).extend({
+  name: 'picker',
+  props: {
+    fullWidth: Boolean,
+    headerColor: String,
+    landscape: Boolean,
+    noTitle: Boolean,
+    width: {
+      type: [Number, String],
+      default: 290
+    }
+  },
+  methods: {
+    genPickerTitle() {
+      return null;
+    },
+
+    genPickerBody() {
+      return null;
+    },
+
+    genPickerActionsSlot() {
+      return this.$scopedSlots.default ? this.$scopedSlots.default({
+        save: this.save,
+        cancel: this.cancel
+      }) : this.$slots.default;
+    },
+
+    genPicker(staticClass) {
+      const children = [];
+
+      if (!this.noTitle) {
+        const title = this.genPickerTitle();
+        title && children.push(title);
+      }
+
+      const body = this.genPickerBody();
+      body && children.push(body);
+      children.push(this.$createElement('template', {
+        slot: 'actions'
+      }, [this.genPickerActionsSlot()]));
+      return this.$createElement(_components_VPicker__WEBPACK_IMPORTED_MODULE_0__["default"], {
+        staticClass,
+        props: {
+          color: this.headerColor || this.color,
+          dark: this.dark,
+          fullWidth: this.fullWidth,
+          landscape: this.landscape,
+          light: this.light,
+          width: this.width,
+          noTitle: this.noTitle
+        }
+      }, children);
+    }
+
+  }
+}));
+//# sourceMappingURL=index.js.map
+
+/***/ }),
+
 /***/ "./node_modules/vuetify/lib/mixins/positionable/index.js":
 /*!***************************************************************!*\
   !*** ./node_modules/vuetify/lib/mixins/positionable/index.js ***!
@@ -103711,6 +107820,53 @@ function provide(namespace, self = false) {
 
   });
 }
+//# sourceMappingURL=index.js.map
+
+/***/ }),
+
+/***/ "./node_modules/vuetify/lib/mixins/returnable/index.js":
+/*!*************************************************************!*\
+  !*** ./node_modules/vuetify/lib/mixins/returnable/index.js ***!
+  \*************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.common.js");
+/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(vue__WEBPACK_IMPORTED_MODULE_0__);
+
+/* @vue/component */
+
+/* harmony default export */ __webpack_exports__["default"] = (vue__WEBPACK_IMPORTED_MODULE_0___default.a.extend({
+  name: 'returnable',
+  props: {
+    returnValue: null
+  },
+  data: () => ({
+    isActive: false,
+    originalValue: null
+  }),
+  watch: {
+    isActive(val) {
+      if (val) {
+        this.originalValue = this.returnValue;
+      } else {
+        this.$emit('update:return-value', this.originalValue);
+      }
+    }
+
+  },
+  methods: {
+    save(value) {
+      this.originalValue = value;
+      setTimeout(() => {
+        this.isActive = false;
+      });
+    }
+
+  }
+}));
 //# sourceMappingURL=index.js.map
 
 /***/ }),
@@ -104061,6 +108217,73 @@ __webpack_require__.r(__webpack_exports__);
     });
   }
 
+}));
+//# sourceMappingURL=index.js.map
+
+/***/ }),
+
+/***/ "./node_modules/vuetify/lib/mixins/stackable/index.js":
+/*!************************************************************!*\
+  !*** ./node_modules/vuetify/lib/mixins/stackable/index.js ***!
+  \************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.common.js");
+/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(vue__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _util_helpers__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../util/helpers */ "./node_modules/vuetify/lib/util/helpers.js");
+
+
+/* @vue/component */
+
+/* harmony default export */ __webpack_exports__["default"] = (vue__WEBPACK_IMPORTED_MODULE_0___default.a.extend().extend({
+  name: 'stackable',
+
+  data() {
+    return {
+      stackElement: null,
+      stackExclude: null,
+      stackMinZIndex: 0,
+      isActive: false
+    };
+  },
+
+  computed: {
+    activeZIndex() {
+      if (typeof window === 'undefined') return 0;
+      const content = this.stackElement || this.$refs.content; // Return current zindex if not active
+
+      const index = !this.isActive ? Object(_util_helpers__WEBPACK_IMPORTED_MODULE_1__["getZIndex"])(content) : this.getMaxZIndex(this.stackExclude || [content]) + 2;
+      if (index == null) return index; // Return max current z-index (excluding self) + 2
+      // (2 to leave room for an overlay below, if needed)
+
+      return parseInt(index);
+    }
+
+  },
+  methods: {
+    getMaxZIndex(exclude = []) {
+      const base = this.$el; // Start with lowest allowed z-index or z-index of
+      // base component's element, whichever is greater
+
+      const zis = [this.stackMinZIndex, Object(_util_helpers__WEBPACK_IMPORTED_MODULE_1__["getZIndex"])(base)]; // Convert the NodeList to an array to
+      // prevent an Edge bug with Symbol.iterator
+      // https://github.com/vuetifyjs/vuetify/issues/2146
+
+      const activeElements = [...document.getElementsByClassName('v-menu__content--active'), ...document.getElementsByClassName('v-dialog__content--active')]; // Get z-index for all active dialogs
+
+      for (let index = 0; index < activeElements.length; index++) {
+        if (!exclude.includes(activeElements[index])) {
+          zis.push(Object(_util_helpers__WEBPACK_IMPORTED_MODULE_1__["getZIndex"])(activeElements[index]));
+        }
+      }
+
+      return Math.max(...zis);
+    }
+
+  }
 }));
 //# sourceMappingURL=index.js.map
 
@@ -105374,6 +109597,36 @@ if(false) {}
 
 /***/ }),
 
+/***/ "./node_modules/vuetify/src/components/VCard/VCard.sass":
+/*!**************************************************************!*\
+  !*** ./node_modules/vuetify/src/components/VCard/VCard.sass ***!
+  \**************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+
+var content = __webpack_require__(/*! !../../../../css-loader!../../../../postcss-loader/src??ref--8-2!../../../../sass-loader/dist/cjs.js??ref--8-3!./VCard.sass */ "./node_modules/css-loader/index.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/vuetify/src/components/VCard/VCard.sass");
+
+if(typeof content === 'string') content = [[module.i, content, '']];
+
+var transform;
+var insertInto;
+
+
+
+var options = {"hmr":true}
+
+options.transform = transform
+options.insertInto = undefined;
+
+var update = __webpack_require__(/*! ../../../../style-loader/lib/addStyles.js */ "./node_modules/style-loader/lib/addStyles.js")(content, options);
+
+if(content.locals) module.exports = content.locals;
+
+if(false) {}
+
+/***/ }),
+
 /***/ "./node_modules/vuetify/src/components/VContent/VContent.sass":
 /*!********************************************************************!*\
   !*** ./node_modules/vuetify/src/components/VContent/VContent.sass ***!
@@ -105413,6 +109666,126 @@ if(false) {}
 
 
 var content = __webpack_require__(/*! !../../../../css-loader!../../../../postcss-loader/src??ref--8-2!../../../../sass-loader/dist/cjs.js??ref--8-3!./VCounter.sass */ "./node_modules/css-loader/index.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/vuetify/src/components/VCounter/VCounter.sass");
+
+if(typeof content === 'string') content = [[module.i, content, '']];
+
+var transform;
+var insertInto;
+
+
+
+var options = {"hmr":true}
+
+options.transform = transform
+options.insertInto = undefined;
+
+var update = __webpack_require__(/*! ../../../../style-loader/lib/addStyles.js */ "./node_modules/style-loader/lib/addStyles.js")(content, options);
+
+if(content.locals) module.exports = content.locals;
+
+if(false) {}
+
+/***/ }),
+
+/***/ "./node_modules/vuetify/src/components/VDatePicker/VDatePickerHeader.sass":
+/*!********************************************************************************!*\
+  !*** ./node_modules/vuetify/src/components/VDatePicker/VDatePickerHeader.sass ***!
+  \********************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+
+var content = __webpack_require__(/*! !../../../../css-loader!../../../../postcss-loader/src??ref--8-2!../../../../sass-loader/dist/cjs.js??ref--8-3!./VDatePickerHeader.sass */ "./node_modules/css-loader/index.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/vuetify/src/components/VDatePicker/VDatePickerHeader.sass");
+
+if(typeof content === 'string') content = [[module.i, content, '']];
+
+var transform;
+var insertInto;
+
+
+
+var options = {"hmr":true}
+
+options.transform = transform
+options.insertInto = undefined;
+
+var update = __webpack_require__(/*! ../../../../style-loader/lib/addStyles.js */ "./node_modules/style-loader/lib/addStyles.js")(content, options);
+
+if(content.locals) module.exports = content.locals;
+
+if(false) {}
+
+/***/ }),
+
+/***/ "./node_modules/vuetify/src/components/VDatePicker/VDatePickerTable.sass":
+/*!*******************************************************************************!*\
+  !*** ./node_modules/vuetify/src/components/VDatePicker/VDatePickerTable.sass ***!
+  \*******************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+
+var content = __webpack_require__(/*! !../../../../css-loader!../../../../postcss-loader/src??ref--8-2!../../../../sass-loader/dist/cjs.js??ref--8-3!./VDatePickerTable.sass */ "./node_modules/css-loader/index.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/vuetify/src/components/VDatePicker/VDatePickerTable.sass");
+
+if(typeof content === 'string') content = [[module.i, content, '']];
+
+var transform;
+var insertInto;
+
+
+
+var options = {"hmr":true}
+
+options.transform = transform
+options.insertInto = undefined;
+
+var update = __webpack_require__(/*! ../../../../style-loader/lib/addStyles.js */ "./node_modules/style-loader/lib/addStyles.js")(content, options);
+
+if(content.locals) module.exports = content.locals;
+
+if(false) {}
+
+/***/ }),
+
+/***/ "./node_modules/vuetify/src/components/VDatePicker/VDatePickerTitle.sass":
+/*!*******************************************************************************!*\
+  !*** ./node_modules/vuetify/src/components/VDatePicker/VDatePickerTitle.sass ***!
+  \*******************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+
+var content = __webpack_require__(/*! !../../../../css-loader!../../../../postcss-loader/src??ref--8-2!../../../../sass-loader/dist/cjs.js??ref--8-3!./VDatePickerTitle.sass */ "./node_modules/css-loader/index.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/vuetify/src/components/VDatePicker/VDatePickerTitle.sass");
+
+if(typeof content === 'string') content = [[module.i, content, '']];
+
+var transform;
+var insertInto;
+
+
+
+var options = {"hmr":true}
+
+options.transform = transform
+options.insertInto = undefined;
+
+var update = __webpack_require__(/*! ../../../../style-loader/lib/addStyles.js */ "./node_modules/style-loader/lib/addStyles.js")(content, options);
+
+if(content.locals) module.exports = content.locals;
+
+if(false) {}
+
+/***/ }),
+
+/***/ "./node_modules/vuetify/src/components/VDatePicker/VDatePickerYears.sass":
+/*!*******************************************************************************!*\
+  !*** ./node_modules/vuetify/src/components/VDatePicker/VDatePickerYears.sass ***!
+  \*******************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+
+var content = __webpack_require__(/*! !../../../../css-loader!../../../../postcss-loader/src??ref--8-2!../../../../sass-loader/dist/cjs.js??ref--8-3!./VDatePickerYears.sass */ "./node_modules/css-loader/index.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/vuetify/src/components/VDatePicker/VDatePickerYears.sass");
 
 if(typeof content === 'string') content = [[module.i, content, '']];
 
@@ -105794,6 +110167,36 @@ if(false) {}
 
 /***/ }),
 
+/***/ "./node_modules/vuetify/src/components/VMenu/VMenu.sass":
+/*!**************************************************************!*\
+  !*** ./node_modules/vuetify/src/components/VMenu/VMenu.sass ***!
+  \**************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+
+var content = __webpack_require__(/*! !../../../../css-loader!../../../../postcss-loader/src??ref--8-2!../../../../sass-loader/dist/cjs.js??ref--8-3!./VMenu.sass */ "./node_modules/css-loader/index.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/vuetify/src/components/VMenu/VMenu.sass");
+
+if(typeof content === 'string') content = [[module.i, content, '']];
+
+var transform;
+var insertInto;
+
+
+
+var options = {"hmr":true}
+
+options.transform = transform
+options.insertInto = undefined;
+
+var update = __webpack_require__(/*! ../../../../style-loader/lib/addStyles.js */ "./node_modules/style-loader/lib/addStyles.js")(content, options);
+
+if(content.locals) module.exports = content.locals;
+
+if(false) {}
+
+/***/ }),
+
 /***/ "./node_modules/vuetify/src/components/VMessages/VMessages.sass":
 /*!**********************************************************************!*\
   !*** ./node_modules/vuetify/src/components/VMessages/VMessages.sass ***!
@@ -105863,6 +110266,36 @@ if(false) {}
 
 
 var content = __webpack_require__(/*! !../../../../css-loader!../../../../postcss-loader/src??ref--8-2!../../../../sass-loader/dist/cjs.js??ref--8-3!./VOverlay.sass */ "./node_modules/css-loader/index.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/vuetify/src/components/VOverlay/VOverlay.sass");
+
+if(typeof content === 'string') content = [[module.i, content, '']];
+
+var transform;
+var insertInto;
+
+
+
+var options = {"hmr":true}
+
+options.transform = transform
+options.insertInto = undefined;
+
+var update = __webpack_require__(/*! ../../../../style-loader/lib/addStyles.js */ "./node_modules/style-loader/lib/addStyles.js")(content, options);
+
+if(content.locals) module.exports = content.locals;
+
+if(false) {}
+
+/***/ }),
+
+/***/ "./node_modules/vuetify/src/components/VPicker/VPicker.sass":
+/*!******************************************************************!*\
+  !*** ./node_modules/vuetify/src/components/VPicker/VPicker.sass ***!
+  \******************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+
+var content = __webpack_require__(/*! !../../../../css-loader!../../../../postcss-loader/src??ref--8-2!../../../../sass-loader/dist/cjs.js??ref--8-3!./VPicker.sass */ "./node_modules/css-loader/index.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/vuetify/src/components/VPicker/VPicker.sass");
 
 if(typeof content === 'string') content = [[module.i, content, '']];
 
@@ -107422,8 +111855,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _node_modules_vuetify_loader_lib_runtime_installComponents_js__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_node_modules_vuetify_loader_lib_runtime_installComponents_js__WEBPACK_IMPORTED_MODULE_4__);
 /* harmony import */ var vuetify_lib_components_VBtn__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! vuetify/lib/components/VBtn */ "./node_modules/vuetify/lib/components/VBtn/index.js");
 /* harmony import */ var vuetify_lib_components_VGrid__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! vuetify/lib/components/VGrid */ "./node_modules/vuetify/lib/components/VGrid/index.js");
-/* harmony import */ var vuetify_lib_components_VImg__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! vuetify/lib/components/VImg */ "./node_modules/vuetify/lib/components/VImg/index.js");
-/* harmony import */ var vuetify_lib_components_VTextField__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! vuetify/lib/components/VTextField */ "./node_modules/vuetify/lib/components/VTextField/index.js");
+/* harmony import */ var vuetify_lib_components_VForm__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! vuetify/lib/components/VForm */ "./node_modules/vuetify/lib/components/VForm/index.js");
+/* harmony import */ var vuetify_lib_components_VImg__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! vuetify/lib/components/VImg */ "./node_modules/vuetify/lib/components/VImg/index.js");
+/* harmony import */ var vuetify_lib_components_VTextField__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! vuetify/lib/components/VTextField */ "./node_modules/vuetify/lib/components/VTextField/index.js");
 
 
 
@@ -107451,7 +111885,8 @@ var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_
 
 
 
-_node_modules_vuetify_loader_lib_runtime_installComponents_js__WEBPACK_IMPORTED_MODULE_4___default()(component, {VBtn: vuetify_lib_components_VBtn__WEBPACK_IMPORTED_MODULE_5__["VBtn"],VCol: vuetify_lib_components_VGrid__WEBPACK_IMPORTED_MODULE_6__["VCol"],VContainer: vuetify_lib_components_VGrid__WEBPACK_IMPORTED_MODULE_6__["VContainer"],VImg: vuetify_lib_components_VImg__WEBPACK_IMPORTED_MODULE_7__["VImg"],VRow: vuetify_lib_components_VGrid__WEBPACK_IMPORTED_MODULE_6__["VRow"],VTextField: vuetify_lib_components_VTextField__WEBPACK_IMPORTED_MODULE_8__["VTextField"]})
+
+_node_modules_vuetify_loader_lib_runtime_installComponents_js__WEBPACK_IMPORTED_MODULE_4___default()(component, {VBtn: vuetify_lib_components_VBtn__WEBPACK_IMPORTED_MODULE_5__["VBtn"],VCol: vuetify_lib_components_VGrid__WEBPACK_IMPORTED_MODULE_6__["VCol"],VContainer: vuetify_lib_components_VGrid__WEBPACK_IMPORTED_MODULE_6__["VContainer"],VForm: vuetify_lib_components_VForm__WEBPACK_IMPORTED_MODULE_7__["VForm"],VImg: vuetify_lib_components_VImg__WEBPACK_IMPORTED_MODULE_8__["VImg"],VRow: vuetify_lib_components_VGrid__WEBPACK_IMPORTED_MODULE_6__["VRow"],VTextField: vuetify_lib_components_VTextField__WEBPACK_IMPORTED_MODULE_9__["VTextField"]})
 
 
 /* hot reload */
@@ -107795,6 +112230,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _CampaignsComponent_vue_vue_type_template_id_2c865be6_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./CampaignsComponent.vue?vue&type=template&id=2c865be6&scoped=true& */ "./resources/js/components/screens/CampaignsComponent.vue?vue&type=template&id=2c865be6&scoped=true&");
 /* harmony import */ var _CampaignsComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./CampaignsComponent.vue?vue&type=script&lang=js& */ "./resources/js/components/screens/CampaignsComponent.vue?vue&type=script&lang=js&");
 /* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+/* harmony import */ var _node_modules_vuetify_loader_lib_runtime_installComponents_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../../node_modules/vuetify-loader/lib/runtime/installComponents.js */ "./node_modules/vuetify-loader/lib/runtime/installComponents.js");
+/* harmony import */ var _node_modules_vuetify_loader_lib_runtime_installComponents_js__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_node_modules_vuetify_loader_lib_runtime_installComponents_js__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var vuetify_lib_components_VBtn__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! vuetify/lib/components/VBtn */ "./node_modules/vuetify/lib/components/VBtn/index.js");
+/* harmony import */ var vuetify_lib_components_VGrid__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! vuetify/lib/components/VGrid */ "./node_modules/vuetify/lib/components/VGrid/index.js");
+/* harmony import */ var vuetify_lib_components_VDatePicker__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! vuetify/lib/components/VDatePicker */ "./node_modules/vuetify/lib/components/VDatePicker/index.js");
+/* harmony import */ var vuetify_lib_components_VMenu__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! vuetify/lib/components/VMenu */ "./node_modules/vuetify/lib/components/VMenu/index.js");
+/* harmony import */ var vuetify_lib_components_VTextField__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! vuetify/lib/components/VTextField */ "./node_modules/vuetify/lib/components/VTextField/index.js");
 
 
 
@@ -107812,6 +112254,19 @@ var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_
   null
   
 )
+
+/* vuetify-loader */
+
+
+
+
+
+
+
+
+
+_node_modules_vuetify_loader_lib_runtime_installComponents_js__WEBPACK_IMPORTED_MODULE_3___default()(component, {VBtn: vuetify_lib_components_VBtn__WEBPACK_IMPORTED_MODULE_4__["VBtn"],VCol: vuetify_lib_components_VGrid__WEBPACK_IMPORTED_MODULE_5__["VCol"],VContainer: vuetify_lib_components_VGrid__WEBPACK_IMPORTED_MODULE_5__["VContainer"],VDatePicker: vuetify_lib_components_VDatePicker__WEBPACK_IMPORTED_MODULE_6__["VDatePicker"],VMenu: vuetify_lib_components_VMenu__WEBPACK_IMPORTED_MODULE_7__["VMenu"],VRow: vuetify_lib_components_VGrid__WEBPACK_IMPORTED_MODULE_5__["VRow"],VSpacer: vuetify_lib_components_VGrid__WEBPACK_IMPORTED_MODULE_5__["VSpacer"],VTextField: vuetify_lib_components_VTextField__WEBPACK_IMPORTED_MODULE_8__["VTextField"]})
+
 
 /* hot reload */
 if (false) { var api; }
