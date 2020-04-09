@@ -8,6 +8,7 @@ import Emails from '../components/screens/EmailsComponent';
 import Campaigns from "../components/screens/CampaignsComponent";
 import Templates from "../components/screens/TemplatesComponent";
 import LandingPages from "../components/screens/LandingPagesComponent";
+import UserProfile from "../components/screens/UserProfileComponent";
 
 Vue.use(VueRouter);
 
@@ -62,6 +63,14 @@ const routes = [
                 },
                 name: 'Landing Pages',
                 component: LandingPages
+            },
+            {
+                path: '/perfil',
+                meta: {
+                    auth: true
+                },
+                name: 'Perfil do usuário',
+                component: UserProfile
             }
         ]
     }

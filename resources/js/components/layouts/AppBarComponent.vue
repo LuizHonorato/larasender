@@ -30,6 +30,17 @@
             v-text="$route.name"
         />
 
+        <v-spacer />
+
+        <v-btn
+            class="ml-2"
+            min-width="0"
+            text
+            to="/perfil"
+        >
+            <v-icon>mdi-account-circle</v-icon>
+        </v-btn>
+
     </v-app-bar>
 </template>
 

@@ -23,5 +23,6 @@ Route::post('login', 'Auth\AuthController@login');
 Route::middleware('auth:sanctum')->group(function () {
     Route::apiResource('users', 'Api\UserController');
     Route::apiResource('contacts', 'Api\ContactController');
-    Route::apiResource('email', 'Api\EmailController');
+    Route::apiResource('emails', 'Api\EmailController');
+    Route::apiResource('campaigns', 'Api\CampaignController');
 });

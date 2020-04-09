@@ -5,10 +5,10 @@ namespace App\Models;
 use DateTimeInterface;
 use Illuminate\Database\Eloquent\Model;
 
-class Contact extends Model
+class Campaign extends Model
 {
     protected $fillable = [
-        'first_name', 'last_name', 'email', 'phone', 'profile_pic'
+        'name', 'start_at', 'finish_at'
     ];
 
     protected function serializeDate(DateTimeInterface $date)
