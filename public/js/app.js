@@ -2293,6 +2293,69 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
+
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(n); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+function _iterableToArrayLimit(arr, i) { if (typeof Symbol === "undefined" || !(Symbol.iterator in Object(arr))) return; var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -2358,12 +2421,29 @@ __webpack_require__.r(__webpack_exports__);
   name: "CampaignsComponent",
   data: function data() {
     return {
-      dates: ['2020-04-02', '2020-04-05']
+      startDate: new Date().toISOString().substr(0, 10),
+      finishDate: new Date().toISOString().substr(0, 10)
     };
   },
   computed: {
-    dateRangeText: function dateRangeText() {
-      return this.dates.join(' ~ ');
+    startDateText: function startDateText() {
+      return this.formatDate(this.startDate);
+    },
+    finishDateText: function finishDateText() {
+      return this.formatDate(this.finishDate);
+    }
+  },
+  methods: {
+    formatDate: function formatDate(date) {
+      if (!date) return null;
+
+      var _date$split = date.split('-'),
+          _date$split2 = _slicedToArray(_date$split, 3),
+          year = _date$split2[0],
+          month = _date$split2[1],
+          day = _date$split2[2];
+
+      return "".concat(day, "/").concat(month, "/").concat(year);
     }
   }
 });
@@ -39700,12 +39780,15 @@ var render = function() {
             1
           ),
           _vm._v(" "),
+          _c("v-col", { attrs: { cols: "2", sm: "2", md: "1" } }, [
+            _c("div", { staticClass: "title my-md-2 mx-md-4 login-title" }, [
+              _vm._v("\n                ou\n            ")
+            ])
+          ]),
+          _vm._v(" "),
           _c(
             "v-col",
-            {
-              staticClass: "mt-md-2",
-              attrs: { cols: "10", sm: "10", md: "4" }
-            },
+            { staticClass: "mt-md-2", attrs: { cols: "5", sm: "5", md: "2" } },
             [
               _c(
                 "v-menu",
@@ -39737,7 +39820,7 @@ var render = function() {
                             _vm._g(
                               {
                                 attrs: {
-                                  label: "ou filtre por data",
+                                  label: "Data início",
                                   "prepend-inner-icon": "mdi-calendar",
                                   dense: "",
                                   readonly: "",
@@ -39745,11 +39828,11 @@ var render = function() {
                                   "hide-details": ""
                                 },
                                 model: {
-                                  value: _vm.dateRangeText,
+                                  value: _vm.startDateText,
                                   callback: function($$v) {
-                                    _vm.dateRangeText = $$v
+                                    _vm.startDateText = $$v
                                   },
-                                  expression: "dateRangeText"
+                                  expression: "startDateText"
                                 }
                               },
                               on
@@ -39772,13 +39855,137 @@ var render = function() {
                   _c(
                     "v-date-picker",
                     {
-                      attrs: { "no-title": "", scrollable: "", range: "" },
+                      attrs: { "no-title": "", scrollable: "", locale: "pt" },
                       model: {
-                        value: _vm.dates,
+                        value: _vm.startDate,
                         callback: function($$v) {
-                          _vm.dates = $$v
+                          _vm.startDate = $$v
                         },
-                        expression: "dates"
+                        expression: "startDate"
+                      }
+                    },
+                    [
+                      _c("v-spacer"),
+                      _vm._v(" "),
+                      _c(
+                        "v-btn",
+                        {
+                          attrs: { text: "", color: "primary" },
+                          on: {
+                            click: function($event) {
+                              _vm.startMenu = false
+                            }
+                          }
+                        },
+                        [
+                          _vm._v(
+                            "\n                        Cancelar\n                    "
+                          )
+                        ]
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "v-btn",
+                        {
+                          attrs: { text: "", color: "primary" },
+                          on: {
+                            click: function($event) {
+                              return _vm.$refs.startMenu.save(_vm.start)
+                            }
+                          }
+                        },
+                        [
+                          _vm._v(
+                            "\n                        OK\n                    "
+                          )
+                        ]
+                      )
+                    ],
+                    1
+                  )
+                ],
+                1
+              )
+            ],
+            1
+          ),
+          _vm._v(" "),
+          _c(
+            "v-col",
+            { staticClass: "mt-md-2", attrs: { cols: "5", sm: "5", md: "2" } },
+            [
+              _c(
+                "v-menu",
+                {
+                  ref: "startMenu",
+                  attrs: {
+                    "close-on-content-click": false,
+                    "nudge-right": 40,
+                    "return-value": _vm.start,
+                    transition: "scale-transition",
+                    "offset-y": ""
+                  },
+                  on: {
+                    "update:returnValue": function($event) {
+                      _vm.start = $event
+                    },
+                    "update:return-value": function($event) {
+                      _vm.start = $event
+                    }
+                  },
+                  scopedSlots: _vm._u([
+                    {
+                      key: "activator",
+                      fn: function(ref) {
+                        var on = ref.on
+                        return [
+                          _c(
+                            "v-text-field",
+                            _vm._g(
+                              {
+                                attrs: {
+                                  label: "Data fim",
+                                  "prepend-inner-icon": "mdi-calendar",
+                                  dense: "",
+                                  readonly: "",
+                                  outlined: "",
+                                  "hide-details": ""
+                                },
+                                model: {
+                                  value: _vm.finishDateText,
+                                  callback: function($$v) {
+                                    _vm.finishDateText = $$v
+                                  },
+                                  expression: "finishDateText"
+                                }
+                              },
+                              on
+                            )
+                          )
+                        ]
+                      }
+                    }
+                  ]),
+                  model: {
+                    value: _vm.startMenu,
+                    callback: function($$v) {
+                      _vm.startMenu = $$v
+                    },
+                    expression: "startMenu"
+                  }
+                },
+                [
+                  _vm._v(" "),
+                  _c(
+                    "v-date-picker",
+                    {
+                      attrs: { "no-title": "", scrollable: "", locale: "pt" },
+                      model: {
+                        value: _vm.finishDate,
+                        callback: function($$v) {
+                          _vm.finishDate = $$v
+                        },
+                        expression: "finishDate"
                       }
                     },
                     [

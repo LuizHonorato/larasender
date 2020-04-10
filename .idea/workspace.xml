@@ -3,8 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="129e07a6-b47e-4b8f-be7b-66b03206ce8b" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/components/LoginComponent.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/LoginComponent.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/js/components/screens/CampaignsComponent.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/screens/CampaignsComponent.vue" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -188,6 +189,8 @@
       <workItem from="1586294591510" duration="11207000" />
       <workItem from="1586381329574" duration="320000" />
       <workItem from="1586391869820" duration="11517000" />
+      <workItem from="1586432075430" duration="57000" />
+      <workItem from="1586482280146" duration="6134000" />
     </task>
     <servers />
   </component>
@@ -215,5 +218,9 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="477" y="264" key="NewPhpFileDialog/0.0.1280.680@0.0.1280.680" timestamp="1586026735517" />
+    <state x="334" y="77" width="612" height="526" key="find.popup" timestamp="1586498585771">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="334" y="77" width="612" height="526" key="find.popup/0.0.1280.680@0.0.1280.680" timestamp="1586498585771" />
   </component>
 </project>
