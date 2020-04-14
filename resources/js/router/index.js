@@ -5,9 +5,6 @@ import App from '../components/App'
 import Dashboard from "../components/screens/DashboardComponent";
 import Contacts from '../components/screens/ContactsComponent';
 import Emails from '../components/screens/EmailsComponent';
-import Campaigns from "../components/screens/CampaignsComponent";
-import Templates from "../components/screens/TemplatesComponent";
-import LandingPages from "../components/screens/LandingPagesComponent";
 import UserProfile from "../components/screens/UserProfileComponent";
 
 Vue.use(VueRouter);
@@ -39,30 +36,6 @@ const routes = [
                 },
                 name: 'E-mails',
                 component: Emails
-            },
-            {
-                path: '/campanhas',
-                meta: {
-                    auth: true
-                },
-                name: 'Campanhas',
-                component: Campaigns
-            },
-            {
-                path: '/templates',
-                meta: {
-                    auth: true
-                },
-                name: 'Templates de e-mails',
-                component: Templates
-            },
-            {
-                path: '/landing-pages',
-                meta: {
-                    auth: true
-                },
-                name: 'Landing Pages',
-                component: LandingPages
             },
             {
                 path: '/perfil',

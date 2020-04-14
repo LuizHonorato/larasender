@@ -63,19 +63,14 @@
                 </v-list-item>
 
                 <v-divider></v-divider>
-
-                <v-list-item v-on:click="logout()">
-                    <v-list-item-icon>
-                        <v-icon>mdi-logout-variant</v-icon>
-                    </v-list-item-icon>
-
-                    <v-list-item-content>
-                        <v-list-item-title>Sair</v-list-item-title>
-                    </v-list-item-content>
-
-                </v-list-item>
-
             </v-list>
+            <template v-slot:append>
+                <div class="pa-4">
+                    <v-btn @click="logout()" depressed left small color="rgba(255, 0, 0, 0)">
+                        <v-icon left>mdi-logout-variant</v-icon> Sair
+                    </v-btn>
+                </div>
+            </template>
         </v-navigation-drawer>
     </v-container>
 </template>
@@ -95,9 +90,6 @@
                     { title: 'Dashboard', icon: 'mdi-view-dashboard', to: '/dashboard' },
                     { title: 'Contatos', icon: 'mdi-account-circle-outline', to: '/contatos' },
                     { title: 'E-mails', icon: 'mdi-email-multiple-outline', to: '/emails' },
-                    { title: 'Campanhas', icon: 'mdi-bullhorn-outline', to: '/campanhas'},
-                    { title: 'Templates de e-mails', icon: 'mdi-chart-tree', to: '/templates'},
-                    { title: 'Landing pages', icon: 'mdi-rocket-outline', to: '/landing-pages'},
 
                 ],
                 systemItems: [

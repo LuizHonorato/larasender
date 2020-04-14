@@ -1,10 +1,137 @@
 <template>
-    <h1>Contatos</h1>
+    <v-container>
+        <v-row>
+            <v-col cols="12" sm="12" md="6">
+                <v-text-field
+                    placeholder="Pesquisar contatos"
+                    type="text"
+                    outlined
+                    prepend-inner-icon="mdi-magnify"
+                />
+            </v-col>
+        </v-row>
+        <v-row>
+            <v-col cols="1">
+                <v-dialog v-model="dialog" persistent max-width="600px">
+                    <template v-slot:activator="{ on }">
+                        <v-btn color="primary" v-on="on">Novo contato</v-btn>
+                    </template>
+                    <v-card>
+                        <v-card-title>
+                            <span class="headline">Inserindo contato</span>
+                        </v-card-title>
+                        <v-card-text>
+                            <v-container>
+                                <v-row>
+                                    <v-col cols="12">
+                                        <v-text-field
+                                            v-model="name"
+                                            placeholder="Nome"
+                                            type="text"
+                                            outlined
+                                        />
+                                    </v-col>
+                                </v-row>
+                                <v-row>
+                                    <v-col cols="12">
+                                        <v-text-field
+                                            v-model="email"
+                                            placeholder="E-mail"
+                                            type="text"
+                                            outlined
+                                        />
+                                    </v-col>
+                                </v-row>
+                                <v-row>
+                                    <v-col cols="12" sm="12" md="6">
+                                        <v-text-field
+                                            v-model="phone"
+                                            placeholder="Celular"
+                                            type="text"
+                                            outlined
+                                        />
+                                    </v-col>
+                                    <v-col cols="12" sm="12" md="6">
+                                        <v-file-input
+                                            v-model="profile_pic"
+                                            color="deep-purple accent-4"
+                                            placeholder="Selecione uma foto"
+                                            prepend-icon=""
+                                            prepend-inner-icon="mdi-camera"
+                                            outlined
+                                            :show-size="1000">
+                                            <template v-slot:selection="{ index, text }">
+                                                <v-chip
+                                                    color="deep-purple accent-4"
+                                                    dark
+                                                    label
+                                                    small
+                                                >
+                                                    {{ text }}
+                                                </v-chip>
+                                            </template>
+                                        </v-file-input>
+                                    </v-col>
+                                </v-row>
+                            </v-container>
+                        </v-card-text>
+                        <v-card-actions>
+                            <v-spacer></v-spacer>
+                            <v-btn color="blue darken-1" text @click="dialog = false">Cancelar</v-btn>
+                            <v-btn color="blue darken-1" text @click="submit()">Salvar</v-btn>
+                        </v-card-actions>
+                    </v-card>
+
+                </v-dialog>
+            </v-col>
+        </v-row>
+
+        <v-divider></v-divider>
+
+        <v-row>
+            <v-col cols="12" v-if="contacts.contacts.length > 0">
+                <p>to do</p>
+            </v-col>
+            <v-col cols="12" v-else>
+                <div class="d-flex justify-center align-center subtitle-1">
+                    <strong class="blue-grey--text text--lighten-3">Nenhum contato cadastrado</strong>
+                </div>
+            </v-col>
+        </v-row>
+
+    </v-container>
 </template>
 
 <script>
+    import {mapState} from "vuex";
+
     export default {
-        name: "ContactsComponent"
+        name: "ContactsComponent",
+        data: function() {
+            return {
+                dialog: false,
+                name: '',
+                email: '',
+                phone: '',
+                profile_pic: null
+            }
+        },
+        computed: {
+            ...mapState(['contacts']),
+        },
+        methods: {
+            submit() {
+                this.$store.dispatch('submitContact', {
+                    name: this.name,
+                    email: this.email,
+                    phone: this.phone,
+                    profile_pic: this.profile_pic
+                });
+            }
+        },
+        created(){
+            this.$store.dispatch('getContacts')
+        }
     }
 </script>
 

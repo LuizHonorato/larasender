@@ -26,10 +26,8 @@ class StoreUpdateContactFormRequest extends FormRequest
         $id = $this->segment(3);
 
         return [
-            'first_name' => "required|min:3|max:50",
-            'last_name' => "required|min:3|max:50",
-            'email' => "required|unique:customers,email,{$id},id",
-            'password' => "required",
+            'name' => "required|min:3|max:50",
+            'email' => "required|unique:contacts,email,{$id},id",
             'profile_pic' => "image"
         ];
     }
