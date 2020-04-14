@@ -46,6 +46,7 @@
                                     <v-col cols="12" sm="12" md="6">
                                         <v-text-field
                                             v-model="phone"
+                                            :mask="mask"
                                             placeholder="Celular"
                                             type="text"
                                             outlined
@@ -90,7 +91,11 @@
 
         <v-row>
             <v-col cols="12" v-if="contacts.contacts.length > 0">
-                <p>to do</p>
+                <v-data-table
+                    :headers="headers"
+                    :items="this.contacts.contacts"
+                    :items-per-page="5"
+                />
             </v-col>
             <v-col cols="12" v-else>
                 <div class="d-flex justify-center align-center subtitle-1">
@@ -103,7 +108,7 @@
 </template>
 
 <script>
-    import {mapState} from "vuex";
+    import {mapState} from "vuex";;
 
     export default {
         name: "ContactsComponent",
@@ -113,7 +118,28 @@
                 name: '',
                 email: '',
                 phone: '',
-                profile_pic: null
+                profile_pic: null,
+                mask: '(##) #####-####',
+                headers: [
+                    {
+                        text: 'ID',
+                        align: 'start',
+                        sortable: true,
+                        value: 'id',
+                    },
+                    {
+                        text: 'Nome',
+                        align: 'start',
+                        sortable: false,
+                        value: 'name',
+                    },
+                    {
+                        text: 'E-mail',
+                        align: 'start',
+                        sortable: false,
+                        value: 'email',
+                    },
+                ]
             }
         },
         computed: {

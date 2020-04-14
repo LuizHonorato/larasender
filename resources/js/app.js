@@ -5,9 +5,11 @@ import Vuetify from 'vuetify';
 import router from './router';
 import Vuex from "vuex";
 import store from "./store/";
+import Vuelidate from 'vuelidate';
 
 Vue.use(Vuetify);
 Vue.use(Vuex);
+Vue.use(Vuelidate);
 
 const app = new Vue({
     el: '#app',

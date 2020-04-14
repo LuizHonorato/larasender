@@ -12,8 +12,8 @@ const actions = {
     getContacts({commit}) {
         return axios
             .get('/contacts')
-            .then(data => {
-                commit('SET_CONTACTS', data)
+            .then(res => {
+                commit('SET_CONTACTS', res.data)
             })
             .catch(err => console.log(err));
     },
@@ -34,8 +34,7 @@ const actions = {
         return axios
             .post('/contacts', formData, config)
             .then(data => {
-                console.log(data);
-                //dispatch('getContacts')
+                dispatch('getContacts')
             })
             .catch(err => console.log(err));
     }
