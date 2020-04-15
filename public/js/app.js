@@ -2461,16 +2461,23 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
         email: this.email,
         phone: this.phone,
         profile_pic: this.profile_pic
+      }).then(function () {
+        _this.dialog = false;
+
+        _this.$store.dispatch('getContacts');
+
+        _this.reset();
+      })["catch"](function (err) {
+        console.log(err);
       });
     },
     reset: function reset() {
-      var _this2 = this;
-
       this.errorMessages = [];
       this.formHasErrors = false;
-      Object.keys(this.form).forEach(function (f) {
-        _this2.$refs[f].reset();
-      });
+      this.name = '';
+      this.email = '';
+      this.phone = '';
+      this.profile_pic = null;
     }
   },
   created: function created() {
@@ -117242,10 +117249,12 @@ var actions = {
     formData.append('email', contact.email);
     formData.append('phone', contact.phone);
     formData.append('profile_pic', contact.profile_pic);
-    return axios__WEBPACK_IMPORTED_MODULE_0___default.a.post('/contacts', formData, config).then(function (data) {
-      dispatch('getContacts');
-    })["catch"](function (err) {
-      return console.log(err);
+    return new Promise(function (resolve, reject) {
+      axios__WEBPACK_IMPORTED_MODULE_0___default.a.post('/contacts', formData, config).then(function (data) {
+        return resolve();
+      })["catch"](function (err) {
+        return reject(err);
+      });
     });
   }
 };

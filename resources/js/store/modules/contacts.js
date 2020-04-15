@@ -31,12 +31,12 @@ const actions = {
         formData.append('phone', contact.phone);
         formData.append('profile_pic', contact.profile_pic);
 
-        return axios
-            .post('/contacts', formData, config)
-            .then(data => {
-                dispatch('getContacts')
-            })
-            .catch(err => console.log(err));
+        return new Promise((resolve, reject) => {
+            axios.post('/contacts', formData, config)
+                .then(data => resolve())
+                .catch(err => reject(err));
+        });
+
     }
 }
 

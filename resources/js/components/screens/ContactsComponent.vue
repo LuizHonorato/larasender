@@ -180,16 +180,23 @@
                     email: this.email,
                     phone: this.phone,
                     profile_pic: this.profile_pic
+                })
+                .then(() => {
+                    this.dialog = false;
+                    this.$store.dispatch('getContacts');
+                    this.reset();
+                })
+                .catch(err => {
+                    console.log(err)
                 });
-
             },
             reset () {
-                this.errorMessages = []
-                this.formHasErrors = false
-
-                Object.keys(this.form).forEach(f => {
-                    this.$refs[f].reset()
-                })
+                this.errorMessages = [];
+                this.formHasErrors = false;
+                this.name = '';
+                this.email = '';
+                this.phone = '';
+                this.profile_pic = null;
             },
         },
         created(){
