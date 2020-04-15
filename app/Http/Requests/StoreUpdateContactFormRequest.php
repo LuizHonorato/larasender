@@ -28,7 +28,6 @@ class StoreUpdateContactFormRequest extends FormRequest
         return [
             'name' => "required|min:3|max:50",
             'email' => "required|unique:contacts,email,{$id},id",
-            'profile_pic' => "image"
         ];
     }
 }
