@@ -4,7 +4,6 @@
             id="core-navigation-drawer"
             v-model="drawer"
             color="rgba(0, 0, 0, .8), rgba(0, 0, 0, .8)"
-            absolute
             dark
             mobile-break-point="960"
             app

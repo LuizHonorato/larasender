@@ -2210,7 +2210,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "NavigationComponent",
   props: {
@@ -2401,6 +2400,39 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -2411,6 +2443,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
   data: function data() {
     return {
       dialog: false,
+      id: '',
       name: '',
       email: '',
       phone: '',
@@ -2418,6 +2451,13 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       errorMessages: '',
       formHasErrors: false,
       isValid: true,
+      color: '',
+      mode: '',
+      snackbar: false,
+      snackbarText: 'Contato cadastrado com sucesso',
+      timeout: 6000,
+      x: 'right',
+      y: 'top',
       headers: [{
         text: 'ID',
         align: 'start',
@@ -2433,6 +2473,11 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
         align: 'start',
         sortable: false,
         value: 'email'
+      }, {
+        text: 'Ações',
+        align: 'start',
+        sortable: false,
+        value: 'actions'
       }]
     };
   },
@@ -2467,8 +2512,24 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
         _this.$store.dispatch('getContacts');
 
         _this.reset();
+
+        _this.snackbar = true;
       })["catch"](function (err) {
         console.log(err);
+      });
+    },
+    edit: function edit(id) {
+      var _this2 = this;
+
+      this.$store.dispatch('getContact', id).then(function (res) {
+        _this2.id = res.data.id;
+        _this2.name = res.data.name;
+        _this2.email = res.data.email;
+        _this2.phone = res.data.phone;
+        _this2.profile_pic = res.data.profile_pic;
+        _this2.dialog = true;
+      })["catch"](function (err) {
+        return console.log(err);
       });
     },
     reset: function reset() {
@@ -7862,6 +7923,25 @@ exports = module.exports = __webpack_require__(/*! ../../../../css-loader/lib/cs
 
 // module
 exports.push([module.i, ".theme--light.v-sheet {\n  background-color: #FFFFFF;\n  border-color: #FFFFFF;\n  color: rgba(0, 0, 0, 0.87);\n}\n\n.theme--dark.v-sheet {\n  background-color: #1E1E1E;\n  border-color: #1E1E1E;\n  color: #FFFFFF;\n}\n\n.v-sheet {\n  border-radius: 4px;\n}\n.v-sheet--tile {\n  border-radius: 0;\n}", ""]);
+
+// exports
+
+
+/***/ }),
+
+/***/ "./node_modules/css-loader/index.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/vuetify/src/components/VSnackbar/VSnackbar.sass":
+/*!*********************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader!./node_modules/postcss-loader/src??ref--8-2!./node_modules/sass-loader/dist/cjs.js??ref--8-3!./node_modules/vuetify/src/components/VSnackbar/VSnackbar.sass ***!
+  \*********************************************************************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(/*! ../../../../css-loader/lib/css-base.js */ "./node_modules/css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, ".v-snack {\n  align-items: center;\n  color: #FFFFFF;\n  display: flex;\n  font-size: 0.875rem;\n  left: 8px;\n  pointer-events: none;\n  position: fixed;\n  right: 8px;\n  transition-duration: 0.15s;\n  transition-timing-function: cubic-bezier(0, 0, 0.2, 1);\n  z-index: 1000;\n}\n.v-application--is-ltr .v-snack {\n  text-align: left;\n}\n.v-application--is-rtl .v-snack {\n  text-align: right;\n}\n.v-snack--absolute {\n  position: absolute;\n}\n.v-snack--top {\n  top: 8px;\n}\n.v-snack--bottom {\n  bottom: 8px;\n}\n.v-snack__wrapper {\n  align-items: center;\n  background-color: #323232;\n  border-radius: 4px;\n  display: flex;\n  margin: 0 auto;\n  pointer-events: auto;\n  transition: inherit;\n  transition-property: opacity, transform;\n  min-width: 100%;\n  box-shadow: 0px 3px 5px -1px rgba(0, 0, 0, 0.2), 0px 6px 10px 0px rgba(0, 0, 0, 0.14), 0px 1px 18px 0px rgba(0, 0, 0, 0.12);\n}\n.v-snack__content {\n  align-items: center;\n  display: flex;\n  min-height: 48px;\n  justify-content: space-between;\n  overflow: hidden;\n  padding: 8px 16px;\n  width: 100%;\n}\n.v-snack__content .v-btn {\n  flex: 0 0 auto;\n  height: auto;\n  min-width: auto;\n  padding: 8px;\n  width: auto;\n}\n.v-snack__content .v-btn--text, .v-snack__content .v-btn--icon, .v-snack__content .v-btn--outlined {\n  color: #FFFFFF;\n}\n.v-application--is-ltr .v-snack__content .v-btn {\n  margin: 0 -8px 0 24px;\n}\n.v-application--is-rtl .v-snack__content .v-btn {\n  margin: 0 24px 0 -8px;\n}\n.v-snack__content .v-btn__content {\n  margin: -2px;\n}\n.v-snack--multi-line .v-snack__content {\n  height: auto;\n  min-height: 68px;\n}\n.v-snack--vertical .v-snack__content {\n  align-items: stretch;\n  flex-direction: column;\n  height: auto;\n  padding: 16px 16px 8px;\n}\n.v-snack--vertical .v-snack__content .v-btn.v-btn {\n  align-self: flex-end;\n  justify-self: flex-end;\n  margin-top: 18px;\n}\n.v-application--is-ltr .v-snack--vertical .v-snack__content .v-btn.v-btn {\n  margin-left: 0;\n}\n.v-application--is-rtl .v-snack--vertical .v-snack__content .v-btn.v-btn {\n  margin-right: 0;\n}\n.v-snack--vertical .v-snack__content .v-btn__content {\n  flex: 0 0 auto;\n  margin: 0;\n}\n\n@media only screen and (min-width: 600px) {\n  .v-snack__wrapper {\n    min-width: 344px;\n    max-width: 672px;\n  }\n  .v-snack--left .v-snack__wrapper {\n    margin-left: 0;\n  }\n  .v-snack--right .v-snack__wrapper {\n    margin-right: 0;\n  }\n  .v-application--is-ltr .v-snack__content .v-btn:first-of-type {\n    margin-left: 42px;\n  }\n  .v-application--is-rtl .v-snack__content .v-btn:first-of-type {\n    margin-right: 42px;\n  }\n}\n.v-snack-transition-enter .v-snack__wrapper {\n  transform: scale(0.8);\n}\n.v-snack-transition-enter .v-snack__wrapper, .v-snack-transition-leave-to .v-snack__wrapper {\n  opacity: 0;\n}", ""]);
 
 // exports
 
@@ -39783,7 +39863,6 @@ var render = function() {
           attrs: {
             id: "core-navigation-drawer",
             color: "rgba(0, 0, 0, .8), rgba(0, 0, 0, .8)",
-            absolute: "",
             dark: "",
             "mobile-break-point": "960",
             app: "",
@@ -40043,6 +40122,27 @@ var render = function() {
                               _c(
                                 "v-container",
                                 [
+                                  _c("input", {
+                                    directives: [
+                                      {
+                                        name: "model",
+                                        rawName: "v-model",
+                                        value: _vm.id,
+                                        expression: "id"
+                                      }
+                                    ],
+                                    attrs: { type: "hidden", name: "id" },
+                                    domProps: { value: _vm.id },
+                                    on: {
+                                      input: function($event) {
+                                        if ($event.target.composing) {
+                                          return
+                                        }
+                                        _vm.id = $event.target.value
+                                      }
+                                    }
+                                  }),
+                                  _vm._v(" "),
                                   _c(
                                     "v-row",
                                     [
@@ -40274,6 +40374,46 @@ var render = function() {
                   )
                 ],
                 1
+              ),
+              _vm._v(" "),
+              _c(
+                "v-snackbar",
+                {
+                  attrs: {
+                    bottom: _vm.y === "right",
+                    color: _vm.color,
+                    right: _vm.x === "right",
+                    timeout: _vm.timeout,
+                    top: _vm.y === "right"
+                  },
+                  model: {
+                    value: _vm.snackbar,
+                    callback: function($$v) {
+                      _vm.snackbar = $$v
+                    },
+                    expression: "snackbar"
+                  }
+                },
+                [
+                  _vm._v(
+                    "\n                " +
+                      _vm._s(_vm.snackbarText) +
+                      "\n                "
+                  ),
+                  _c(
+                    "v-btn",
+                    {
+                      attrs: { color: "red", text: "" },
+                      on: {
+                        click: function($event) {
+                          _vm.snackbar = false
+                        }
+                      }
+                    },
+                    [_vm._v("\n                    Fechar\n                ")]
+                  )
+                ],
+                1
               )
             ],
             1
@@ -40296,8 +40436,47 @@ var render = function() {
                     attrs: {
                       headers: _vm.headers,
                       items: this.contacts.contacts,
-                      "items-per-page": 5
-                    }
+                      "items-per-page": 5,
+                      locale: "pt"
+                    },
+                    scopedSlots: _vm._u(
+                      [
+                        {
+                          key: "item.actions",
+                          fn: function(ref) {
+                            var item = ref.item
+                            return [
+                              _c(
+                                "v-icon",
+                                {
+                                  staticClass: "mr-2",
+                                  attrs: { small: "" },
+                                  on: {
+                                    click: function($event) {
+                                      return _vm.edit(item.id)
+                                    }
+                                  }
+                                },
+                                [
+                                  _vm._v(
+                                    "\n                        mdi-pencil\n                    "
+                                  )
+                                ]
+                              ),
+                              _vm._v(" "),
+                              _c("v-icon", { attrs: { small: "" } }, [
+                                _vm._v(
+                                  "\n                        mdi-delete\n                    "
+                                )
+                              ])
+                            ]
+                          }
+                        }
+                      ],
+                      null,
+                      false,
+                      1176073433
+                    )
                   })
                 ],
                 1
@@ -108305,6 +108484,135 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./node_modules/vuetify/lib/components/VSnackbar/VSnackbar.js":
+/*!********************************************************************!*\
+  !*** ./node_modules/vuetify/lib/components/VSnackbar/VSnackbar.js ***!
+  \********************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _src_components_VSnackbar_VSnackbar_sass__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../src/components/VSnackbar/VSnackbar.sass */ "./node_modules/vuetify/src/components/VSnackbar/VSnackbar.sass");
+/* harmony import */ var _src_components_VSnackbar_VSnackbar_sass__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_src_components_VSnackbar_VSnackbar_sass__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _mixins_colorable__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../mixins/colorable */ "./node_modules/vuetify/lib/mixins/colorable/index.js");
+/* harmony import */ var _mixins_toggleable__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../mixins/toggleable */ "./node_modules/vuetify/lib/mixins/toggleable/index.js");
+/* harmony import */ var _mixins_positionable__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../mixins/positionable */ "./node_modules/vuetify/lib/mixins/positionable/index.js");
+/* harmony import */ var _util_mixins__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../util/mixins */ "./node_modules/vuetify/lib/util/mixins.js");
+/* harmony import */ var _util_console__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../util/console */ "./node_modules/vuetify/lib/util/console.js");
+// Styles
+ // Mixins
+
+
+
+ // Types
+
+
+
+/* harmony default export */ __webpack_exports__["default"] = (Object(_util_mixins__WEBPACK_IMPORTED_MODULE_4__["default"])(_mixins_colorable__WEBPACK_IMPORTED_MODULE_1__["default"], _mixins_toggleable__WEBPACK_IMPORTED_MODULE_2__["default"], Object(_mixins_positionable__WEBPACK_IMPORTED_MODULE_3__["factory"])(['absolute', 'top', 'bottom', 'left', 'right'])
+/* @vue/component */
+).extend({
+  name: 'v-snackbar',
+  props: {
+    multiLine: Boolean,
+    // TODO: change this to closeDelay to match other API in delayable.js
+    timeout: {
+      type: Number,
+      default: 6000
+    },
+    vertical: Boolean
+  },
+  data: () => ({
+    activeTimeout: -1
+  }),
+  computed: {
+    classes() {
+      return {
+        'v-snack--active': this.isActive,
+        'v-snack--absolute': this.absolute,
+        'v-snack--bottom': this.bottom || !this.top,
+        'v-snack--left': this.left,
+        'v-snack--multi-line': this.multiLine && !this.vertical,
+        'v-snack--right': this.right,
+        'v-snack--top': this.top,
+        'v-snack--vertical': this.vertical
+      };
+    }
+
+  },
+  watch: {
+    isActive() {
+      this.setTimeout();
+    }
+
+  },
+
+  created() {
+    if (this.$attrs.hasOwnProperty('auto-height')) {
+      Object(_util_console__WEBPACK_IMPORTED_MODULE_5__["removed"])('auto-height', this);
+    }
+  },
+
+  mounted() {
+    this.setTimeout();
+  },
+
+  methods: {
+    setTimeout() {
+      window.clearTimeout(this.activeTimeout);
+
+      if (this.isActive && this.timeout) {
+        this.activeTimeout = window.setTimeout(() => {
+          this.isActive = false;
+        }, this.timeout);
+      }
+    }
+
+  },
+
+  render(h) {
+    return h('transition', {
+      attrs: {
+        name: 'v-snack-transition'
+      }
+    }, [this.isActive && h('div', {
+      staticClass: 'v-snack',
+      class: this.classes,
+      on: this.$listeners
+    }, [h('div', this.setBackgroundColor(this.color, {
+      staticClass: 'v-snack__wrapper',
+      attrs: {
+        role: 'alert'
+      }
+    }), [h('div', {
+      staticClass: 'v-snack__content'
+    }, this.$slots.default)])])]);
+  }
+
+}));
+//# sourceMappingURL=VSnackbar.js.map
+
+/***/ }),
+
+/***/ "./node_modules/vuetify/lib/components/VSnackbar/index.js":
+/*!****************************************************************!*\
+  !*** ./node_modules/vuetify/lib/components/VSnackbar/index.js ***!
+  \****************************************************************/
+/*! exports provided: VSnackbar, default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _VSnackbar__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./VSnackbar */ "./node_modules/vuetify/lib/components/VSnackbar/VSnackbar.js");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "VSnackbar", function() { return _VSnackbar__WEBPACK_IMPORTED_MODULE_0__["default"]; });
+
+
+
+/* harmony default export */ __webpack_exports__["default"] = (_VSnackbar__WEBPACK_IMPORTED_MODULE_0__["default"]);
+//# sourceMappingURL=index.js.map
+
+/***/ }),
+
 /***/ "./node_modules/vuetify/lib/components/VSubheader/VSubheader.js":
 /*!**********************************************************************!*\
   !*** ./node_modules/vuetify/lib/components/VSubheader/VSubheader.js ***!
@@ -114882,6 +115190,36 @@ if(false) {}
 
 /***/ }),
 
+/***/ "./node_modules/vuetify/src/components/VSnackbar/VSnackbar.sass":
+/*!**********************************************************************!*\
+  !*** ./node_modules/vuetify/src/components/VSnackbar/VSnackbar.sass ***!
+  \**********************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+
+var content = __webpack_require__(/*! !../../../../css-loader!../../../../postcss-loader/src??ref--8-2!../../../../sass-loader/dist/cjs.js??ref--8-3!./VSnackbar.sass */ "./node_modules/css-loader/index.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/vuetify/src/components/VSnackbar/VSnackbar.sass");
+
+if(typeof content === 'string') content = [[module.i, content, '']];
+
+var transform;
+var insertInto;
+
+
+
+var options = {"hmr":true}
+
+options.transform = transform
+options.insertInto = undefined;
+
+var update = __webpack_require__(/*! ../../../../style-loader/lib/addStyles.js */ "./node_modules/style-loader/lib/addStyles.js")(content, options);
+
+if(content.locals) module.exports = content.locals;
+
+if(false) {}
+
+/***/ }),
+
 /***/ "./node_modules/vuetify/src/components/VSubheader/VSubheader.sass":
 /*!************************************************************************!*\
   !*** ./node_modules/vuetify/src/components/VSubheader/VSubheader.sass ***!
@@ -116722,7 +117060,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vuetify_lib_components_VDivider__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! vuetify/lib/components/VDivider */ "./node_modules/vuetify/lib/components/VDivider/index.js");
 /* harmony import */ var vuetify_lib_components_VFileInput__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! vuetify/lib/components/VFileInput */ "./node_modules/vuetify/lib/components/VFileInput/index.js");
 /* harmony import */ var vuetify_lib_components_VForm__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! vuetify/lib/components/VForm */ "./node_modules/vuetify/lib/components/VForm/index.js");
-/* harmony import */ var vuetify_lib_components_VTextField__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! vuetify/lib/components/VTextField */ "./node_modules/vuetify/lib/components/VTextField/index.js");
+/* harmony import */ var vuetify_lib_components_VIcon__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! vuetify/lib/components/VIcon */ "./node_modules/vuetify/lib/components/VIcon/index.js");
+/* harmony import */ var vuetify_lib_components_VSnackbar__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! vuetify/lib/components/VSnackbar */ "./node_modules/vuetify/lib/components/VSnackbar/index.js");
+/* harmony import */ var vuetify_lib_components_VTextField__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! vuetify/lib/components/VTextField */ "./node_modules/vuetify/lib/components/VTextField/index.js");
 
 
 
@@ -116759,7 +117099,9 @@ var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_
 
 
 
-_node_modules_vuetify_loader_lib_runtime_installComponents_js__WEBPACK_IMPORTED_MODULE_3___default()(component, {VBtn: vuetify_lib_components_VBtn__WEBPACK_IMPORTED_MODULE_4__["VBtn"],VCard: vuetify_lib_components_VCard__WEBPACK_IMPORTED_MODULE_5__["VCard"],VCardActions: vuetify_lib_components_VCard__WEBPACK_IMPORTED_MODULE_5__["VCardActions"],VCardText: vuetify_lib_components_VCard__WEBPACK_IMPORTED_MODULE_5__["VCardText"],VCardTitle: vuetify_lib_components_VCard__WEBPACK_IMPORTED_MODULE_5__["VCardTitle"],VChip: vuetify_lib_components_VChip__WEBPACK_IMPORTED_MODULE_6__["VChip"],VCol: vuetify_lib_components_VGrid__WEBPACK_IMPORTED_MODULE_7__["VCol"],VContainer: vuetify_lib_components_VGrid__WEBPACK_IMPORTED_MODULE_7__["VContainer"],VDataTable: vuetify_lib_components_VDataTable__WEBPACK_IMPORTED_MODULE_8__["VDataTable"],VDialog: vuetify_lib_components_VDialog__WEBPACK_IMPORTED_MODULE_9__["VDialog"],VDivider: vuetify_lib_components_VDivider__WEBPACK_IMPORTED_MODULE_10__["VDivider"],VFileInput: vuetify_lib_components_VFileInput__WEBPACK_IMPORTED_MODULE_11__["VFileInput"],VForm: vuetify_lib_components_VForm__WEBPACK_IMPORTED_MODULE_12__["VForm"],VRow: vuetify_lib_components_VGrid__WEBPACK_IMPORTED_MODULE_7__["VRow"],VSpacer: vuetify_lib_components_VGrid__WEBPACK_IMPORTED_MODULE_7__["VSpacer"],VTextField: vuetify_lib_components_VTextField__WEBPACK_IMPORTED_MODULE_13__["VTextField"]})
+
+
+_node_modules_vuetify_loader_lib_runtime_installComponents_js__WEBPACK_IMPORTED_MODULE_3___default()(component, {VBtn: vuetify_lib_components_VBtn__WEBPACK_IMPORTED_MODULE_4__["VBtn"],VCard: vuetify_lib_components_VCard__WEBPACK_IMPORTED_MODULE_5__["VCard"],VCardActions: vuetify_lib_components_VCard__WEBPACK_IMPORTED_MODULE_5__["VCardActions"],VCardText: vuetify_lib_components_VCard__WEBPACK_IMPORTED_MODULE_5__["VCardText"],VCardTitle: vuetify_lib_components_VCard__WEBPACK_IMPORTED_MODULE_5__["VCardTitle"],VChip: vuetify_lib_components_VChip__WEBPACK_IMPORTED_MODULE_6__["VChip"],VCol: vuetify_lib_components_VGrid__WEBPACK_IMPORTED_MODULE_7__["VCol"],VContainer: vuetify_lib_components_VGrid__WEBPACK_IMPORTED_MODULE_7__["VContainer"],VDataTable: vuetify_lib_components_VDataTable__WEBPACK_IMPORTED_MODULE_8__["VDataTable"],VDialog: vuetify_lib_components_VDialog__WEBPACK_IMPORTED_MODULE_9__["VDialog"],VDivider: vuetify_lib_components_VDivider__WEBPACK_IMPORTED_MODULE_10__["VDivider"],VFileInput: vuetify_lib_components_VFileInput__WEBPACK_IMPORTED_MODULE_11__["VFileInput"],VForm: vuetify_lib_components_VForm__WEBPACK_IMPORTED_MODULE_12__["VForm"],VIcon: vuetify_lib_components_VIcon__WEBPACK_IMPORTED_MODULE_13__["VIcon"],VRow: vuetify_lib_components_VGrid__WEBPACK_IMPORTED_MODULE_7__["VRow"],VSnackbar: vuetify_lib_components_VSnackbar__WEBPACK_IMPORTED_MODULE_14__["VSnackbar"],VSpacer: vuetify_lib_components_VGrid__WEBPACK_IMPORTED_MODULE_7__["VSpacer"],VTextField: vuetify_lib_components_VTextField__WEBPACK_IMPORTED_MODULE_15__["VTextField"]})
 
 
 /* hot reload */
@@ -117237,8 +117579,18 @@ var actions = {
       return console.log(err);
     });
   },
-  submitContact: function submitContact(_ref2, contact) {
-    var dispatch = _ref2.dispatch;
+  getContact: function getContact(_ref2, id) {
+    var commit = _ref2.commit;
+    return new Promise(function (resolve, reject) {
+      axios__WEBPACK_IMPORTED_MODULE_0___default.a.get("/contacts/".concat(id)).then(function (data) {
+        return resolve(data);
+      })["catch"](function (err) {
+        return reject(err);
+      });
+    });
+  },
+  submitContact: function submitContact(_ref3, contact) {
+    var dispatch = _ref3.dispatch;
     var config = {
       headers: {
         'Content-Type': 'multipart/form-data'

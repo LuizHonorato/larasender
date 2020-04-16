@@ -18,6 +18,14 @@ const actions = {
             .catch(err => console.log(err));
     },
 
+    getContact({commit}, id) {
+        return new Promise((resolve, reject) => {
+            axios.get(`/contacts/${id}`)
+                .then(data => resolve(data))
+                .catch(err => reject(err));
+        });
+    },
+
     submitContact({dispatch}, contact) {
         const config = {
             headers: {
@@ -43,7 +51,7 @@ const actions = {
 const mutations = {
     SET_CONTACTS (state, emails) {
         state.contacts = emails
-    }
+    },
 }
 
 export default {

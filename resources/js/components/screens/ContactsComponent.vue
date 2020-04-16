@@ -23,6 +23,7 @@
                             </v-card-title>
                             <v-card-text>
                                 <v-container>
+                                    <input type="hidden" name="id" v-model="id" />
                                     <v-row>
                                         <v-col cols="12">
                                             <v-text-field
@@ -91,6 +92,25 @@
                         </v-card>
                     </v-form>
                 </v-dialog>
+
+                <v-snackbar
+                    v-model="snackbar"
+                    :bottom="y === 'right'"
+                    :color="color"
+                    :right="x === 'right'"
+                    :timeout="timeout"
+                    :top="y === 'right'"
+                >
+                    {{ snackbarText }}
+                    <v-btn
+                        color="red"
+                        text
+                        @click="snackbar = false"
+                    >
+                        Fechar
+                    </v-btn>
+                </v-snackbar>
+
             </v-col>
         </v-row>
 
@@ -102,7 +122,20 @@
                     :headers="headers"
                     :items="this.contacts.contacts"
                     :items-per-page="5"
-                />
+                    locale="pt">
+                    <template v-slot:item.actions="{ item }">
+                        <v-icon
+                            small
+                            class="mr-2"
+                            @click="edit(item.id)"
+                        >
+                            mdi-pencil
+                        </v-icon>
+                        <v-icon small>
+                            mdi-delete
+                        </v-icon>
+                    </template>
+                </v-data-table>
             </v-col>
             <v-col cols="12" v-else>
                 <div class="d-flex justify-center align-center subtitle-1">
@@ -124,6 +157,7 @@
         data: function() {
             return {
                 dialog: false,
+                id: '',
                 name: '',
                 email: '',
                 phone: '',
@@ -131,6 +165,13 @@
                 errorMessages: '',
                 formHasErrors: false,
                 isValid: true,
+                color: '',
+                mode: '',
+                snackbar: false,
+                snackbarText: 'Contato cadastrado com sucesso',
+                timeout: 6000,
+                x: 'right',
+                y: 'top',
                 headers: [
                     {
                         text: 'ID',
@@ -149,6 +190,12 @@
                         align: 'start',
                         sortable: false,
                         value: 'email',
+                    },
+                    {
+                        text: 'Ações',
+                        align: 'start',
+                        sortable: false,
+                        value: 'actions',
                     },
                 ]
             }
@@ -185,10 +232,24 @@
                     this.dialog = false;
                     this.$store.dispatch('getContacts');
                     this.reset();
+                    this.snackbar = true;
                 })
                 .catch(err => {
                     console.log(err)
                 });
+            },
+            edit(id) {
+                this.$store.dispatch('getContact', id)
+                    .then(res => {
+                        this.id = res.data.id;
+                        this.name = res.data.name;
+                        this.email = res.data.email;
+                        this.phone = res.data.phone;
+                        this.profile_pic = res.data.profile_pic;
+
+                        this.dialog = true;
+                    })
+                    .catch(err => console.log(err));
             },
             reset () {
                 this.errorMessages = [];
