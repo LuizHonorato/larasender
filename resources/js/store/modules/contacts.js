@@ -65,6 +65,14 @@ const actions = {
                 .then(data => resolve())
                 .catch(err => reject(err));
         });
+    },
+
+    deleteContact({dispatch}, id) {
+        return new Promise((resolve, reject) => {
+            axios.delete(`/contacts/${id}`)
+                .then(data => resolve(data))
+                .catch(err => reject(err));
+        });
     }
 }
 

@@ -16,7 +16,7 @@
                     <template v-slot:activator="{ on }">
                         <v-btn color="primary" v-on="on">Novo contato</v-btn>
                     </template>
-                    <v-form v-model="isValid">
+                    <v-form ref="form" v-model="isValid">
                         <v-card>
                             <v-card-title>
                                 <span class="headline">Inserindo contato</span>
@@ -51,7 +51,6 @@
                                     <v-row>
                                         <v-col cols="12" sm="12" md="6">
                                             <v-text-field
-                                                ref="phone"
                                                 v-model="phone"
                                                 v-mask="'(##) #####-####'"
                                                 placeholder="Celular"
@@ -59,34 +58,45 @@
                                                 outlined
                                             />
                                         </v-col>
-                                        <v-col cols="12" sm="12" md="6">
-                                            <v-file-input
-                                                ref="profile_pic"
-                                                v-model="profile_pic"
-                                                color="deep-purple accent-4"
-                                                placeholder="Selecione uma foto"
-                                                prepend-icon=""
-                                                prepend-inner-icon="mdi-camera"
-                                                outlined
-                                                :show-size="1000">
-                                                <template v-slot:selection="{ index, text }">
-                                                    <v-chip
-                                                        color="deep-purple accent-4"
-                                                        dark
-                                                        label
-                                                        small
+                                        <v-col cols="12" sm="12" md="6" style="text-align: center">
+                                            <div v-if="imagePreview != null">
+                                                <v-avatar size="62">
+                                                    <img
+                                                        :src="imagePreview"
+                                                        alt="avatar"
                                                     >
-                                                        {{ text }}
-                                                    </v-chip>
-                                                </template>
-                                            </v-file-input>
+                                                </v-avatar>
+                                                <v-btn text small color="error" @click="resetImage">Remover</v-btn>
+                                            </div>
+                                            <div v-else>
+                                                <v-file-input
+                                                    v-model="profile_pic"
+                                                    @change="onFileChange"
+                                                    color="deep-purple accent-4"
+                                                    placeholder="Selecione uma foto"
+                                                    prepend-icon=""
+                                                    prepend-inner-icon="mdi-camera"
+                                                    outlined
+                                                    :show-size="1000">
+                                                    <template v-slot:selection="{ index, text }">
+                                                        <v-chip
+                                                            color="deep-purple accent-4"
+                                                            dark
+                                                            label
+                                                            small
+                                                        >
+                                                            {{ text }}
+                                                        </v-chip>
+                                                    </template>
+                                                </v-file-input>
+                                            </div>
                                         </v-col>
                                     </v-row>
                                 </v-container>
                             </v-card-text>
                             <v-card-actions>
                                 <v-spacer></v-spacer>
-                                <v-btn color="blue darken-1" text @click="dialog = false">Cancelar</v-btn>
+                                <v-btn color="blue darken-1" text @click="closeDialog">Cancelar</v-btn>
                                 <v-btn color="blue darken-1" :disabled="!isValid" text @click="submit()">Salvar</v-btn>
                             </v-card-actions>
                         </v-card>
@@ -106,6 +116,24 @@
                         color="red"
                         text
                         @click="snackbar = false"
+                    >
+                        Fechar
+                    </v-btn>
+                </v-snackbar>
+
+                <v-snackbar
+                    v-model="snackbarError"
+                    :bottom="y === 'right'"
+                    color="red"
+                    :right="x === 'right'"
+                    :timeout="timeout"
+                    :top="y === 'right'"
+                >
+                    {{ snackbarErrorText }}
+                    <v-btn
+                        color="white"
+                        text
+                        @click="snackbarError = false"
                     >
                         Fechar
                     </v-btn>
@@ -131,11 +159,46 @@
                         >
                             mdi-pencil
                         </v-icon>
-                        <v-icon small>
+                        <v-icon small @click="dialogDelete = true">
                             mdi-delete
                         </v-icon>
+
+                        <v-dialog
+                            v-model="dialogDelete"
+                            max-width="290"
+                        >
+                            <v-card>
+                                <v-card-title class="headline">Deseja excluir?</v-card-title>
+
+                                <v-card-text>
+                                    Deseja realmente excluir este contato?
+                                </v-card-text>
+
+                                <v-card-actions>
+                                    <v-spacer></v-spacer>
+
+                                    <v-btn
+                                        color="green darken-1"
+                                        text
+                                        @click="dialogDelete = false"
+                                    >
+                                        Não
+                                    </v-btn>
+
+                                    <v-btn
+                                        color="green darken-1"
+                                        text
+                                        @click="deleteContact(item.id)"
+                                    >
+                                        Sim
+                                    </v-btn>
+                                </v-card-actions>
+                            </v-card>
+                        </v-dialog>
+
                     </template>
                 </v-data-table>
+
             </v-col>
             <v-col cols="12" v-else>
                 <div class="d-flex justify-center align-center subtitle-1">
@@ -157,18 +220,22 @@
         data: function() {
             return {
                 dialog: false,
+                dialogDelete: false,
                 update: false,
                 id: '',
                 name: '',
                 email: '',
                 phone: '',
                 profile_pic: null,
+                imagePreview: null,
                 errorMessages: '',
                 formHasErrors: false,
                 isValid: true,
                 color: '',
                 mode: '',
                 snackbar: false,
+                snackbarError: false,
+                snackbarErrorText: '',
                 snackbarText: 'Contato salvo com sucesso',
                 timeout: 6000,
                 x: 'right',
@@ -207,8 +274,6 @@
                 return {
                     name: this.name,
                     email: this.email,
-                    phone: this.phone,
-                    profile_pic: this.profile_pic
                 }
             },
         },
@@ -218,7 +283,6 @@
 
                 Object.keys(this.form).forEach(f => {
                     if (!this.form[f]) this.formHasErrors = true;
-
                     this.$refs[f].validate(true);
                 });
 
@@ -233,30 +297,59 @@
                 })
                 .then(() => {
                     this.dialog = false;
-                    this.update = false;
                     this.$store.dispatch('getContacts');
                     this.reset();
                     this.snackbar = true;
                 })
                 .catch(err => {
-                    console.log(err)
+                    this.snackbarErrorText = 'Algo errado';
+                    this.snackbarError = true;
                 });
             },
             edit(id) {
+                let _this = this;
                 this.$store.dispatch('getContact', id)
                     .then(res => {
                         this.id = res.data.id;
                         this.name = res.data.name;
                         this.email = res.data.email;
                         this.phone = res.data.phone;
-                        //this.profile_pic = res.data.profile_pic;
+
+                        if(res.data.profile_pic !== 'null') {
+                            let path = [`/storage/contacts/${res.data.profile_pic}`];
+
+                            let blob = null;
+                            let xhr = new XMLHttpRequest();
+                            xhr.open("GET", path[0]);
+                            xhr.responseType = "blob";
+                            xhr.onload = function () {
+                                blob = xhr.response;
+                                _this.previewImage(blob);
+                            };
+                            xhr.send();
+                        }
 
                         this.update = true;
 
                         this.dialog = true;
                     })
+                    .catch(err => {
+                        console.log(err);
+                        this.snackbarErrorText = 'Algo errado.'
+                        this.snackbarError = true;
+                    });
+            },
+
+            deleteContact(id) {
+                this.$store.dispatch('deleteContact', id)
+                    .then(res => {
+                        this.dialogDelete = false;
+                        this.$store.dispatch('getContacts');
+                        this.reset();
+                    })
                     .catch(err => console.log(err));
             },
+
             reset () {
                 this.errorMessages = [];
                 this.formHasErrors = false;
@@ -265,7 +358,36 @@
                 this.email = '';
                 this.phone = '';
                 this.profile_pic = null;
+                this.update = false;
+                this.resetImage();
             },
+
+            resetImage() {
+                this.imagePreview = null;
+                this.profile_pic = null;
+            },
+
+            closeDialog() {
+                this.dialog = false;
+                this.$refs.form.reset();
+                this.reset();
+            },
+
+            onFileChange(e) {
+                if(!e) {
+                    return;
+                }
+
+                this.previewImage(e);
+            },
+
+            previewImage(file) {
+                let reader = new FileReader();
+                reader.onload = (e) => {
+                    this.imagePreview = e.target.result;
+                };
+                reader.readAsDataURL(file);
+            }
         },
         created(){
             this.$store.dispatch('getContacts')

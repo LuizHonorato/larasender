@@ -2433,6 +2433,69 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -2443,18 +2506,22 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
   data: function data() {
     return {
       dialog: false,
+      dialogDelete: false,
       update: false,
       id: '',
       name: '',
       email: '',
       phone: '',
       profile_pic: null,
+      imagePreview: null,
       errorMessages: '',
       formHasErrors: false,
       isValid: true,
       color: '',
       mode: '',
       snackbar: false,
+      snackbarError: false,
+      snackbarErrorText: '',
       snackbarText: 'Contato salvo com sucesso',
       timeout: 6000,
       x: 'right',
@@ -2486,21 +2553,19 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     form: function form() {
       return {
         name: this.name,
-        email: this.email,
-        phone: this.phone,
-        profile_pic: this.profile_pic
+        email: this.email
       };
     }
   }),
   methods: {
     submit: function submit() {
-      var _this = this;
+      var _this2 = this;
 
       this.formHasErrors = false;
       Object.keys(this.form).forEach(function (f) {
-        if (!_this.form[f]) _this.formHasErrors = true;
+        if (!_this2.form[f]) _this2.formHasErrors = true;
 
-        _this.$refs[f].validate(true);
+        _this2.$refs[f].validate(true);
       });
       var action = this.update ? 'updateContact' : 'storeContact';
       this.$store.dispatch(action, {
@@ -2510,29 +2575,62 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
         phone: this.phone,
         profile_pic: this.profile_pic
       }).then(function () {
-        _this.dialog = false;
-        _this.update = false;
+        _this2.dialog = false;
 
-        _this.$store.dispatch('getContacts');
+        _this2.$store.dispatch('getContacts');
 
-        _this.reset();
+        _this2.reset();
 
-        _this.snackbar = true;
+        _this2.snackbar = true;
       })["catch"](function (err) {
-        console.log(err);
+        _this2.snackbarErrorText = 'Algo errado';
+        _this2.snackbarError = true;
       });
     },
     edit: function edit(id) {
-      var _this2 = this;
+      var _this3 = this;
+
+      var _this = this;
 
       this.$store.dispatch('getContact', id).then(function (res) {
-        _this2.id = res.data.id;
-        _this2.name = res.data.name;
-        _this2.email = res.data.email;
-        _this2.phone = res.data.phone; //this.profile_pic = res.data.profile_pic;
+        _this3.id = res.data.id;
+        _this3.name = res.data.name;
+        _this3.email = res.data.email;
+        _this3.phone = res.data.phone;
 
-        _this2.update = true;
-        _this2.dialog = true;
+        if (res.data.profile_pic !== 'null') {
+          var path = ["/storage/contacts/".concat(res.data.profile_pic)];
+          var blob = null;
+          var xhr = new XMLHttpRequest();
+          xhr.open("GET", path[0]);
+          xhr.responseType = "blob";
+
+          xhr.onload = function () {
+            blob = xhr.response;
+
+            _this.previewImage(blob);
+          };
+
+          xhr.send();
+        }
+
+        _this3.update = true;
+        _this3.dialog = true;
+      })["catch"](function (err) {
+        console.log(err);
+        _this3.snackbarErrorText = 'Algo errado.';
+        _this3.snackbarError = true;
+      });
+    },
+    deleteContact: function deleteContact(id) {
+      var _this4 = this;
+
+      this.$store.dispatch('deleteContact', id).then(function (res) {
+        _this4.dialogDelete = false;
+
+        _this4.$store.dispatch('getContacts');
+
+        _this4.reset();
       })["catch"](function (err) {
         return console.log(err);
       });
@@ -2545,6 +2643,35 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       this.email = '';
       this.phone = '';
       this.profile_pic = null;
+      this.update = false;
+      this.resetImage();
+    },
+    resetImage: function resetImage() {
+      this.imagePreview = null;
+      this.profile_pic = null;
+    },
+    closeDialog: function closeDialog() {
+      this.dialog = false;
+      this.$refs.form.reset();
+      this.reset();
+    },
+    onFileChange: function onFileChange(e) {
+      if (!e) {
+        return;
+      }
+
+      this.previewImage(e);
+    },
+    previewImage: function previewImage(file) {
+      var _this5 = this;
+
+      var reader = new FileReader();
+
+      reader.onload = function (e) {
+        _this5.imagePreview = e.target.result;
+      };
+
+      reader.readAsDataURL(file);
     }
   },
   created: function created() {
@@ -40104,6 +40231,7 @@ var render = function() {
                   _c(
                     "v-form",
                     {
+                      ref: "form",
                       model: {
                         value: _vm.isValid,
                         callback: function($$v) {
@@ -40245,7 +40373,6 @@ var render = function() {
                                                 expression: "'(##) #####-####'"
                                               }
                                             ],
-                                            ref: "phone",
                                             attrs: {
                                               placeholder: "Celular",
                                               type: "text",
@@ -40266,6 +40393,9 @@ var render = function() {
                                       _c(
                                         "v-col",
                                         {
+                                          staticStyle: {
+                                            "text-align": "center"
+                                          },
                                           attrs: {
                                             cols: "12",
                                             sm: "12",
@@ -40273,57 +40403,102 @@ var render = function() {
                                           }
                                         },
                                         [
-                                          _c("v-file-input", {
-                                            ref: "profile_pic",
-                                            attrs: {
-                                              color: "deep-purple accent-4",
-                                              placeholder: "Selecione uma foto",
-                                              "prepend-icon": "",
-                                              "prepend-inner-icon":
-                                                "mdi-camera",
-                                              outlined: "",
-                                              "show-size": 1000
-                                            },
-                                            scopedSlots: _vm._u([
-                                              {
-                                                key: "selection",
-                                                fn: function(ref) {
-                                                  var index = ref.index
-                                                  var text = ref.text
-                                                  return [
-                                                    _c(
-                                                      "v-chip",
-                                                      {
+                                          _vm.imagePreview != null
+                                            ? _c(
+                                                "div",
+                                                [
+                                                  _c(
+                                                    "v-avatar",
+                                                    { attrs: { size: "62" } },
+                                                    [
+                                                      _c("img", {
                                                         attrs: {
-                                                          color:
-                                                            "deep-purple accent-4",
-                                                          dark: "",
-                                                          label: "",
-                                                          small: ""
+                                                          src: _vm.imagePreview,
+                                                          alt: "avatar"
                                                         }
+                                                      })
+                                                    ]
+                                                  ),
+                                                  _vm._v(" "),
+                                                  _c(
+                                                    "v-btn",
+                                                    {
+                                                      attrs: {
+                                                        text: "",
+                                                        small: "",
+                                                        color: "error"
                                                       },
-                                                      [
-                                                        _vm._v(
-                                                          "\n                                                    " +
-                                                            _vm._s(text) +
-                                                            "\n                                                "
-                                                        )
-                                                      ]
-                                                    )
-                                                  ]
-                                                }
-                                              }
-                                            ]),
-                                            model: {
-                                              value: _vm.profile_pic,
-                                              callback: function($$v) {
-                                                _vm.profile_pic = $$v
-                                              },
-                                              expression: "profile_pic"
-                                            }
-                                          })
-                                        ],
-                                        1
+                                                      on: {
+                                                        click: _vm.resetImage
+                                                      }
+                                                    },
+                                                    [_vm._v("Remover")]
+                                                  )
+                                                ],
+                                                1
+                                              )
+                                            : _c(
+                                                "div",
+                                                [
+                                                  _c("v-file-input", {
+                                                    attrs: {
+                                                      color:
+                                                        "deep-purple accent-4",
+                                                      placeholder:
+                                                        "Selecione uma foto",
+                                                      "prepend-icon": "",
+                                                      "prepend-inner-icon":
+                                                        "mdi-camera",
+                                                      outlined: "",
+                                                      "show-size": 1000
+                                                    },
+                                                    on: {
+                                                      change: _vm.onFileChange
+                                                    },
+                                                    scopedSlots: _vm._u([
+                                                      {
+                                                        key: "selection",
+                                                        fn: function(ref) {
+                                                          var index = ref.index
+                                                          var text = ref.text
+                                                          return [
+                                                            _c(
+                                                              "v-chip",
+                                                              {
+                                                                attrs: {
+                                                                  color:
+                                                                    "deep-purple accent-4",
+                                                                  dark: "",
+                                                                  label: "",
+                                                                  small: ""
+                                                                }
+                                                              },
+                                                              [
+                                                                _vm._v(
+                                                                  "\n                                                        " +
+                                                                    _vm._s(
+                                                                      text
+                                                                    ) +
+                                                                    "\n                                                    "
+                                                                )
+                                                              ]
+                                                            )
+                                                          ]
+                                                        }
+                                                      }
+                                                    ]),
+                                                    model: {
+                                                      value: _vm.profile_pic,
+                                                      callback: function($$v) {
+                                                        _vm.profile_pic = $$v
+                                                      },
+                                                      expression: "profile_pic"
+                                                    }
+                                                  })
+                                                ],
+                                                1
+                                              )
+                                        ]
                                       )
                                     ],
                                     1
@@ -40344,11 +40519,7 @@ var render = function() {
                                 "v-btn",
                                 {
                                   attrs: { color: "blue darken-1", text: "" },
-                                  on: {
-                                    click: function($event) {
-                                      _vm.dialog = false
-                                    }
-                                  }
+                                  on: { click: _vm.closeDialog }
                                 },
                                 [_vm._v("Cancelar")]
                               ),
@@ -40420,6 +40591,46 @@ var render = function() {
                   )
                 ],
                 1
+              ),
+              _vm._v(" "),
+              _c(
+                "v-snackbar",
+                {
+                  attrs: {
+                    bottom: _vm.y === "right",
+                    color: "red",
+                    right: _vm.x === "right",
+                    timeout: _vm.timeout,
+                    top: _vm.y === "right"
+                  },
+                  model: {
+                    value: _vm.snackbarError,
+                    callback: function($$v) {
+                      _vm.snackbarError = $$v
+                    },
+                    expression: "snackbarError"
+                  }
+                },
+                [
+                  _vm._v(
+                    "\n                " +
+                      _vm._s(_vm.snackbarErrorText) +
+                      "\n                "
+                  ),
+                  _c(
+                    "v-btn",
+                    {
+                      attrs: { color: "white", text: "" },
+                      on: {
+                        click: function($event) {
+                          _vm.snackbarError = false
+                        }
+                      }
+                    },
+                    [_vm._v("\n                    Fechar\n                ")]
+                  )
+                ],
+                1
               )
             ],
             1
@@ -40470,18 +40681,113 @@ var render = function() {
                                 ]
                               ),
                               _vm._v(" "),
-                              _c("v-icon", { attrs: { small: "" } }, [
-                                _vm._v(
-                                  "\n                        mdi-delete\n                    "
-                                )
-                              ])
+                              _c(
+                                "v-icon",
+                                {
+                                  attrs: { small: "" },
+                                  on: {
+                                    click: function($event) {
+                                      _vm.dialogDelete = true
+                                    }
+                                  }
+                                },
+                                [
+                                  _vm._v(
+                                    "\n                        mdi-delete\n                    "
+                                  )
+                                ]
+                              ),
+                              _vm._v(" "),
+                              _c(
+                                "v-dialog",
+                                {
+                                  attrs: { "max-width": "290" },
+                                  model: {
+                                    value: _vm.dialogDelete,
+                                    callback: function($$v) {
+                                      _vm.dialogDelete = $$v
+                                    },
+                                    expression: "dialogDelete"
+                                  }
+                                },
+                                [
+                                  _c(
+                                    "v-card",
+                                    [
+                                      _c(
+                                        "v-card-title",
+                                        { staticClass: "headline" },
+                                        [_vm._v("Deseja excluir?")]
+                                      ),
+                                      _vm._v(" "),
+                                      _c("v-card-text", [
+                                        _vm._v(
+                                          "\n                                Deseja realmente excluir este contato?\n                            "
+                                        )
+                                      ]),
+                                      _vm._v(" "),
+                                      _c(
+                                        "v-card-actions",
+                                        [
+                                          _c("v-spacer"),
+                                          _vm._v(" "),
+                                          _c(
+                                            "v-btn",
+                                            {
+                                              attrs: {
+                                                color: "green darken-1",
+                                                text: ""
+                                              },
+                                              on: {
+                                                click: function($event) {
+                                                  _vm.dialogDelete = false
+                                                }
+                                              }
+                                            },
+                                            [
+                                              _vm._v(
+                                                "\n                                    Não\n                                "
+                                              )
+                                            ]
+                                          ),
+                                          _vm._v(" "),
+                                          _c(
+                                            "v-btn",
+                                            {
+                                              attrs: {
+                                                color: "green darken-1",
+                                                text: ""
+                                              },
+                                              on: {
+                                                click: function($event) {
+                                                  return _vm.deleteContact(
+                                                    item.id
+                                                  )
+                                                }
+                                              }
+                                            },
+                                            [
+                                              _vm._v(
+                                                "\n                                    Sim\n                                "
+                                              )
+                                            ]
+                                          )
+                                        ],
+                                        1
+                                      )
+                                    ],
+                                    1
+                                  )
+                                ],
+                                1
+                              )
                             ]
                           }
                         }
                       ],
                       null,
                       false,
-                      1176073433
+                      3410296196
                     )
                   })
                 ],
@@ -117057,18 +117363,19 @@ __webpack_require__.r(__webpack_exports__);
 /* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
 /* harmony import */ var _node_modules_vuetify_loader_lib_runtime_installComponents_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../../node_modules/vuetify-loader/lib/runtime/installComponents.js */ "./node_modules/vuetify-loader/lib/runtime/installComponents.js");
 /* harmony import */ var _node_modules_vuetify_loader_lib_runtime_installComponents_js__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_node_modules_vuetify_loader_lib_runtime_installComponents_js__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var vuetify_lib_components_VBtn__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! vuetify/lib/components/VBtn */ "./node_modules/vuetify/lib/components/VBtn/index.js");
-/* harmony import */ var vuetify_lib_components_VCard__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! vuetify/lib/components/VCard */ "./node_modules/vuetify/lib/components/VCard/index.js");
-/* harmony import */ var vuetify_lib_components_VChip__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! vuetify/lib/components/VChip */ "./node_modules/vuetify/lib/components/VChip/index.js");
-/* harmony import */ var vuetify_lib_components_VGrid__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! vuetify/lib/components/VGrid */ "./node_modules/vuetify/lib/components/VGrid/index.js");
-/* harmony import */ var vuetify_lib_components_VDataTable__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! vuetify/lib/components/VDataTable */ "./node_modules/vuetify/lib/components/VDataTable/index.js");
-/* harmony import */ var vuetify_lib_components_VDialog__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! vuetify/lib/components/VDialog */ "./node_modules/vuetify/lib/components/VDialog/index.js");
-/* harmony import */ var vuetify_lib_components_VDivider__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! vuetify/lib/components/VDivider */ "./node_modules/vuetify/lib/components/VDivider/index.js");
-/* harmony import */ var vuetify_lib_components_VFileInput__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! vuetify/lib/components/VFileInput */ "./node_modules/vuetify/lib/components/VFileInput/index.js");
-/* harmony import */ var vuetify_lib_components_VForm__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! vuetify/lib/components/VForm */ "./node_modules/vuetify/lib/components/VForm/index.js");
-/* harmony import */ var vuetify_lib_components_VIcon__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! vuetify/lib/components/VIcon */ "./node_modules/vuetify/lib/components/VIcon/index.js");
-/* harmony import */ var vuetify_lib_components_VSnackbar__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! vuetify/lib/components/VSnackbar */ "./node_modules/vuetify/lib/components/VSnackbar/index.js");
-/* harmony import */ var vuetify_lib_components_VTextField__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! vuetify/lib/components/VTextField */ "./node_modules/vuetify/lib/components/VTextField/index.js");
+/* harmony import */ var vuetify_lib_components_VAvatar__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! vuetify/lib/components/VAvatar */ "./node_modules/vuetify/lib/components/VAvatar/index.js");
+/* harmony import */ var vuetify_lib_components_VBtn__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! vuetify/lib/components/VBtn */ "./node_modules/vuetify/lib/components/VBtn/index.js");
+/* harmony import */ var vuetify_lib_components_VCard__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! vuetify/lib/components/VCard */ "./node_modules/vuetify/lib/components/VCard/index.js");
+/* harmony import */ var vuetify_lib_components_VChip__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! vuetify/lib/components/VChip */ "./node_modules/vuetify/lib/components/VChip/index.js");
+/* harmony import */ var vuetify_lib_components_VGrid__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! vuetify/lib/components/VGrid */ "./node_modules/vuetify/lib/components/VGrid/index.js");
+/* harmony import */ var vuetify_lib_components_VDataTable__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! vuetify/lib/components/VDataTable */ "./node_modules/vuetify/lib/components/VDataTable/index.js");
+/* harmony import */ var vuetify_lib_components_VDialog__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! vuetify/lib/components/VDialog */ "./node_modules/vuetify/lib/components/VDialog/index.js");
+/* harmony import */ var vuetify_lib_components_VDivider__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! vuetify/lib/components/VDivider */ "./node_modules/vuetify/lib/components/VDivider/index.js");
+/* harmony import */ var vuetify_lib_components_VFileInput__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! vuetify/lib/components/VFileInput */ "./node_modules/vuetify/lib/components/VFileInput/index.js");
+/* harmony import */ var vuetify_lib_components_VForm__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! vuetify/lib/components/VForm */ "./node_modules/vuetify/lib/components/VForm/index.js");
+/* harmony import */ var vuetify_lib_components_VIcon__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! vuetify/lib/components/VIcon */ "./node_modules/vuetify/lib/components/VIcon/index.js");
+/* harmony import */ var vuetify_lib_components_VSnackbar__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! vuetify/lib/components/VSnackbar */ "./node_modules/vuetify/lib/components/VSnackbar/index.js");
+/* harmony import */ var vuetify_lib_components_VTextField__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! vuetify/lib/components/VTextField */ "./node_modules/vuetify/lib/components/VTextField/index.js");
 
 
 
@@ -117107,7 +117414,8 @@ var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_
 
 
 
-_node_modules_vuetify_loader_lib_runtime_installComponents_js__WEBPACK_IMPORTED_MODULE_3___default()(component, {VBtn: vuetify_lib_components_VBtn__WEBPACK_IMPORTED_MODULE_4__["VBtn"],VCard: vuetify_lib_components_VCard__WEBPACK_IMPORTED_MODULE_5__["VCard"],VCardActions: vuetify_lib_components_VCard__WEBPACK_IMPORTED_MODULE_5__["VCardActions"],VCardText: vuetify_lib_components_VCard__WEBPACK_IMPORTED_MODULE_5__["VCardText"],VCardTitle: vuetify_lib_components_VCard__WEBPACK_IMPORTED_MODULE_5__["VCardTitle"],VChip: vuetify_lib_components_VChip__WEBPACK_IMPORTED_MODULE_6__["VChip"],VCol: vuetify_lib_components_VGrid__WEBPACK_IMPORTED_MODULE_7__["VCol"],VContainer: vuetify_lib_components_VGrid__WEBPACK_IMPORTED_MODULE_7__["VContainer"],VDataTable: vuetify_lib_components_VDataTable__WEBPACK_IMPORTED_MODULE_8__["VDataTable"],VDialog: vuetify_lib_components_VDialog__WEBPACK_IMPORTED_MODULE_9__["VDialog"],VDivider: vuetify_lib_components_VDivider__WEBPACK_IMPORTED_MODULE_10__["VDivider"],VFileInput: vuetify_lib_components_VFileInput__WEBPACK_IMPORTED_MODULE_11__["VFileInput"],VForm: vuetify_lib_components_VForm__WEBPACK_IMPORTED_MODULE_12__["VForm"],VIcon: vuetify_lib_components_VIcon__WEBPACK_IMPORTED_MODULE_13__["VIcon"],VRow: vuetify_lib_components_VGrid__WEBPACK_IMPORTED_MODULE_7__["VRow"],VSnackbar: vuetify_lib_components_VSnackbar__WEBPACK_IMPORTED_MODULE_14__["VSnackbar"],VSpacer: vuetify_lib_components_VGrid__WEBPACK_IMPORTED_MODULE_7__["VSpacer"],VTextField: vuetify_lib_components_VTextField__WEBPACK_IMPORTED_MODULE_15__["VTextField"]})
+
+_node_modules_vuetify_loader_lib_runtime_installComponents_js__WEBPACK_IMPORTED_MODULE_3___default()(component, {VAvatar: vuetify_lib_components_VAvatar__WEBPACK_IMPORTED_MODULE_4__["VAvatar"],VBtn: vuetify_lib_components_VBtn__WEBPACK_IMPORTED_MODULE_5__["VBtn"],VCard: vuetify_lib_components_VCard__WEBPACK_IMPORTED_MODULE_6__["VCard"],VCardActions: vuetify_lib_components_VCard__WEBPACK_IMPORTED_MODULE_6__["VCardActions"],VCardText: vuetify_lib_components_VCard__WEBPACK_IMPORTED_MODULE_6__["VCardText"],VCardTitle: vuetify_lib_components_VCard__WEBPACK_IMPORTED_MODULE_6__["VCardTitle"],VChip: vuetify_lib_components_VChip__WEBPACK_IMPORTED_MODULE_7__["VChip"],VCol: vuetify_lib_components_VGrid__WEBPACK_IMPORTED_MODULE_8__["VCol"],VContainer: vuetify_lib_components_VGrid__WEBPACK_IMPORTED_MODULE_8__["VContainer"],VDataTable: vuetify_lib_components_VDataTable__WEBPACK_IMPORTED_MODULE_9__["VDataTable"],VDialog: vuetify_lib_components_VDialog__WEBPACK_IMPORTED_MODULE_10__["VDialog"],VDivider: vuetify_lib_components_VDivider__WEBPACK_IMPORTED_MODULE_11__["VDivider"],VFileInput: vuetify_lib_components_VFileInput__WEBPACK_IMPORTED_MODULE_12__["VFileInput"],VForm: vuetify_lib_components_VForm__WEBPACK_IMPORTED_MODULE_13__["VForm"],VIcon: vuetify_lib_components_VIcon__WEBPACK_IMPORTED_MODULE_14__["VIcon"],VRow: vuetify_lib_components_VGrid__WEBPACK_IMPORTED_MODULE_8__["VRow"],VSnackbar: vuetify_lib_components_VSnackbar__WEBPACK_IMPORTED_MODULE_15__["VSnackbar"],VSpacer: vuetify_lib_components_VGrid__WEBPACK_IMPORTED_MODULE_8__["VSpacer"],VTextField: vuetify_lib_components_VTextField__WEBPACK_IMPORTED_MODULE_16__["VTextField"]})
 
 
 /* hot reload */
@@ -117631,6 +117939,16 @@ var actions = {
     return new Promise(function (resolve, reject) {
       axios__WEBPACK_IMPORTED_MODULE_0___default.a.post("/contacts/".concat(contact.id), formData, config).then(function (data) {
         return resolve();
+      })["catch"](function (err) {
+        return reject(err);
+      });
+    });
+  },
+  deleteContact: function deleteContact(_ref5, id) {
+    var dispatch = _ref5.dispatch;
+    return new Promise(function (resolve, reject) {
+      axios__WEBPACK_IMPORTED_MODULE_0___default.a["delete"]("/contacts/".concat(id)).then(function (data) {
+        return resolve(data);
       })["catch"](function (err) {
         return reject(err);
       });
