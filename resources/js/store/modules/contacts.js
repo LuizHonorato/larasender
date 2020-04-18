@@ -26,7 +26,7 @@ const actions = {
         });
     },
 
-    submitContact({dispatch}, contact) {
+    storeContact({dispatch}, contact) {
         const config = {
             headers: {
                 'Content-Type' : 'multipart/form-data'
@@ -44,7 +44,27 @@ const actions = {
                 .then(data => resolve())
                 .catch(err => reject(err));
         });
+    },
 
+    updateContact({dispatch}, contact) {
+        const config = {
+            headers: {
+                'Content-Type' : 'multipart/form-data'
+            }
+        };
+
+        let formData = new FormData();
+        formData.append('name', contact.name);
+        formData.append('email', contact.email);
+        formData.append('phone', contact.phone);
+        formData.append('profile_pic', contact.profile_pic);
+        formData.append('_method', 'PUT');
+
+        return new Promise((resolve, reject) => {
+            axios.post(`/contacts/${contact.id}`, formData, config)
+                .then(data => resolve())
+                .catch(err => reject(err));
+        });
     }
 }
 

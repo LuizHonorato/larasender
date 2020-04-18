@@ -2443,6 +2443,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
   data: function data() {
     return {
       dialog: false,
+      update: false,
       id: '',
       name: '',
       email: '',
@@ -2454,7 +2455,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       color: '',
       mode: '',
       snackbar: false,
-      snackbarText: 'Contato cadastrado com sucesso',
+      snackbarText: 'Contato salvo com sucesso',
       timeout: 6000,
       x: 'right',
       y: 'top',
@@ -2501,13 +2502,16 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
         _this.$refs[f].validate(true);
       });
-      this.$store.dispatch('submitContact', {
+      var action = this.update ? 'updateContact' : 'storeContact';
+      this.$store.dispatch(action, {
+        id: this.id,
         name: this.name,
         email: this.email,
         phone: this.phone,
         profile_pic: this.profile_pic
       }).then(function () {
         _this.dialog = false;
+        _this.update = false;
 
         _this.$store.dispatch('getContacts');
 
@@ -2525,8 +2529,9 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
         _this2.id = res.data.id;
         _this2.name = res.data.name;
         _this2.email = res.data.email;
-        _this2.phone = res.data.phone;
-        _this2.profile_pic = res.data.profile_pic;
+        _this2.phone = res.data.phone; //this.profile_pic = res.data.profile_pic;
+
+        _this2.update = true;
         _this2.dialog = true;
       })["catch"](function (err) {
         return console.log(err);
@@ -2535,6 +2540,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     reset: function reset() {
       this.errorMessages = [];
       this.formHasErrors = false;
+      this.id = '';
       this.name = '';
       this.email = '';
       this.phone = '';
@@ -117589,7 +117595,7 @@ var actions = {
       });
     });
   },
-  submitContact: function submitContact(_ref3, contact) {
+  storeContact: function storeContact(_ref3, contact) {
     var dispatch = _ref3.dispatch;
     var config = {
       headers: {
@@ -117603,6 +117609,27 @@ var actions = {
     formData.append('profile_pic', contact.profile_pic);
     return new Promise(function (resolve, reject) {
       axios__WEBPACK_IMPORTED_MODULE_0___default.a.post('/contacts', formData, config).then(function (data) {
+        return resolve();
+      })["catch"](function (err) {
+        return reject(err);
+      });
+    });
+  },
+  updateContact: function updateContact(_ref4, contact) {
+    var dispatch = _ref4.dispatch;
+    var config = {
+      headers: {
+        'Content-Type': 'multipart/form-data'
+      }
+    };
+    var formData = new FormData();
+    formData.append('name', contact.name);
+    formData.append('email', contact.email);
+    formData.append('phone', contact.phone);
+    formData.append('profile_pic', contact.profile_pic);
+    formData.append('_method', 'PUT');
+    return new Promise(function (resolve, reject) {
+      axios__WEBPACK_IMPORTED_MODULE_0___default.a.post("/contacts/".concat(contact.id), formData, config).then(function (data) {
         return resolve();
       })["catch"](function (err) {
         return reject(err);

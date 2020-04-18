@@ -157,6 +157,7 @@
         data: function() {
             return {
                 dialog: false,
+                update: false,
                 id: '',
                 name: '',
                 email: '',
@@ -168,7 +169,7 @@
                 color: '',
                 mode: '',
                 snackbar: false,
-                snackbarText: 'Contato cadastrado com sucesso',
+                snackbarText: 'Contato salvo com sucesso',
                 timeout: 6000,
                 x: 'right',
                 y: 'top',
@@ -213,8 +214,7 @@
         },
         methods: {
             submit() {
-
-                this.formHasErrors = false
+                this.formHasErrors = false;
 
                 Object.keys(this.form).forEach(f => {
                     if (!this.form[f]) this.formHasErrors = true;
@@ -222,7 +222,10 @@
                     this.$refs[f].validate(true);
                 });
 
-                this.$store.dispatch('submitContact', {
+                let action = this.update ? 'updateContact' : 'storeContact';
+
+                this.$store.dispatch(action, {
+                    id: this.id,
                     name: this.name,
                     email: this.email,
                     phone: this.phone,
@@ -230,6 +233,7 @@
                 })
                 .then(() => {
                     this.dialog = false;
+                    this.update = false;
                     this.$store.dispatch('getContacts');
                     this.reset();
                     this.snackbar = true;
@@ -245,7 +249,9 @@
                         this.name = res.data.name;
                         this.email = res.data.email;
                         this.phone = res.data.phone;
-                        this.profile_pic = res.data.profile_pic;
+                        //this.profile_pic = res.data.profile_pic;
+
+                        this.update = true;
 
                         this.dialog = true;
                     })
@@ -254,6 +260,7 @@
             reset () {
                 this.errorMessages = [];
                 this.formHasErrors = false;
+                this.id = '';
                 this.name = '';
                 this.email = '';
                 this.phone = '';
