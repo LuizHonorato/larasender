@@ -42,7 +42,7 @@ const actions = {
         return new Promise((resolve, reject) => {
             axios.post('/contacts', formData, config)
                 .then(data => resolve())
-                .catch(err => reject(err));
+                .catch(err => reject(err.response));
         });
     },
 
@@ -63,7 +63,7 @@ const actions = {
         return new Promise((resolve, reject) => {
             axios.post(`/contacts/${contact.id}`, formData, config)
                 .then(data => resolve())
-                .catch(err => reject(err));
+                .catch(err => reject(err.response));
         });
     },
 

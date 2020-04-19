@@ -97,7 +97,7 @@
                             <v-card-actions>
                                 <v-spacer></v-spacer>
                                 <v-btn color="blue darken-1" text @click="closeDialog">Cancelar</v-btn>
-                                <v-btn color="blue darken-1" :disabled="!isValid" text @click="submit()">Salvar</v-btn>
+                                <v-btn type="submit" color="blue darken-1" :disabled="!isValid" text @click="submit()">Salvar</v-btn>
                             </v-card-actions>
                         </v-card>
                     </v-form>
@@ -302,7 +302,14 @@
                     this.snackbar = true;
                 })
                 .catch(err => {
-                    this.snackbarErrorText = 'Algo errado';
+                    if(err.data.errors.name) {
+                        this.snackbarErrorText = err.data.errors.name[0];
+                    }
+
+                    if(err.data.errors.email) {
+                        this.snackbarErrorText = err.data.errors.email[0];
+                    }
+
                     this.snackbarError = true;
                 });
             },
@@ -324,6 +331,7 @@
                             xhr.responseType = "blob";
                             xhr.onload = function () {
                                 blob = xhr.response;
+                                _this.profile_pic = blob;
                                 _this.previewImage(blob);
                             };
                             xhr.send();
@@ -334,8 +342,7 @@
                         this.dialog = true;
                     })
                     .catch(err => {
-                        console.log(err);
-                        this.snackbarErrorText = 'Algo errado.'
+                        this.snackbarErrorText = 'Não foi possível exibir o contato selecionado.';
                         this.snackbarError = true;
                     });
             },
@@ -347,7 +354,10 @@
                         this.$store.dispatch('getContacts');
                         this.reset();
                     })
-                    .catch(err => console.log(err));
+                    .catch(err => {
+                        this.snackbarErrorText = 'Erro ao excluir o contato.';
+                        this.snackbarError = true;
+                    });
             },
 
             reset () {

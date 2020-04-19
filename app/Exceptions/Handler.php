@@ -3,6 +3,9 @@
 namespace App\Exceptions;
 
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
+use Symfony\Component\HttpKernel\Exception\MethodNotAllowedHttpException;
+use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
+use Symfony\Component\HttpKernel\Exception\UnprocessableEntityHttpException;
 use Throwable;
 
 class Handler extends ExceptionHandler
@@ -50,6 +53,24 @@ class Handler extends ExceptionHandler
      */
     public function render($request, Throwable $exception)
     {
+        if($exception instanceof NotFoundHttpException) {
+            if($request->expectsJson()) {
+                return response()->json(['success' => false, 'error' => 'URL não encontrada'], $exception->getStatusCode());
+            }
+        }
+
+        if($exception instanceof MethodNotAllowedHttpException) {
+            if($request->expectsJson()) {
+                return response()->json(['success' => false, 'error' => 'Tipo de requisição não permitida para esse recurso'], $exception->getStatusCode());
+            }
+        }
+
+        if($exception instanceof UnprocessableEntityHttpException) {
+            if($request->expectsJson()) {
+                return response()->json(['success' => false, 'error' => $exception->getMessage()], $exception->getStatusCode());
+            }
+        }
+
         return parent::render($request, $exception);
     }
 }

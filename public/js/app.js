@@ -2583,7 +2583,14 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
         _this2.snackbar = true;
       })["catch"](function (err) {
-        _this2.snackbarErrorText = 'Algo errado';
+        if (err.data.errors.name) {
+          _this2.snackbarErrorText = err.data.errors.name[0];
+        }
+
+        if (err.data.errors.email) {
+          _this2.snackbarErrorText = err.data.errors.email[0];
+        }
+
         _this2.snackbarError = true;
       });
     },
@@ -2607,6 +2614,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
           xhr.onload = function () {
             blob = xhr.response;
+            _this.profile_pic = blob;
 
             _this.previewImage(blob);
           };
@@ -2617,8 +2625,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
         _this3.update = true;
         _this3.dialog = true;
       })["catch"](function (err) {
-        console.log(err);
-        _this3.snackbarErrorText = 'Algo errado.';
+        _this3.snackbarErrorText = 'Não foi possível exibir o contato selecionado.';
         _this3.snackbarError = true;
       });
     },
@@ -2632,7 +2639,8 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
         _this4.reset();
       })["catch"](function (err) {
-        return console.log(err);
+        _this4.snackbarErrorText = 'Erro ao excluir o contato.';
+        _this4.snackbarError = true;
       });
     },
     reset: function reset() {
@@ -40528,6 +40536,7 @@ var render = function() {
                                 "v-btn",
                                 {
                                   attrs: {
+                                    type: "submit",
                                     color: "blue darken-1",
                                     disabled: !_vm.isValid,
                                     text: ""
@@ -117919,7 +117928,7 @@ var actions = {
       axios__WEBPACK_IMPORTED_MODULE_0___default.a.post('/contacts', formData, config).then(function (data) {
         return resolve();
       })["catch"](function (err) {
-        return reject(err);
+        return reject(err.response);
       });
     });
   },
@@ -117940,7 +117949,7 @@ var actions = {
       axios__WEBPACK_IMPORTED_MODULE_0___default.a.post("/contacts/".concat(contact.id), formData, config).then(function (data) {
         return resolve();
       })["catch"](function (err) {
-        return reject(err);
+        return reject(err.response);
       });
     });
   },
