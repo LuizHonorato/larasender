@@ -1,8 +1,6 @@
 import axios from 'axios';
-import header from "vuetify/lib/components/VDataTable/mixins/header";
-import {consoleError} from "vuetify/lib/util/console";
 
-axios.defaults.baseURL = 'http://larasender.test/api';
+axios.defaults.baseURL = process.env.BASE_URL;
 
 const state = {
     contacts: [],
@@ -11,19 +9,29 @@ const state = {
 const actions = {
     getContacts({commit}) {
         return axios
-            .get('/contacts')
+            .get('api/contacts')
             .then(res => {
-                commit('SET_CONTACTS', res.data)
+                commit('SET_CONTACTS', res.data);
             })
             .catch(err => console.log(err));
     },
 
     getContact({commit}, id) {
         return new Promise((resolve, reject) => {
-            axios.get(`/contacts/${id}`)
+            axios.get(`api/contacts/${id}`)
                 .then(data => resolve(data))
                 .catch(err => reject(err));
         });
+    },
+
+    searchContact({commit}, params) {
+        axios.post('api/contacts/search', params)
+            .then(res => {
+                commit('SET_CONTACTS', res.data);
+            })
+            .catch(err => {
+                console.log(err);
+            });
     },
 
     storeContact({dispatch}, contact) {
@@ -40,7 +48,7 @@ const actions = {
         formData.append('profile_pic', contact.profile_pic);
 
         return new Promise((resolve, reject) => {
-            axios.post('/contacts', formData, config)
+            axios.post('api/contacts', formData, config)
                 .then(data => resolve())
                 .catch(err => reject(err.response));
         });
@@ -61,7 +69,7 @@ const actions = {
         formData.append('_method', 'PUT');
 
         return new Promise((resolve, reject) => {
-            axios.post(`/contacts/${contact.id}`, formData, config)
+            axios.post(`api/contacts/${contact.id}`, formData, config)
                 .then(data => resolve())
                 .catch(err => reject(err.response));
         });
@@ -69,7 +77,7 @@ const actions = {
 
     deleteContact({dispatch}, id) {
         return new Promise((resolve, reject) => {
-            axios.delete(`/contacts/${id}`)
+            axios.delete(`api/contacts/${id}`)
                 .then(data => resolve(data))
                 .catch(err => reject(err));
         });

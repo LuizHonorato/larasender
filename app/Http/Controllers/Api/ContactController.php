@@ -24,6 +24,11 @@ class ContactController extends Controller
         return response()->json($contacts);
     }
 
+    public function search(Request $request)
+    {
+        return $this->contactRepository->search($request->all());
+    }
+
     public function store(StoreUpdateContactFormRequest $request)
     {
         $data = $request->all();

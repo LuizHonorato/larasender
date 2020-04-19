@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-axios.defaults.baseURL = 'http://larasender.test/api';
+axios.defaults.baseURL = process.env.BASE_URL;
 
 const state = {
     user: null,
@@ -9,7 +9,7 @@ const state = {
 const actions = {
     login ({commit}, credentials) {
         return axios
-            .post('/login', credentials)
+            .post('api/login', credentials)
             .then(({data}) => {
                 commit('SET_USER', data)
             })

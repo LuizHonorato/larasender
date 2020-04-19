@@ -4,9 +4,12 @@
             <v-col cols="12" sm="12" md="6">
                 <v-text-field
                     placeholder="Pesquisar contatos"
+                    v-model="search"
                     type="text"
                     outlined
                     prepend-inner-icon="mdi-magnify"
+                    @change="searchContact"
+                    :clearable="search !== ''"
                 />
             </v-col>
         </v-row>
@@ -31,7 +34,9 @@
                                                 v-model="name"
                                                 placeholder="Nome"
                                                 type="text"
-                                                :rules="[() => !!name || 'Esse campo é obrigatório']"
+                                                :rules="[
+                                                    () => !!name || 'Esse campo é obrigatório',
+                                                    () => (name && name.length >= 3) || 'O campo nome deve ter no mínimo 3 caracteres']"
                                                 outlined
                                             />
                                         </v-col>
@@ -43,7 +48,9 @@
                                                 v-model="email"
                                                 placeholder="E-mail"
                                                 type="text"
-                                                :rules="[() => !!email || 'Esse campo é obrigatório']"
+                                                :rules="[
+                                                    () => !!email || 'Esse campo é obrigatório',
+                                                    () => /.+@.+\..+/.test(email) || 'Digite um e-mail válido']"
                                                 outlined
                                             />
                                         </v-col>
@@ -97,7 +104,7 @@
                             <v-card-actions>
                                 <v-spacer></v-spacer>
                                 <v-btn color="blue darken-1" text @click="closeDialog">Cancelar</v-btn>
-                                <v-btn type="submit" color="blue darken-1" :disabled="!isValid" text @click="submit()">Salvar</v-btn>
+                                <v-btn type="submit" color="blue darken-1" :disabled="!isValid" text @click.prevent="submit()">Salvar</v-btn>
                             </v-card-actions>
                         </v-card>
                     </v-form>
@@ -227,6 +234,7 @@
                 email: '',
                 phone: '',
                 profile_pic: null,
+                search: '',
                 imagePreview: null,
                 errorMessages: '',
                 formHasErrors: false,
@@ -358,6 +366,12 @@
                         this.snackbarErrorText = 'Erro ao excluir o contato.';
                         this.snackbarError = true;
                     });
+            },
+
+            searchContact() {
+                this.$store.dispatch('searchContact', {
+                    params: this.search
+                });
             },
 
             reset () {

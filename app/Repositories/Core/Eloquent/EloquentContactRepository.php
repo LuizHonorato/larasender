@@ -19,11 +19,14 @@ class EloquentContactRepository extends BaseEloquentRepository implements Contac
     {
         return $this->entity
             ->where(function ($query) use ($data) {
-                if(isset($data['name'])) {
-                    $query->where('name', 'LIKE', "%{$data['name']}%");
+                if(isset($data['params'])) {
+                    $query->where('name', 'LIKE', "%{$data['params']}%");
                 }
             })
+            ->orWhere(function($query) use ($data) {
+                $query->where('email', 'LIKE', "%{$data['params']}%");
+            })
             ->orderBy('id', 'desc')
-            ->paginate();
+            ->get();
     }
 }

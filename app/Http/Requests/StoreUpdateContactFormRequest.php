@@ -16,6 +16,13 @@ class StoreUpdateContactFormRequest extends FormRequest
         return true;
     }
 
+    public function messages()
+    {
+        return [
+            'email.unique'  => 'Contato já cadastrado.',
+        ];
+    }
+
     /**
      * Get the validation rules that apply to the request.
      *

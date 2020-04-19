@@ -2496,6 +2496,13 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -2513,6 +2520,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       email: '',
       phone: '',
       profile_pic: null,
+      search: '',
       imagePreview: null,
       errorMessages: '',
       formHasErrors: false,
@@ -2641,6 +2649,11 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       })["catch"](function (err) {
         _this4.snackbarErrorText = 'Erro ao excluir o contato.';
         _this4.snackbarError = true;
+      });
+    },
+    searchContact: function searchContact() {
+      this.$store.dispatch('searchContact', {
+        params: this.search
       });
     },
     reset: function reset() {
@@ -40190,7 +40203,16 @@ var render = function() {
                   placeholder: "Pesquisar contatos",
                   type: "text",
                   outlined: "",
-                  "prepend-inner-icon": "mdi-magnify"
+                  "prepend-inner-icon": "mdi-magnify",
+                  clearable: _vm.search !== ""
+                },
+                on: { change: _vm.searchContact },
+                model: {
+                  value: _vm.search,
+                  callback: function($$v) {
+                    _vm.search = $$v
+                  },
+                  expression: "search"
                 }
               })
             ],
@@ -40303,6 +40325,13 @@ var render = function() {
                                                     !!_vm.name ||
                                                     "Esse campo é obrigatório"
                                                   )
+                                                },
+                                                function() {
+                                                  return (
+                                                    (_vm.name &&
+                                                      _vm.name.length >= 3) ||
+                                                    "O campo nome deve ter no mínimo 3 caracteres"
+                                                  )
                                                 }
                                               ],
                                               outlined: ""
@@ -40339,6 +40368,14 @@ var render = function() {
                                                   return (
                                                     !!_vm.email ||
                                                     "Esse campo é obrigatório"
+                                                  )
+                                                },
+                                                function() {
+                                                  return (
+                                                    /.+@.+\..+/.test(
+                                                      _vm.email
+                                                    ) ||
+                                                    "Digite um e-mail válido"
                                                   )
                                                 }
                                               ],
@@ -40543,6 +40580,7 @@ var render = function() {
                                   },
                                   on: {
                                     click: function($event) {
+                                      $event.preventDefault()
                                       return _vm.submit()
                                     }
                                   }
@@ -117827,17 +117865,17 @@ var store = new vuex__WEBPACK_IMPORTED_MODULE_1__["default"].Store({
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
+/* WEBPACK VAR INJECTION */(function(process) {/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_0__);
 
-axios__WEBPACK_IMPORTED_MODULE_0___default.a.defaults.baseURL = 'http://larasender.test/api';
+axios__WEBPACK_IMPORTED_MODULE_0___default.a.defaults.baseURL = process.env.BASE_URL;
 var state = {
   user: null
 };
 var actions = {
   login: function login(_ref, credentials) {
     var commit = _ref.commit;
-    return axios__WEBPACK_IMPORTED_MODULE_0___default.a.post('/login', credentials).then(function (_ref2) {
+    return axios__WEBPACK_IMPORTED_MODULE_0___default.a.post('api/login', credentials).then(function (_ref2) {
       var data = _ref2.data;
       commit('SET_USER', data);
     });
@@ -117870,6 +117908,7 @@ var mutations = {
   actions: actions,
   mutations: mutations
 });
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./../../../../node_modules/process/browser.js */ "./node_modules/process/browser.js")))
 
 /***/ }),
 
@@ -117882,21 +117921,17 @@ var mutations = {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
+/* WEBPACK VAR INJECTION */(function(process) {/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var vuetify_lib_components_VDataTable_mixins_header__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! vuetify/lib/components/VDataTable/mixins/header */ "./node_modules/vuetify/lib/components/VDataTable/mixins/header.js");
-/* harmony import */ var vuetify_lib_util_console__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! vuetify/lib/util/console */ "./node_modules/vuetify/lib/util/console.js");
 
-
-
-axios__WEBPACK_IMPORTED_MODULE_0___default.a.defaults.baseURL = 'http://larasender.test/api';
+axios__WEBPACK_IMPORTED_MODULE_0___default.a.defaults.baseURL = process.env.BASE_URL;
 var state = {
   contacts: []
 };
 var actions = {
   getContacts: function getContacts(_ref) {
     var commit = _ref.commit;
-    return axios__WEBPACK_IMPORTED_MODULE_0___default.a.get('/contacts').then(function (res) {
+    return axios__WEBPACK_IMPORTED_MODULE_0___default.a.get('api/contacts').then(function (res) {
       commit('SET_CONTACTS', res.data);
     })["catch"](function (err) {
       return console.log(err);
@@ -117905,15 +117940,23 @@ var actions = {
   getContact: function getContact(_ref2, id) {
     var commit = _ref2.commit;
     return new Promise(function (resolve, reject) {
-      axios__WEBPACK_IMPORTED_MODULE_0___default.a.get("/contacts/".concat(id)).then(function (data) {
+      axios__WEBPACK_IMPORTED_MODULE_0___default.a.get("api/contacts/".concat(id)).then(function (data) {
         return resolve(data);
       })["catch"](function (err) {
         return reject(err);
       });
     });
   },
-  storeContact: function storeContact(_ref3, contact) {
-    var dispatch = _ref3.dispatch;
+  searchContact: function searchContact(_ref3, params) {
+    var commit = _ref3.commit;
+    axios__WEBPACK_IMPORTED_MODULE_0___default.a.post('api/contacts/search', params).then(function (res) {
+      commit('SET_CONTACTS', res.data);
+    })["catch"](function (err) {
+      console.log(err);
+    });
+  },
+  storeContact: function storeContact(_ref4, contact) {
+    var dispatch = _ref4.dispatch;
     var config = {
       headers: {
         'Content-Type': 'multipart/form-data'
@@ -117925,15 +117968,15 @@ var actions = {
     formData.append('phone', contact.phone);
     formData.append('profile_pic', contact.profile_pic);
     return new Promise(function (resolve, reject) {
-      axios__WEBPACK_IMPORTED_MODULE_0___default.a.post('/contacts', formData, config).then(function (data) {
+      axios__WEBPACK_IMPORTED_MODULE_0___default.a.post('api/contacts', formData, config).then(function (data) {
         return resolve();
       })["catch"](function (err) {
         return reject(err.response);
       });
     });
   },
-  updateContact: function updateContact(_ref4, contact) {
-    var dispatch = _ref4.dispatch;
+  updateContact: function updateContact(_ref5, contact) {
+    var dispatch = _ref5.dispatch;
     var config = {
       headers: {
         'Content-Type': 'multipart/form-data'
@@ -117946,17 +117989,17 @@ var actions = {
     formData.append('profile_pic', contact.profile_pic);
     formData.append('_method', 'PUT');
     return new Promise(function (resolve, reject) {
-      axios__WEBPACK_IMPORTED_MODULE_0___default.a.post("/contacts/".concat(contact.id), formData, config).then(function (data) {
+      axios__WEBPACK_IMPORTED_MODULE_0___default.a.post("api/contacts/".concat(contact.id), formData, config).then(function (data) {
         return resolve();
       })["catch"](function (err) {
         return reject(err.response);
       });
     });
   },
-  deleteContact: function deleteContact(_ref5, id) {
-    var dispatch = _ref5.dispatch;
+  deleteContact: function deleteContact(_ref6, id) {
+    var dispatch = _ref6.dispatch;
     return new Promise(function (resolve, reject) {
-      axios__WEBPACK_IMPORTED_MODULE_0___default.a["delete"]("/contacts/".concat(id)).then(function (data) {
+      axios__WEBPACK_IMPORTED_MODULE_0___default.a["delete"]("api/contacts/".concat(id)).then(function (data) {
         return resolve(data);
       })["catch"](function (err) {
         return reject(err);
@@ -117974,6 +118017,7 @@ var mutations = {
   actions: actions,
   mutations: mutations
 });
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./../../../../node_modules/process/browser.js */ "./node_modules/process/browser.js")))
 
 /***/ }),
 
@@ -118010,17 +118054,17 @@ var mutations = {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
+/* WEBPACK VAR INJECTION */(function(process) {/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_0__);
 
-axios__WEBPACK_IMPORTED_MODULE_0___default.a.defaults.baseURL = 'http://larasender.test/api';
+axios__WEBPACK_IMPORTED_MODULE_0___default.a.defaults.baseURL = process.env.BASE_URL;
 var state = {
   emails: []
 };
 var actions = {
   getEmails: function getEmails(_ref) {
     var commit = _ref.commit;
-    return axios__WEBPACK_IMPORTED_MODULE_0___default.a.get('/emails').then(function (data) {
+    return axios__WEBPACK_IMPORTED_MODULE_0___default.a.get('api/emails').then(function (data) {
       commit('SET_EMAILS', data);
     })["catch"](function (err) {
       return console.log(err);
@@ -118037,6 +118081,7 @@ var mutations = {
   actions: actions,
   mutations: mutations
 });
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./../../../../node_modules/process/browser.js */ "./node_modules/process/browser.js")))
 
 /***/ }),
 

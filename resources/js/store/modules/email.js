@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-axios.defaults.baseURL = 'http://larasender.test/api';
+axios.defaults.baseURL = process.env.BASE_URL;
 
 const state = {
     emails: [],
@@ -9,7 +9,7 @@ const state = {
 const actions = {
     getEmails({commit}) {
         return axios
-            .get('/emails')
+            .get('api/emails')
             .then(data => {
                 commit('SET_EMAILS', data)
             })
