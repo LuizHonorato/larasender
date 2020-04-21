@@ -88,8 +88,7 @@
                 items: [
                     { title: 'Dashboard', icon: 'mdi-view-dashboard', to: '/dashboard' },
                     { title: 'Contatos', icon: 'mdi-account-circle-outline', to: '/contatos' },
-                    { title: 'Caixas de entrada', icon: 'mdi-email-multiple-outline', to: '/emails' },
-                    { title: 'Contas de e-mail', icon: 'mdi-email-lock', to: '/emails' },
+                    { title: 'E-mails', icon: 'mdi-email-multiple-outline', to: '/emails' },
                 ],
                 systemItems: [
                     { title: 'Configurações do sistema', icon: 'mdi-cog' },

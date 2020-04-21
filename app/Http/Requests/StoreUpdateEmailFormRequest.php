@@ -25,7 +25,6 @@ class StoreUpdateEmailFormRequest extends FormRequest
     {
         return [
             'message' => "required|min:3",
-            'send_at' => "required",
             'user_sender_id' => "required",
             'contact_id' => "required"
         ];

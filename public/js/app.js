@@ -2229,12 +2229,8 @@ __webpack_require__.r(__webpack_exports__);
         icon: 'mdi-account-circle-outline',
         to: '/contatos'
       }, {
-        title: 'Caixas de entrada',
+        title: 'E-mails',
         icon: 'mdi-email-multiple-outline',
-        to: '/emails'
-      }, {
-        title: 'Contas de e-mail',
-        icon: 'mdi-email-lock',
         to: '/emails'
       }],
       systemItems: [{
